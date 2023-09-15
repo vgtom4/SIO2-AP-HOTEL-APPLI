@@ -30,99 +30,127 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnValider = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtPw = new System.Windows.Forms.TextBox();
-            this.lblErreurId = new System.Windows.Forms.Label();
-            this.lblErreurPw = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnConnect = new AP_HOTEL_APPLI.Controlers.CustomButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(152, 130);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(87, 151);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 16);
+            this.label1.Size = new System.Drawing.Size(196, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Identifiant :";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(152, 180);
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(87, 209);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 16);
+            this.label2.Size = new System.Drawing.Size(196, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mot de passe :";
-            // 
-            // btnValider
-            // 
-            this.btnValider.Location = new System.Drawing.Point(247, 228);
-            this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(166, 44);
-            this.btnValider.TabIndex = 2;
-            this.btnValider.Text = "Connexion";
-            this.btnValider.UseVisualStyleBackColor = true;
-            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(247, 124);
+            this.txtId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtId.Location = new System.Drawing.Point(87, 184);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(165, 22);
+            this.txtId.Size = new System.Drawing.Size(196, 22);
             this.txtId.TabIndex = 3;
             // 
             // txtPw
             // 
-            this.txtPw.Location = new System.Drawing.Point(247, 180);
+            this.txtPw.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPw.Location = new System.Drawing.Point(87, 240);
             this.txtPw.Name = "txtPw";
-            this.txtPw.Size = new System.Drawing.Size(166, 22);
+            this.txtPw.Size = new System.Drawing.Size(196, 22);
             this.txtPw.TabIndex = 4;
             // 
-            // lblErreurId
+            // lblInfo
             // 
-            this.lblErreurId.ForeColor = System.Drawing.Color.Red;
-            this.lblErreurId.Location = new System.Drawing.Point(248, 147);
-            this.lblErreurId.Name = "lblErreurId";
-            this.lblErreurId.Size = new System.Drawing.Size(164, 15);
-            this.lblErreurId.TabIndex = 5;
-            // 
-            // lblErreurPw
-            // 
-            this.lblErreurPw.ForeColor = System.Drawing.Color.Red;
-            this.lblErreurPw.Location = new System.Drawing.Point(249, 205);
-            this.lblErreurPw.Name = "lblErreurPw";
-            this.lblErreurPw.Size = new System.Drawing.Size(164, 15);
-            this.lblErreurPw.TabIndex = 6;
+            this.lblInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.Color.Red;
+            this.lblInfo.Location = new System.Drawing.Point(12, 265);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(343, 34);
+            this.lblInfo.TabIndex = 6;
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F);
-            this.label3.ForeColor = System.Drawing.Color.Coral;
-            this.label3.Location = new System.Drawing.Point(232, 48);
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(66)))), ((int)(((byte)(212)))));
+            this.label3.Location = new System.Drawing.Point(11, 100);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 32);
+            this.label3.Size = new System.Drawing.Size(344, 51);
             this.label3.TabIndex = 7;
             this.label3.Text = "Se connecter";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::AP_HOTEL_APPLI.Properties.Resources.logo_balladins;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(344, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(66)))), ((int)(((byte)(212)))));
+            this.btnConnect.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(66)))), ((int)(((byte)(212)))));
+            this.btnConnect.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConnect.BorderRadius = 5;
+            this.btnConnect.BorderSize = 0;
+            this.btnConnect.FlatAppearance.BorderSize = 0;
+            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConnect.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.ForeColor = System.Drawing.Color.White;
+            this.btnConnect.Location = new System.Drawing.Point(87, 302);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(196, 44);
+            this.btnConnect.TabIndex = 9;
+            this.btnConnect.Text = "Connexion";
+            this.btnConnect.TextColor = System.Drawing.Color.White;
+            this.btnConnect.UseVisualStyleBackColor = false;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // frmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(169)))), ((int)(((byte)(159)))));
+            this.ClientSize = new System.Drawing.Size(367, 358);
+            this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblErreurPw);
-            this.Controls.Add(this.lblErreurId);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.txtPw);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.btnValider);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmConnexion";
-            this.Text = "Form1";
+            this.Text = "Connexion";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,12 +160,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnValider;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtPw;
-        private System.Windows.Forms.Label lblErreurId;
-        private System.Windows.Forms.Label lblErreurPw;
+        private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Controlers.CustomButton btnConnect;
     }
 }
 

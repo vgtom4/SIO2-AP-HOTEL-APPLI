@@ -12,8 +12,6 @@ namespace AP_HOTEL_APPLI
 {
     public partial class frmConnexion : Form
     {
-        connexiondb maconnexion;
-
         public frmConnexion()
         {
             InitializeComponent();
@@ -21,31 +19,19 @@ namespace AP_HOTEL_APPLI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            maconnexion = new connexiondb();           
+
         }
 
-        private void btnValider_Click(object sender, EventArgs e)
+        private void btnConnect_Click(object sender, EventArgs e)
         {
-            hotel hotelTemp;
-            lblErreurId.Text = "";
-            lblErreurPw.Text = "";
-             if (maconnexion.hotel.Where(hotel => hotel.nom == txtId.Text).FirstOrDefault()!=null)
+            lblInfo.Text = "";
+            if (passerelle.initConnexion(txtId.Text, txtPw.Text))
             {
-                hotelTemp = maconnexion.hotel.Where(hotel => hotel.nom == txtId.Text).FirstOrDefault();
-                if (hotelTemp.password == txtPw.Text)
-                {
-                    MessageBox.Show("Connexion réussie");
-                    // Charger formulaire gestion
-                    varglobale.hotel = hotelTemp;
-                }
-                else
-                {
-                    lblErreurPw.Text = "mot de passe erroné";
-                }
-            }   
-             else
+                lblInfo.Text = "Connexion établie";
+            }
+            else
             {
-                lblErreurId.Text = "identifiant erroné";
+                lblInfo.Text = "Identifiant ou mot de passe incorrecte";
             }
         }
     }

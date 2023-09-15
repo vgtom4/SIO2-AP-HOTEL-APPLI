@@ -9,6 +9,6 @@ namespace AP_HOTEL_APPLI
     public class varglobale
     {
         public static hotel hotel;
-
+        public static connexiondb connexion = new connexiondb();
     }
 }
