@@ -18,7 +18,7 @@ namespace AP_HOTEL_APPLI
                     varglobale.hotel = varglobale.connexion.hotel.Where(hotel => hotel.nom == id && hotel.password == password).FirstOrDefault();
                     return true;
                 }
-                return false;
+                else return false;
             }
             catch (Exception ex)
             {

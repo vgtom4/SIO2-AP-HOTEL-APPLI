@@ -27,11 +27,11 @@ namespace AP_HOTEL_APPLI
             lblInfo.Text = "";
             if (passerelle.initConnexion(txtId.Text, txtPw.Text))
             {
-                lblInfo.Text = "Connexion établie";
+                MessageBox.Show("Connexion établie");
             }
             else
             {
-                lblInfo.Text = "Identifiant ou mot de passe incorrecte";
+                lblInfo.Text = "Identifiant ou mot de passe incorrect";
             }
         }
     }
