@@ -26,17 +26,17 @@ namespace AP_HOTEL_APPLI
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            hotel unhotel;
+            hotel hotelTemp;
             lblErreurId.Text = "";
             lblErreurPw.Text = "";
              if (maconnexion.hotel.Where(hotel => hotel.nom == txtId.Text).FirstOrDefault()!=null)
             {
-                unhotel = maconnexion.hotel.Where(hotel => hotel.nom == txtId.Text).FirstOrDefault();
-                if (unhotel.password == txtPw.Text)
+                hotelTemp = maconnexion.hotel.Where(hotel => hotel.nom == txtId.Text).FirstOrDefault();
+                if (hotelTemp.password == txtPw.Text)
                 {
                     MessageBox.Show("Connexion réussie");
                     // Charger formulaire gestion
-                    varglobale.hotel = unhotel;
+                    varglobale.hotel = hotelTemp;
                 }
                 else
                 {
