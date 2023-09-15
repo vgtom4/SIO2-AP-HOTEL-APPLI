@@ -28,6 +28,9 @@ namespace AP_HOTEL_APPLI
             if (passerelle.initConnexion(txtId.Text, txtPw.Text))
             {
                 MessageBox.Show("Connexion établie");
+                // utilisation de refreshConnexion() pour mettre à jour le label de formBase
+                Application.OpenForms.OfType<formMain>().FirstOrDefault().refreshConnexion();
+                this.Close();
             }
             else
             {

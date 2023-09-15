@@ -16,7 +16,7 @@ namespace AP_HOTEL_APPLI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmConnexion());
+            Application.Run(new formMain());
         }
     }
 }
