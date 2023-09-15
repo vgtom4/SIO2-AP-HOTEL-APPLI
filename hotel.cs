@@ -34,6 +34,7 @@ namespace AP_HOTEL_APPLI
         public string deslong { get; set; }
         public Nullable<double> prix { get; set; }
         public string password { get; set; }
+
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<chambre> chambre { get; set; }

@@ -172,7 +172,7 @@
     <Compile Include="chambre.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="passerelle.cs" />
     <Compile Include="EntityModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -191,11 +191,11 @@
     <Compile Include="equipement.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmConnexion.Designer.cs">
+      <DependentUpon>frmConnexion.cs</DependentUpon>
     </Compile>
     <Compile Include="hotel.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
@@ -208,8 +208,9 @@
     <Compile Include="reservation.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="varglobale.cs" />
+    <EmbeddedResource Include="frmConnexion.resx">
+      <DependentUpon>frmConnexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

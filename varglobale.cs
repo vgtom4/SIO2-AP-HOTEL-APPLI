@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace AP_HOTEL_APPLI
 {
-    public class Class1
+    public class varglobale
     {
-       
+        public static hotel hotel;
+
     }
 }
