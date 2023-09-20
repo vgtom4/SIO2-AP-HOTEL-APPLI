@@ -34,7 +34,7 @@ namespace AP_HOTEL_APPLI
                 if (control is RichTextBox RTB)
                 {
                     // Bascule l'état du TextBox en fonction de l'état du mode d'édition
-                    RTB.ReadOnly = !editMode;
+                    RTB.ReadOnly = !editMode || control == txtNo;
 
                     // ReadOnly si l'hotel est connecté
                     RTB.Enabled = varglobale.hotel != null;
@@ -101,6 +101,7 @@ namespace AP_HOTEL_APPLI
         private void btnSave_Click(object sender, EventArgs e)
         {
             editMode = false;
+            EditHotel();
             RefreshInfo();
         }
 
@@ -108,6 +109,24 @@ namespace AP_HOTEL_APPLI
         {
             editMode = false;
             RefreshInfo();
+        }
+
+        private void EditHotel()
+        {
+            if (varglobale.hotel != null)
+            {
+                varglobale.hotel.nom = txtNom.Text;
+                varglobale.hotel.password = txtPassword.Text;
+                varglobale.hotel.adr1 = txtAdr1.Text;
+                varglobale.hotel.adr2 = txtAdr2.Text;
+                varglobale.hotel.ville = txtVille.Text;
+                varglobale.hotel.cp = int.Parse(txtCP.Text);
+                varglobale.hotel.tel = int.Parse(txtTel.Text);
+                varglobale.hotel.deslong = txtDescL.Text;
+                varglobale.hotel.descourt = txtDescC.Text;
+                varglobale.hotel.prix = int.Parse(txtPrix.Text);
+                varglobale.connexion.SaveChanges();
+            }
         }
     }
 }

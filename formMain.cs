@@ -12,6 +12,7 @@ namespace AP_HOTEL_APPLI
 {
     public partial class formMain : Form
     {
+        frmConnexion frmConnexion;
         public formMain()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace AP_HOTEL_APPLI
         private void formBase_Load(object sender, EventArgs e)
         {
             RefreshConnexion();
+            frmConnexion = new frmConnexion();
         }
 
         public void RefreshConnexion()
@@ -39,14 +41,21 @@ namespace AP_HOTEL_APPLI
 
         private void btnCompte_Click(object sender, EventArgs e)
         {
-            frmConnexion frmConnexion = new frmConnexion();
             frmConnexion.Show();
+            frmConnexion.BringToFront();
         }
 
         private void btnInfoHotel_Click(object sender, EventArgs e)
         {
             FormInfo frmInfo = new FormInfo();
             frmInfo.Show();
+        }
+
+        // actualisation des autres forms
+        public void RefreshForm()
+        {
+            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshConnexion();
+            Application.OpenForms.OfType<FormInfo>().FirstOrDefault()?.RefreshInfo();
         }
     }
 }

@@ -19,6 +19,12 @@ namespace AP_HOTEL_APPLI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            RefreshConnexion();
+        }
+
+        public void RefreshConnexion()
+        {
+            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshForm();
             if (varglobale.hotel != null)
             {
                 PanelFormLogout();
@@ -42,21 +48,15 @@ namespace AP_HOTEL_APPLI
             panelLogout.Visible = true;
         }
 
-        // actualisation des autres forms
-        public void RefreshForm()
-        {
-            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshConnexion();
-            Application.OpenForms.OfType<FormInfo>().FirstOrDefault()?.RefreshInfo();
-            Form1_Load(this, EventArgs.Empty);
-        }
+        
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
             lblInfo.Text = "";
             if (passerelle.initConnexion(txtId.Text, txtPw.Text))
             {
-                RefreshForm();
-                this.Close();
+                RefreshConnexion();
+                this.Hide();
             }
             else
             {
@@ -67,14 +67,14 @@ namespace AP_HOTEL_APPLI
         private void btnLogout_Click(object sender, EventArgs e)
         {
             varglobale.hotel = null;
-            RefreshForm();
+            RefreshConnexion();
         }
 
         private void btnConnexionDemo_Click(object sender, EventArgs e)
         {
             varglobale.hotel = varglobale.connexion.hotel.FirstOrDefault();
-            RefreshForm();
-            this.Close();
+            RefreshConnexion();
+            this.Hide();
         }
     }
 }
