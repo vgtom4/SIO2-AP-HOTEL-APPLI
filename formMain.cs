@@ -19,20 +19,10 @@ namespace AP_HOTEL_APPLI
 
         private void formBase_Load(object sender, EventArgs e)
         {
-            lblInfo.Text = string.Empty;
-            if (varglobale.hotel != null)
-            {
-                lblInfo.Text = "Bienvenue " + varglobale.hotel.nom;
-            }
-            else
-            {
-                lblInfo.Text = "Vous n'êtes pas connecté";
-                frmConnexion frm = new frmConnexion();
-                frm.Show();
-            }
+            RefreshConnexion();
         }
 
-        public void refreshConnexion()
+        public void RefreshConnexion()
         {
             lblInfo.Text = string.Empty;
             if (varglobale.hotel != null)
@@ -42,9 +32,15 @@ namespace AP_HOTEL_APPLI
             else
             {
                 lblInfo.Text = "Vous n'êtes pas connecté";
-                frmConnexion frm = new frmConnexion();
-                frm.Show();
+                //frmConnexion frm = new frmConnexion();
+                //frm.Show();
             }
+        }
+
+        private void btnCompte_Click(object sender, EventArgs e)
+        {
+            frmConnexion frmConnexion = new frmConnexion();
+            frmConnexion.Show();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace AP_HOTEL_APPLI.Controlers
         private Color borderColor = Color.PaleVioletRed;
 
         //Properties
-        [Category("RJ Code Advance")]
+        [Category("Options Custom Button")]
         public int BorderSize
         {
             get { return borderSize; }
@@ -30,7 +30,7 @@ namespace AP_HOTEL_APPLI.Controlers
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Options Custom Button")]
         public int BorderRadius
         {
             get { return borderRadius; }
@@ -41,7 +41,7 @@ namespace AP_HOTEL_APPLI.Controlers
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Options Custom Button")]
         public Color BorderColor
         {
             get { return borderColor; }
@@ -52,14 +52,14 @@ namespace AP_HOTEL_APPLI.Controlers
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Options Custom Button")]
         public Color BackgroundColor
         {
             get { return this.BackColor; }
             set { this.BackColor = value; }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Options Custom Button")]
         public Color TextColor
         {
             get { return this.ForeColor; }
