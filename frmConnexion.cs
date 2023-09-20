@@ -34,25 +34,20 @@ namespace AP_HOTEL_APPLI
         {
             panelLogin.Visible = true;
             panelLogout.Visible = false;
-            //lblCompte.Visible = false;
-            //label1.Visible = true;
-            //label2.Visible = true;
-            //txtId.Visible = true;
-            //txtPw.Visible = true;
-            //btnConnect.Visible = true;
-            //btnLogout.Visible = false;
         }
 
         public void PanelFormLogout()
         {
             panelLogin.Visible = false;
             panelLogout.Visible = true;
-            //lblCompte.Visible = true;
-            //label1.Visible = false;
-            //label2.Visible = false;
-            //txtId.Visible = false;
-            //txtPw.Visible = false;
-            //btnConnect.Visible = false;
+        }
+
+        // actualisation des autres forms
+        public void RefreshForm()
+        {
+            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshConnexion();
+            Application.OpenForms.OfType<FormInfo>().FirstOrDefault()?.RefreshInfo();
+            Form1_Load(this, EventArgs.Empty);
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -60,9 +55,7 @@ namespace AP_HOTEL_APPLI
             lblInfo.Text = "";
             if (passerelle.initConnexion(txtId.Text, txtPw.Text))
             {
-                // utilisation de refreshConnexion() pour mettre à jour le label de formBase
-                Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshConnexion();
-                Form1_Load(sender, e);
+                RefreshForm();
                 this.Close();
             }
             else
@@ -74,8 +67,14 @@ namespace AP_HOTEL_APPLI
         private void btnLogout_Click(object sender, EventArgs e)
         {
             varglobale.hotel = null;
-            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshConnexion();
-            Form1_Load(sender, e);
+            RefreshForm();
+        }
+
+        private void btnConnexionDemo_Click(object sender, EventArgs e)
+        {
+            varglobale.hotel = varglobale.connexion.hotel.FirstOrDefault();
+            RefreshForm();
+            this.Close();
         }
     }
 }

@@ -37,10 +37,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCompte = new System.Windows.Forms.Label();
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.btnConnect = new AP_HOTEL_APPLI.Controlers.CustomButton();
             this.panelLogout = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new AP_HOTEL_APPLI.Controlers.CustomButton();
-            this.btnConnect = new AP_HOTEL_APPLI.Controlers.CustomButton();
+            this.btnConnexionDemo = new AP_HOTEL_APPLI.Controlers.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLogin.SuspendLayout();
             this.panelLogout.SuspendLayout();
@@ -133,6 +134,7 @@
             // panelLogin
             // 
             this.panelLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelLogin.Controls.Add(this.btnConnexionDemo);
             this.panelLogin.Controls.Add(this.txtId);
             this.panelLogin.Controls.Add(this.label1);
             this.panelLogin.Controls.Add(this.lblInfo);
@@ -145,6 +147,27 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(350, 334);
             this.panelLogin.TabIndex = 12;
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(66)))), ((int)(((byte)(212)))));
+            this.btnConnect.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(66)))), ((int)(((byte)(212)))));
+            this.btnConnect.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConnect.BorderRadius = 5;
+            this.btnConnect.BorderSize = 0;
+            this.btnConnect.FlatAppearance.BorderSize = 0;
+            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConnect.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.ForeColor = System.Drawing.Color.White;
+            this.btnConnect.Location = new System.Drawing.Point(79, 287);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(196, 44);
+            this.btnConnect.TabIndex = 9;
+            this.btnConnect.Text = "Connexion";
+            this.btnConnect.TextColor = System.Drawing.Color.White;
+            this.btnConnect.UseVisualStyleBackColor = false;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // panelLogout
             // 
@@ -189,26 +212,26 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnConnect
+            // btnConnexionDemo
             // 
-            this.btnConnect.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(66)))), ((int)(((byte)(212)))));
-            this.btnConnect.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(66)))), ((int)(((byte)(212)))));
-            this.btnConnect.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConnect.BorderRadius = 5;
-            this.btnConnect.BorderSize = 0;
-            this.btnConnect.FlatAppearance.BorderSize = 0;
-            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnect.ForeColor = System.Drawing.Color.White;
-            this.btnConnect.Location = new System.Drawing.Point(79, 287);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(196, 44);
-            this.btnConnect.TabIndex = 9;
-            this.btnConnect.Text = "Connexion";
-            this.btnConnect.TextColor = System.Drawing.Color.White;
-            this.btnConnect.UseVisualStyleBackColor = false;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            this.btnConnexionDemo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnConnexionDemo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(66)))), ((int)(((byte)(212)))));
+            this.btnConnexionDemo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(66)))), ((int)(((byte)(212)))));
+            this.btnConnexionDemo.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConnexionDemo.BorderRadius = 5;
+            this.btnConnexionDemo.BorderSize = 0;
+            this.btnConnexionDemo.FlatAppearance.BorderSize = 0;
+            this.btnConnexionDemo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConnexionDemo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnexionDemo.ForeColor = System.Drawing.Color.White;
+            this.btnConnexionDemo.Location = new System.Drawing.Point(12, 287);
+            this.btnConnexionDemo.Name = "btnConnexionDemo";
+            this.btnConnexionDemo.Size = new System.Drawing.Size(56, 44);
+            this.btnConnexionDemo.TabIndex = 10;
+            this.btnConnexionDemo.Text = "Demo";
+            this.btnConnexionDemo.TextColor = System.Drawing.Color.White;
+            this.btnConnexionDemo.UseVisualStyleBackColor = false;
+            this.btnConnexionDemo.Click += new System.EventHandler(this.btnConnexionDemo_Click);
             // 
             // frmConnexion
             // 
@@ -216,8 +239,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(169)))), ((int)(((byte)(159)))));
             this.ClientSize = new System.Drawing.Size(376, 358);
-            this.Controls.Add(this.panelLogout);
             this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.panelLogout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmConnexion";
             this.Text = "Connexion";
@@ -246,6 +269,7 @@
         private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.Panel panelLogout;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private Controlers.CustomButton btnConnexionDemo;
     }
 }
 

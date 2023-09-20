@@ -42,5 +42,11 @@ namespace AP_HOTEL_APPLI
             frmConnexion frmConnexion = new frmConnexion();
             frmConnexion.Show();
         }
+
+        private void btnInfoHotel_Click(object sender, EventArgs e)
+        {
+            FormInfo frmInfo = new FormInfo();
+            frmInfo.Show();
+        }
     }
 }

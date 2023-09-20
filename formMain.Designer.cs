@@ -30,38 +30,57 @@
         {
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnCompte = new FontAwesome.Sharp.IconButton();
+            this.btnInfoHotel = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // lblInfo
             // 
-            this.lblInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(12, 104);
+            this.lblInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(976, 12);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(776, 337);
+            this.lblInfo.Size = new System.Drawing.Size(194, 50);
             this.lblInfo.TabIndex = 0;
             this.lblInfo.Text = "label1";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCompte
             // 
+            this.btnCompte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompte.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnCompte.IconColor = System.Drawing.Color.Black;
+            this.btnCompte.IconColor = System.Drawing.Color.LightCoral;
             this.btnCompte.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCompte.Location = new System.Drawing.Point(738, 12);
+            this.btnCompte.IconSize = 45;
+            this.btnCompte.Location = new System.Drawing.Point(920, 12);
             this.btnCompte.Name = "btnCompte";
             this.btnCompte.Size = new System.Drawing.Size(50, 50);
             this.btnCompte.TabIndex = 2;
             this.btnCompte.UseVisualStyleBackColor = true;
             this.btnCompte.Click += new System.EventHandler(this.btnCompte_Click);
             // 
+            // btnInfoHotel
+            // 
+            this.btnInfoHotel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInfoHotel.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
+            this.btnInfoHotel.IconColor = System.Drawing.Color.RoyalBlue;
+            this.btnInfoHotel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInfoHotel.IconSize = 45;
+            this.btnInfoHotel.Location = new System.Drawing.Point(864, 12);
+            this.btnInfoHotel.Name = "btnInfoHotel";
+            this.btnInfoHotel.Size = new System.Drawing.Size(50, 50);
+            this.btnInfoHotel.TabIndex = 3;
+            this.btnInfoHotel.UseVisualStyleBackColor = true;
+            this.btnInfoHotel.Click += new System.EventHandler(this.btnInfoHotel_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.btnInfoHotel);
             this.Controls.Add(this.btnCompte);
             this.Controls.Add(this.lblInfo);
+            this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "formMain";
             this.Text = "Base";
             this.Load += new System.EventHandler(this.formBase_Load);
@@ -73,5 +92,6 @@
 
         private System.Windows.Forms.Label lblInfo;
         private FontAwesome.Sharp.IconButton btnCompte;
+        private FontAwesome.Sharp.IconButton btnInfoHotel;
     }
 }
