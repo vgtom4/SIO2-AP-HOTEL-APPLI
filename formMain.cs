@@ -13,6 +13,8 @@ namespace AP_HOTEL_APPLI
     public partial class formMain : Form
     {
         frmConnexion frmConnexion;
+        private Form currentChildForm;
+
         public formMain()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace AP_HOTEL_APPLI
         {
             RefreshConnexion();
             frmConnexion = new frmConnexion();
+            panelConnexion.Visible = false;
         }
 
         public void RefreshConnexion()
@@ -34,21 +37,27 @@ namespace AP_HOTEL_APPLI
             else
             {
                 lblInfo.Text = "Vous n'êtes pas connecté";
-                //frmConnexion frm = new frmConnexion();
-                //frm.Show();
             }
         }
 
         private void btnCompte_Click(object sender, EventArgs e)
         {
-            frmConnexion.Show();
-            frmConnexion.BringToFront();
+            if (frmConnexion.Visible)
+            {
+                panelConnexion.Visible = false;
+                frmConnexion.Hide();
+            }
+            else
+            {
+                panelConnexion.Visible = true;
+                frmConnexion.Show();
+            }
+            
         }
 
         private void btnInfoHotel_Click(object sender, EventArgs e)
         {
-            FormInfo frmInfo = new FormInfo();
-            frmInfo.Show();
+            OpenChildForm(new FormInfo());
         }
 
         // actualisation des autres forms
@@ -56,6 +65,34 @@ namespace AP_HOTEL_APPLI
         {
             Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshConnexion();
             Application.OpenForms.OfType<FormInfo>().FirstOrDefault()?.RefreshInfo();
+            Application.OpenForms.OfType<frmConnexion>().FirstOrDefault()?.RefreshConnexion();
         }
+
+        /// <summary> Permet d'afficher un formulaire enfant dans la zone de travail "panelDesktop". </summary>
+        /// <param name="childForm">Nouveau formulaire à afficher</param>
+        private void OpenChildForm(Form childForm)
+        {
+            // Vérifie si le formulaire actuel est différent du formulaire à ouvrir
+            if (currentChildForm == null || currentChildForm.GetType() != childForm.GetType())
+            {
+                // Ferme le formulaire actuel s'il existe
+                currentChildForm?.Close();
+
+                // Crée une nouvelle instance du formulaire à ouvrir
+                currentChildForm = (Form)Activator.CreateInstance(childForm.GetType());
+
+                // Configure les propriétés du formulaire
+                currentChildForm.TopLevel = false;
+                currentChildForm.FormBorderStyle = FormBorderStyle.None;
+                currentChildForm.Dock = DockStyle.Fill;
+
+                // Ajoute le formulaire à la zone de travail "panelDesktop"
+                panelDesktop.Controls.Clear();
+                panelDesktop.Controls.Add(currentChildForm);
+                currentChildForm.BringToFront();
+                currentChildForm.Show();
+            }
+        }
+
     }
 }

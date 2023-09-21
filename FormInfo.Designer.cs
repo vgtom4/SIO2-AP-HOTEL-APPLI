@@ -77,7 +77,7 @@
             this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
             this.btnEdit.IconColor = System.Drawing.Color.IndianRed;
             this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEdit.Location = new System.Drawing.Point(1020, 479);
+            this.btnEdit.Location = new System.Drawing.Point(1020, 362);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(50, 50);
             this.btnEdit.TabIndex = 1;
@@ -91,7 +91,7 @@
             this.btnSave.IconColor = System.Drawing.Color.BlueViolet;
             this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnSave.IconSize = 45;
-            this.btnSave.Location = new System.Drawing.Point(1020, 535);
+            this.btnSave.Location = new System.Drawing.Point(1020, 418);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(50, 50);
             this.btnSave.TabIndex = 13;
@@ -105,7 +105,7 @@
             this.btnCancel.IconColor = System.Drawing.Color.Brown;
             this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancel.IconSize = 45;
-            this.btnCancel.Location = new System.Drawing.Point(1020, 591);
+            this.btnCancel.Location = new System.Drawing.Point(1020, 474);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(50, 50);
             this.btnCancel.TabIndex = 14;
@@ -145,19 +145,19 @@
             this.tablePanelInfo.Controls.Add(this.txtNo, 1, 0);
             this.tablePanelInfo.Controls.Add(this.label11, 3, 7);
             this.tablePanelInfo.Controls.Add(this.txtPrix, 4, 7);
-            this.tablePanelInfo.Location = new System.Drawing.Point(12, 55);
+            this.tablePanelInfo.Location = new System.Drawing.Point(29, 55);
             this.tablePanelInfo.Name = "tablePanelInfo";
-            this.tablePanelInfo.RowCount = 9;
-            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tablePanelInfo.Size = new System.Drawing.Size(1002, 586);
+            this.tablePanelInfo.RowCount = 8;
+            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tablePanelInfo.Size = new System.Drawing.Size(985, 469);
             this.tablePanelInfo.TabIndex = 16;
             // 
             // txtDescC
@@ -166,9 +166,9 @@
             this.txtDescC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDescC.EnableAutoDragDrop = true;
             this.txtDescC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescC.Location = new System.Drawing.Point(210, 458);
+            this.txtDescC.Location = new System.Drawing.Point(210, 409);
             this.txtDescC.Name = "txtDescC";
-            this.txtDescC.Size = new System.Drawing.Size(305, 59);
+            this.txtDescC.Size = new System.Drawing.Size(296, 57);
             this.txtDescC.TabIndex = 12;
             this.txtDescC.Text = "";
             // 
@@ -178,9 +178,9 @@
             this.txtDescL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDescL.EnableAutoDragDrop = true;
             this.txtDescL.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescL.Location = new System.Drawing.Point(210, 393);
+            this.txtDescL.Location = new System.Drawing.Point(210, 351);
             this.txtDescL.Name = "txtDescL";
-            this.txtDescL.Size = new System.Drawing.Size(305, 59);
+            this.txtDescL.Size = new System.Drawing.Size(296, 52);
             this.txtDescL.TabIndex = 11;
             this.txtDescL.Text = "";
             // 
@@ -190,9 +190,9 @@
             this.txtTel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTel.EnableAutoDragDrop = true;
             this.txtTel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.Location = new System.Drawing.Point(694, 328);
+            this.txtTel.Location = new System.Drawing.Point(685, 293);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(305, 59);
+            this.txtTel.Size = new System.Drawing.Size(297, 52);
             this.txtTel.TabIndex = 9;
             this.txtTel.Text = "";
             // 
@@ -202,9 +202,9 @@
             this.txtVille.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtVille.EnableAutoDragDrop = true;
             this.txtVille.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVille.Location = new System.Drawing.Point(694, 198);
+            this.txtVille.Location = new System.Drawing.Point(685, 177);
             this.txtVille.Name = "txtVille";
-            this.txtVille.Size = new System.Drawing.Size(305, 59);
+            this.txtVille.Size = new System.Drawing.Size(297, 52);
             this.txtVille.TabIndex = 8;
             this.txtVille.Text = "";
             // 
@@ -214,9 +214,9 @@
             this.txtCP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCP.EnableAutoDragDrop = true;
             this.txtCP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCP.Location = new System.Drawing.Point(694, 133);
+            this.txtCP.Location = new System.Drawing.Point(685, 119);
             this.txtCP.Name = "txtCP";
-            this.txtCP.Size = new System.Drawing.Size(305, 59);
+            this.txtCP.Size = new System.Drawing.Size(297, 52);
             this.txtCP.TabIndex = 7;
             this.txtCP.Text = "";
             // 
@@ -226,9 +226,9 @@
             this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassword.EnableAutoDragDrop = true;
             this.txtPassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(210, 133);
+            this.txtPassword.Location = new System.Drawing.Point(210, 119);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(305, 59);
+            this.txtPassword.Size = new System.Drawing.Size(296, 52);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.Text = "";
             // 
@@ -238,9 +238,9 @@
             this.txtAdr2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAdr2.EnableAutoDragDrop = true;
             this.txtAdr2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdr2.Location = new System.Drawing.Point(694, 68);
+            this.txtAdr2.Location = new System.Drawing.Point(685, 61);
             this.txtAdr2.Name = "txtAdr2";
-            this.txtAdr2.Size = new System.Drawing.Size(305, 59);
+            this.txtAdr2.Size = new System.Drawing.Size(297, 52);
             this.txtAdr2.TabIndex = 6;
             this.txtAdr2.Text = "";
             // 
@@ -250,9 +250,9 @@
             this.txtNom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNom.EnableAutoDragDrop = true;
             this.txtNom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(210, 68);
+            this.txtNom.Location = new System.Drawing.Point(210, 61);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(305, 59);
+            this.txtNom.Size = new System.Drawing.Size(296, 52);
             this.txtNom.TabIndex = 3;
             this.txtNom.Text = "";
             // 
@@ -262,9 +262,9 @@
             this.txtAdr1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAdr1.EnableAutoDragDrop = true;
             this.txtAdr1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdr1.Location = new System.Drawing.Point(694, 3);
+            this.txtAdr1.Location = new System.Drawing.Point(685, 3);
             this.txtAdr1.Name = "txtAdr1";
-            this.txtAdr1.Size = new System.Drawing.Size(305, 59);
+            this.txtAdr1.Size = new System.Drawing.Size(297, 52);
             this.txtAdr1.TabIndex = 5;
             this.txtAdr1.Text = "";
             // 
@@ -273,7 +273,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(171, 21);
+            this.label2.Location = new System.Drawing.Point(171, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 23);
             this.label2.TabIndex = 17;
@@ -285,7 +285,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(579, 21);
+            this.label5.Location = new System.Drawing.Point(570, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 23);
             this.label5.TabIndex = 20;
@@ -297,7 +297,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 411);
+            this.label8.Location = new System.Drawing.Point(3, 365);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(201, 23);
             this.label8.TabIndex = 23;
@@ -309,7 +309,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(149, 86);
+            this.label3.Location = new System.Drawing.Point(149, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 23);
             this.label3.TabIndex = 18;
@@ -321,7 +321,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(579, 86);
+            this.label4.Location = new System.Drawing.Point(570, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 23);
             this.label4.TabIndex = 19;
@@ -333,7 +333,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(561, 151);
+            this.label6.Location = new System.Drawing.Point(552, 133);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 23);
             this.label6.TabIndex = 21;
@@ -345,7 +345,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(637, 216);
+            this.label10.Location = new System.Drawing.Point(628, 191);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 23);
             this.label10.TabIndex = 25;
@@ -357,7 +357,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 476);
+            this.label9.Location = new System.Drawing.Point(9, 426);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(195, 23);
             this.label9.TabIndex = 24;
@@ -369,7 +369,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(575, 346);
+            this.label7.Location = new System.Drawing.Point(566, 307);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 23);
             this.label7.TabIndex = 22;
@@ -381,7 +381,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(64, 151);
+            this.label12.Location = new System.Drawing.Point(64, 133);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(140, 23);
             this.label12.TabIndex = 27;
@@ -397,7 +397,7 @@
             this.txtNo.Location = new System.Drawing.Point(210, 3);
             this.txtNo.Name = "txtNo";
             this.txtNo.ReadOnly = true;
-            this.txtNo.Size = new System.Drawing.Size(305, 59);
+            this.txtNo.Size = new System.Drawing.Size(296, 52);
             this.txtNo.TabIndex = 2;
             this.txtNo.Text = "";
             // 
@@ -406,7 +406,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(641, 476);
+            this.label11.Location = new System.Drawing.Point(632, 426);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 23);
             this.label11.TabIndex = 26;
@@ -419,9 +419,9 @@
             this.txtPrix.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPrix.EnableAutoDragDrop = true;
             this.txtPrix.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrix.Location = new System.Drawing.Point(694, 458);
+            this.txtPrix.Location = new System.Drawing.Point(685, 409);
             this.txtPrix.Name = "txtPrix";
-            this.txtPrix.Size = new System.Drawing.Size(305, 59);
+            this.txtPrix.Size = new System.Drawing.Size(297, 57);
             this.txtPrix.TabIndex = 10;
             this.txtPrix.Text = "";
             // 
@@ -429,14 +429,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 653);
+            this.ClientSize = new System.Drawing.Size(1082, 553);
             this.Controls.Add(this.tablePanelInfo);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label1);
-            this.MinimumSize = new System.Drawing.Size(1100, 700);
+            this.MinimumSize = new System.Drawing.Size(1100, 600);
             this.Name = "FormInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInfo";
             this.Load += new System.EventHandler(this.FormInfo_Load);
             this.tablePanelInfo.ResumeLayout(false);

@@ -102,6 +102,7 @@ namespace AP_HOTEL_APPLI
         {
             editMode = false;
             EditHotel();
+            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshForm();
             RefreshInfo();
         }
 

@@ -24,7 +24,7 @@ namespace AP_HOTEL_APPLI
 
         public void RefreshConnexion()
         {
-            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshForm();
+            lblInfo.Text = "";
             if (varglobale.hotel != null)
             {
                 PanelFormLogout();
@@ -55,6 +55,7 @@ namespace AP_HOTEL_APPLI
             lblInfo.Text = "";
             if (passerelle.initConnexion(txtId.Text, txtPw.Text))
             {
+                Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshForm();
                 RefreshConnexion();
                 this.Hide();
             }
@@ -67,13 +68,26 @@ namespace AP_HOTEL_APPLI
         private void btnLogout_Click(object sender, EventArgs e)
         {
             varglobale.hotel = null;
+            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshForm();
             RefreshConnexion();
         }
 
         private void btnConnexionDemo_Click(object sender, EventArgs e)
         {
             varglobale.hotel = varglobale.connexion.hotel.FirstOrDefault();
+            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshForm();
             RefreshConnexion();
+            this.Hide();
+        }
+
+        public void HideForm()
+        {
+            this.Hide();
+            //Application.OpenForms.OfType<formMain>().FirstOrDefault().
+        }
+
+        private void frmConnexion_Deactivate(object sender, EventArgs e)
+        {
             this.Hide();
         }
     }
