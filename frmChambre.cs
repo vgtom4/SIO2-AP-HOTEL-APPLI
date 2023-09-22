@@ -12,21 +12,14 @@ using System.Windows.Forms;
 
 namespace AP_HOTEL_APPLI
 {
-    public partial class frmChambre : Form
+    public partial class FrmChambre : Form
     {
         connexiondb connexion = varglobale.connexion;
         hotel hotel = varglobale.hotel;
 
-        private FlowLayoutPanel flowLayoutPanelChambres;
-
-        public frmChambre()
+        public FrmChambre()
         {
             InitializeComponent();
-
-            flowLayoutPanelChambres = new FlowLayoutPanel();
-            flowLayoutPanelChambres.Dock = DockStyle.Fill;
-            Controls.Add(flowLayoutPanelChambres);
-
         }
 
         private void frmChambre_Load(object sender, EventArgs e)
@@ -36,11 +29,10 @@ namespace AP_HOTEL_APPLI
 
         public void RefreshChambre()
         {
+            flowLayoutPanelChambres.Controls.Clear();
             if (varglobale.hotel != null)
             {
-
                 List<chambre> chambres = connexion.chambre.Where(chambre => chambre.nohotel == varglobale.hotel.nohotel).ToList();
-                flowLayoutPanelChambres.Controls.Clear();
 
                 foreach (var chambre in chambres)
                 {
@@ -54,20 +46,8 @@ namespace AP_HOTEL_APPLI
             }
             else
             {
-                //foreach (Control control in tablePanelInfo.Controls)
-                //{
-                //    // Vérifiez si le contrôle est de type TextBox
-                //    if (control is RichTextBox RTB)
-                //    {
-                //        // Inversez l'état Enabled (désactiver si activé, activer si désactivé)
-                //        RTB.Text = "donnée inaccessible";
-                //    }
-                //}
+                // Données inaccessibles
             }
-        }
-        private void AfficherBoutonsPourChambres()
-        {
-            RefreshChambre();
         }
 
         private void BtnChambre_Click(object sender, EventArgs e)

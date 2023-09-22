@@ -1,6 +1,6 @@
 ﻿namespace AP_HOTEL_APPLI
 {
-    partial class frmConnexion
+    partial class FrmConnexion
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -200,7 +200,7 @@
             this.btnConnect.UseVisualStyleBackColor = false;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // frmConnexion
+            // FrmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -209,7 +209,7 @@
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelLogout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmConnexion";
+            this.Name = "FrmConnexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connexion";
             this.Load += new System.EventHandler(this.Form1_Load);

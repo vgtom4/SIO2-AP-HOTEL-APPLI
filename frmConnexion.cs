@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace AP_HOTEL_APPLI
 {
-    public partial class frmConnexion : Form
+    public partial class FrmConnexion : Form
     {
-        private formMain formMain = Application.OpenForms.OfType<formMain>().FirstOrDefault();
-        public frmConnexion()
+        private FrmMain formMain = Application.OpenForms.OfType<FrmMain>().FirstOrDefault();
+        public FrmConnexion()
         {
             InitializeComponent();
         }
@@ -55,7 +55,7 @@ namespace AP_HOTEL_APPLI
             lblInfo.Text = "";
             if (passerelle.initConnexion(txtId.Text, txtPw.Text))
             {
-                Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshForm();
+                Application.OpenForms.OfType<FrmMain>().FirstOrDefault().RefreshForm();
                 RefreshConnexion();
                 this.Hide();
             }
@@ -68,14 +68,14 @@ namespace AP_HOTEL_APPLI
         private void btnLogout_Click(object sender, EventArgs e)
         {
             varglobale.hotel = null;
-            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshForm();
+            formMain.RefreshForm();
             RefreshConnexion();
         }
 
         private void btnConnexionDemo_Click(object sender, EventArgs e)
         {
             varglobale.hotel = varglobale.connexion.hotel.FirstOrDefault();
-            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshForm();
+            Application.OpenForms.OfType<FrmMain>().FirstOrDefault().RefreshForm();
             RefreshConnexion();
             formMain.SwitchVisibilityFormConnexion();
         }

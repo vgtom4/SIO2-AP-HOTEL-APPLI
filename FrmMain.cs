@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace AP_HOTEL_APPLI
 {
-    public partial class formMain : Form
+    public partial class FrmMain : Form
     {
-        frmConnexion frmConnexion;
+        FrmConnexion frmConnexion;
         private Form currentChildForm;
 
-        public formMain()
+        public FrmMain()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace AP_HOTEL_APPLI
         private void formBase_Load(object sender, EventArgs e)
         {
             RefreshConnexion();
-            frmConnexion = new frmConnexion();
+            frmConnexion = new FrmConnexion();
             frmConnexion.TopLevel = false;
             panelConnexion.Controls.Add(frmConnexion);
             frmConnexion.Show();
@@ -56,16 +56,16 @@ namespace AP_HOTEL_APPLI
 
         private void btnInfoHotel_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormInfo());
+            OpenChildForm(new FrmInfo());
         }
 
         // actualisation des autres forms
         public void RefreshForm()
         {
-            Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshConnexion();
-            Application.OpenForms.OfType<FormInfo>().FirstOrDefault()?.RefreshInfo();
+            Application.OpenForms.OfType<FrmMain>().FirstOrDefault().RefreshConnexion();
+            Application.OpenForms.OfType<FrmInfo>().FirstOrDefault()?.RefreshInfo();
             frmConnexion?.RefreshConnexion();
-            Application.OpenForms.OfType<frmChambre>().FirstOrDefault()?.RefreshChambre();
+            Application.OpenForms.OfType<FrmChambre>().FirstOrDefault()?.RefreshChambre();
 
         }
 
@@ -99,9 +99,10 @@ namespace AP_HOTEL_APPLI
         {
             MessageBox.Show("test");
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnChambreHotel_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmChambre());
+            OpenChildForm(new FrmChambre());
         }
     }
 }
