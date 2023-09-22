@@ -24,6 +24,9 @@ namespace AP_HOTEL_APPLI
         {
             RefreshConnexion();
             frmConnexion = new frmConnexion();
+            frmConnexion.TopLevel = false;
+            panelConnexion.Controls.Add(frmConnexion);
+            frmConnexion.Show();
             panelConnexion.Visible = false;
         }
 
@@ -40,19 +43,15 @@ namespace AP_HOTEL_APPLI
             }
         }
 
+        public void SwitchVisibilityFormConnexion()
+        {
+            if (panelConnexion.Visible) panelConnexion.Visible = false;
+            else panelConnexion.Visible = true;
+        }
+
         private void btnCompte_Click(object sender, EventArgs e)
         {
-            if (frmConnexion.Visible)
-            {
-                panelConnexion.Visible = false;
-                frmConnexion.Hide();
-            }
-            else
-            {
-                panelConnexion.Visible = true;
-                frmConnexion.Show();
-            }
-            
+            SwitchVisibilityFormConnexion();
         }
 
         private void btnInfoHotel_Click(object sender, EventArgs e)
@@ -65,7 +64,7 @@ namespace AP_HOTEL_APPLI
         {
             Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshConnexion();
             Application.OpenForms.OfType<FormInfo>().FirstOrDefault()?.RefreshInfo();
-            Application.OpenForms.OfType<frmConnexion>().FirstOrDefault()?.RefreshConnexion();
+            frmConnexion?.RefreshConnexion();
         }
 
         /// <summary> Permet d'afficher un formulaire enfant dans la zone de travail "panelDesktop". </summary>
@@ -94,5 +93,9 @@ namespace AP_HOTEL_APPLI
             }
         }
 
+        private void panelConnexion_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("test");
+        }
     }
 }

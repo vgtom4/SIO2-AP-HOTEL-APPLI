@@ -103,6 +103,7 @@
             this.panelConnexion.Name = "panelConnexion";
             this.panelConnexion.Size = new System.Drawing.Size(280, 200);
             this.panelConnexion.TabIndex = 5;
+            this.panelConnexion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelConnexion_MouseClick);
             // 
             // formMain
             // 

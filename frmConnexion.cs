@@ -12,6 +12,7 @@ namespace AP_HOTEL_APPLI
 {
     public partial class frmConnexion : Form
     {
+        private formMain formMain = Application.OpenForms.OfType<formMain>().FirstOrDefault();
         public frmConnexion()
         {
             InitializeComponent();
@@ -28,7 +29,6 @@ namespace AP_HOTEL_APPLI
             if (varglobale.hotel != null)
             {
                 PanelFormLogout();
-                lblCompte.Text = varglobale.hotel.nom;
             }
             else
             {
@@ -77,18 +77,7 @@ namespace AP_HOTEL_APPLI
             varglobale.hotel = varglobale.connexion.hotel.FirstOrDefault();
             Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshForm();
             RefreshConnexion();
-            this.Hide();
-        }
-
-        public void HideForm()
-        {
-            this.Hide();
-            //Application.OpenForms.OfType<formMain>().FirstOrDefault().
-        }
-
-        private void frmConnexion_Deactivate(object sender, EventArgs e)
-        {
-            this.Hide();
+            formMain.SwitchVisibilityFormConnexion();
         }
     }
 }

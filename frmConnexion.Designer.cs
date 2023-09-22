@@ -33,7 +33,6 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtPw = new System.Windows.Forms.TextBox();
             this.lblInfo = new System.Windows.Forms.Label();
-            this.lblCompte = new System.Windows.Forms.Label();
             this.panelLogout = new System.Windows.Forms.Panel();
             this.btnLogout = new AP_HOTEL_APPLI.Controlers.CustomButton();
             this.panelLogin = new System.Windows.Forms.TableLayoutPanel();
@@ -94,21 +93,9 @@
             this.lblInfo.TabIndex = 6;
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblCompte
-            // 
-            this.lblCompte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblCompte.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompte.Location = new System.Drawing.Point(0, 0);
-            this.lblCompte.Name = "lblCompte";
-            this.lblCompte.Size = new System.Drawing.Size(280, 102);
-            this.lblCompte.TabIndex = 11;
-            this.lblCompte.Text = "id";
-            this.lblCompte.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panelLogout
             // 
             this.panelLogout.Controls.Add(this.btnLogout);
-            this.panelLogout.Controls.Add(this.lblCompte);
             this.panelLogout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLogout.Location = new System.Drawing.Point(0, 0);
             this.panelLogout.Name = "panelLogout";
@@ -122,14 +109,14 @@
             this.btnLogout.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnLogout.BorderRadius = 5;
             this.btnLogout.BorderSize = 0;
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 115);
+            this.btnLogout.Location = new System.Drawing.Point(0, 0);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(280, 85);
+            this.btnLogout.Size = new System.Drawing.Size(280, 200);
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Se déconnecter";
             this.btnLogout.TextColor = System.Drawing.Color.White;
@@ -225,7 +212,6 @@
             this.Name = "frmConnexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connexion";
-            this.Deactivate += new System.EventHandler(this.frmConnexion_Deactivate);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelLogout.ResumeLayout(false);
             this.panelLogin.ResumeLayout(false);
@@ -243,7 +229,6 @@
         private System.Windows.Forms.TextBox txtPw;
         private System.Windows.Forms.Label lblInfo;
         private Controlers.CustomButton btnLogout;
-        private System.Windows.Forms.Label lblCompte;
         private System.Windows.Forms.Panel panelLogout;
         private System.Windows.Forms.TableLayoutPanel panelLogin;
         private Controlers.CustomButton btnConnect;

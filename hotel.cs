@@ -27,14 +27,13 @@ namespace AP_HOTEL_APPLI
         public string nom { get; set; }
         public string adr1 { get; set; }
         public string adr2 { get; set; }
-        public Nullable<int> cp { get; set; }
+        public string cp { get; set; }
         public string ville { get; set; }
-        public Nullable<int> tel { get; set; }
+        public string tel { get; set; }
         public string descourt { get; set; }
         public string deslong { get; set; }
         public Nullable<double> prix { get; set; }
         public string password { get; set; }
-
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<chambre> chambre { get; set; }

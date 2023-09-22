@@ -22,6 +22,7 @@ namespace AP_HOTEL_APPLI
     
         public int noequ { get; set; }
         public string lib { get; set; }
+        public string imgequ { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<hotel> hotel { get; set; }

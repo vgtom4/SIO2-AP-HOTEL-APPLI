@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="chambre">
           <Key>
             <PropertyRef Name="nohotel" />
@@ -18,7 +18,8 @@
             <PropertyRef Name="noequ" />
           </Key>
           <Property Name="noequ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="lib" Type="varchar" MaxLength="255" />
+          <Property Name="lib" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="imgequ" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="equiper">
           <Key>
@@ -36,11 +37,11 @@
           <Property Name="nom" Type="varchar" MaxLength="255" />
           <Property Name="adr1" Type="varchar" MaxLength="255" />
           <Property Name="adr2" Type="varchar" MaxLength="255" />
-          <Property Name="cp" Type="int" />
+          <Property Name="cp" Type="varchar" MaxLength="5" />
           <Property Name="ville" Type="varchar" MaxLength="255" />
-          <Property Name="tel" Type="int" />
+          <Property Name="tel" Type="varchar" MaxLength="20" />
           <Property Name="descourt" Type="varchar" MaxLength="255" />
-          <Property Name="deslong" Type="varchar" MaxLength="255" />
+          <Property Name="deslong" Type="text" />
           <Property Name="prix" Type="float" />
           <Property Name="password" Type="varchar" MaxLength="255" />
         </EntityType>
@@ -161,7 +162,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ModelStoreContainer">
+        <EntityContainer Name="EntityModelStoreContainer">
           <EntitySet Name="chambre" EntityType="Self.chambre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="equipement" EntityType="Self.equipement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="equiper" EntityType="Self.equiper" Schema="dbo" store:Type="Tables" />
@@ -202,7 +203,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="EntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="chambre">
           <Key>
             <PropertyRef Name="nohotel" />
@@ -218,7 +219,8 @@
             <PropertyRef Name="noequ" />
           </Key>
           <Property Name="noequ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="lib" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="lib" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="imgequ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="hotel" Relationship="Self.equiper" FromRole="equipement" ToRole="hotel" />
         </EntityType>
         <EntityType Name="hotel">
@@ -229,11 +231,11 @@
           <Property Name="nom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="adr1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="adr2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="cp" Type="Int32" />
+          <Property Name="cp" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="ville" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="tel" Type="Int32" />
+          <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="descourt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="deslong" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="deslong" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="prix" Type="Double" />
           <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="chambre" Relationship="Self.FK__chambre__nohotel__4222D4EF" FromRole="hotel" ToRole="chambre" />
@@ -341,9 +343,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="connexiondb">
+        <EntityContainerMapping StorageEntityContainer="EntityModelStoreContainer" CdmEntityContainer="connexiondb">
           <EntitySetMapping Name="chambre">
-            <EntityTypeMapping TypeName="Model.chambre">
+            <EntityTypeMapping TypeName="EntityModel.chambre">
               <MappingFragment StoreEntitySet="chambre">
                 <ScalarProperty Name="nohotel" ColumnName="nohotel" />
                 <ScalarProperty Name="nochambre" ColumnName="nochambre" />
@@ -351,15 +353,16 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="equipement">
-            <EntityTypeMapping TypeName="Model.equipement">
+            <EntityTypeMapping TypeName="EntityModel.equipement">
               <MappingFragment StoreEntitySet="equipement">
                 <ScalarProperty Name="noequ" ColumnName="noequ" />
                 <ScalarProperty Name="lib" ColumnName="lib" />
+                <ScalarProperty Name="imgequ" ColumnName="imgequ" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="hotel">
-            <EntityTypeMapping TypeName="Model.hotel">
+            <EntityTypeMapping TypeName="EntityModel.hotel">
               <MappingFragment StoreEntitySet="hotel">
                 <ScalarProperty Name="nohotel" ColumnName="nohotel" />
                 <ScalarProperty Name="nom" ColumnName="nom" />
@@ -376,7 +379,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="photo">
-            <EntityTypeMapping TypeName="Model.photo">
+            <EntityTypeMapping TypeName="EntityModel.photo">
               <MappingFragment StoreEntitySet="photo">
                 <ScalarProperty Name="nohotel" ColumnName="nohotel" />
                 <ScalarProperty Name="nophoto" ColumnName="nophoto" />
@@ -385,7 +388,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="reservation">
-            <EntityTypeMapping TypeName="Model.reservation">
+            <EntityTypeMapping TypeName="EntityModel.reservation">
               <MappingFragment StoreEntitySet="reservation">
                 <ScalarProperty Name="nohotel" ColumnName="nohotel" />
                 <ScalarProperty Name="nores" ColumnName="nores" />
@@ -397,7 +400,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="equiper" TypeName="Model.equiper" StoreEntitySet="equiper">
+          <AssociationSetMapping Name="equiper" TypeName="EntityModel.equiper" StoreEntitySet="equiper">
             <EndProperty Name="equipement">
               <ScalarProperty Name="noequ" ColumnName="noequ" />
             </EndProperty>
@@ -405,7 +408,7 @@
               <ScalarProperty Name="nohotel" ColumnName="nohotel" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="reserver" TypeName="Model.reserver" StoreEntitySet="reserver">
+          <AssociationSetMapping Name="reserver" TypeName="EntityModel.reserver" StoreEntitySet="reserver">
             <EndProperty Name="chambre">
               <ScalarProperty Name="nohotel" ColumnName="nohotel" />
               <ScalarProperty Name="nochambre" ColumnName="nochambre" />
@@ -428,7 +431,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
