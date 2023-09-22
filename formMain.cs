@@ -66,6 +66,8 @@ namespace AP_HOTEL_APPLI
             Application.OpenForms.OfType<formMain>().FirstOrDefault().RefreshConnexion();
             Application.OpenForms.OfType<FormInfo>().FirstOrDefault()?.RefreshInfo();
             Application.OpenForms.OfType<frmConnexion>().FirstOrDefault()?.RefreshConnexion();
+            Application.OpenForms.OfType<frmChambre>().FirstOrDefault()?.RefreshChambre();
+
         }
 
         /// <summary> Permet d'afficher un formulaire enfant dans la zone de travail "panelDesktop". </summary>
@@ -94,5 +96,9 @@ namespace AP_HOTEL_APPLI
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmChambre());
+        }
     }
 }
