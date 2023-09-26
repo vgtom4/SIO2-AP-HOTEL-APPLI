@@ -27,19 +27,24 @@ namespace AP_HOTEL_APPLI
 
         public void IsEditMode()
         {
+            txtPassword.UseSystemPasswordChar = !editMode;  
+
             // Parcoure tous les contrôles dans le TableLayoutPanel
             foreach (Control control in tablePanelInfo.Controls)
             {
                 // Vérifie si le contrôle est de type TextBox
-                if (control is RichTextBox RTB)
+                if (control is TextBoxBase zoneDeSaisie)
                 {
                     // Bascule l'état du TextBox en fonction de l'état du mode d'édition
-                    RTB.ReadOnly = !editMode || control == txtNo;
+                    zoneDeSaisie.ReadOnly = !editMode || control == txtNo;
 
                     // ReadOnly si l'hotel est connecté
-                    RTB.Enabled = varglobale.hotel != null;
+                    zoneDeSaisie.Enabled = varglobale.hotel != null;
                 }
             }
+            grdEquip.ReadOnly = !editMode;
+            grdEquip.Columns[1].ReadOnly = true;
+
             if (varglobale.hotel != null)
             {
                 btnEdit.Visible = !editMode;
@@ -74,10 +79,26 @@ namespace AP_HOTEL_APPLI
                 txtDescL.Text = varglobale.hotel.deslong;
                 txtDescC.Text = varglobale.hotel.descourt;
                 txtPrix.Text = varglobale.hotel.prix.ToString();
+
+                // Equipement de l'hotel
+                grdEquip.Rows.Clear();
+                foreach (var equipement in varglobale.connexion.equipement)
+                {
+                    // Ajouter dans la deuxième colonne de la ligne actuelle le nom de l'équipement
+                    grdEquip.Rows[grdEquip.Rows.Add()].Cells[1].Value = equipement.lib;
+                    // Check si l'équipement est présent dans l'hotel
+                    if (varglobale.hotel.equipement.Contains(equipement))
+                    {
+                        // Ajouter dans la première colonne de la ligne actuelle un checkbox coché
+                        grdEquip.Rows[grdEquip.Rows.Count - 1].Cells[0].Value = true;
+                    }
+                }
             }
             else
             {
-                foreach (Control RTB in tablePanelInfo.Controls.OfType<RichTextBox>())
+                grdEquip.Rows.Clear();
+                txtPassword.UseSystemPasswordChar = false;
+                foreach (Control RTB in tablePanelInfo.Controls.OfType<TextBoxBase>())
                 {
                     RTB.Text = "donnée inaccessible";
                     // Vérifiez si le contrôle est de type TextBox
@@ -127,18 +148,18 @@ namespace AP_HOTEL_APPLI
 
             bool dataIsCorrect = true;
             // Liste des contrôles à ignorer car peuvent être vides
-            List<RichTextBox> controlsToIgnoreBecauseCanBeEmpty = new List<RichTextBox> { txtAdr2 };
+            List<TextBoxBase> controlsToIgnoreBecauseCanBeEmpty = new List<TextBoxBase> { txtAdr2 };
 
             // Liste des contrôles invalide
-            List<RichTextBox> invalidControls = new List<RichTextBox>();
+            List<TextBoxBase> invalidControls = new List<TextBoxBase>();
 
-            foreach (Control RTB in tablePanelInfo.Controls.OfType<RichTextBox>())
+            foreach (Control RTB in tablePanelInfo.Controls.OfType<TextBoxBase>())
             {
                 // Si le contrôle est vide et n'est pas dans la liste des contrôles à ignorer
                 if (RTB.Text == "" && !controlsToIgnoreBecauseCanBeEmpty.Contains(RTB))
                 {
                     // Ajoutez le contrôle à la liste des contrôles invalides
-                    invalidControls.Add((RichTextBox)RTB);
+                    invalidControls.Add((TextBoxBase)RTB);
                     dataIsCorrect = false;
                 }
             }

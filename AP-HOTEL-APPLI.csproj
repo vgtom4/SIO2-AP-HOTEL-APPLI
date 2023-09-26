@@ -49,6 +49,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo-balladins-mini.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -228,7 +231,7 @@
     <Compile Include="FrmChambre.Designer.cs">
       <DependentUpon>FrmChambre.cs</DependentUpon>
     </Compile>
-    <Compile Include="passerelle.cs" />
+    <Compile Include="passerelleConnexion.cs" />
     <Compile Include="EntityModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -325,6 +328,9 @@
       <DependentUpon>EntityModel.edmx</DependentUpon>
       <LastGenOutput>EntityModel.cs</LastGenOutput>
     </Content>
+    <Content Include="logo-balladins-mini.ico" />
+    <None Include="Resources\logo-balladins-mini-bg.jpg" />
+    <None Include="Resources\logo-balladins-mini.png" />
     <None Include="Resources\wifi.png" />
     <None Include="Resources\sallereunion.png" />
     <None Include="Resources\restaurant.png" />

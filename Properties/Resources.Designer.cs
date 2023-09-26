@@ -123,6 +123,16 @@ namespace AP_HOTEL_APPLI.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_balladins_mini_bg {
+            get {
+                object obj = ResourceManager.GetObject("logo_balladins_mini_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap parking {
             get {
                 object obj = ResourceManager.GetObject("parking", resourceCulture);

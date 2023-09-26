@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AP_HOTEL_APPLI
 {
-    public class passerelle
+    public class passerelleConnexion
     {
         public static bool initConnexion(string id, string password)
         {

@@ -35,7 +35,7 @@ namespace AP_HOTEL_APPLI
             lblInfo.Text = string.Empty;
             if (varglobale.hotel != null)
             {
-                lblInfo.Text = "Bienvenue " + varglobale.hotel.nom;
+                lblInfo.Text = $"Bienvenue, \n{varglobale.hotel.nom}";
             }
             else
             {

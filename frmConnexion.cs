@@ -53,11 +53,11 @@ namespace AP_HOTEL_APPLI
         private void btnConnect_Click(object sender, EventArgs e)
         {
             lblInfo.Text = "";
-            if (passerelle.initConnexion(txtId.Text, txtPw.Text))
+            if (passerelleConnexion.initConnexion(txtId.Text, txtPw.Text))
             {
                 Application.OpenForms.OfType<FrmMain>().FirstOrDefault().RefreshForm();
                 RefreshConnexion();
-                this.Hide();
+                formMain.SwitchVisibilityFormConnexion();
             }
             else
             {
@@ -67,6 +67,8 @@ namespace AP_HOTEL_APPLI
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            txtId.Text = "";
+            txtPw.Text = "";
             varglobale.hotel = null;
             formMain.RefreshForm();
             RefreshConnexion();

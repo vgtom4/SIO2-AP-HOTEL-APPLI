@@ -43,9 +43,9 @@
             // 
             this.lblInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(946, 32);
+            this.lblInfo.Location = new System.Drawing.Point(896, 32);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(194, 50);
+            this.lblInfo.Size = new System.Drawing.Size(274, 50);
             this.lblInfo.TabIndex = 0;
             this.lblInfo.Text = "label1";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -57,7 +57,7 @@
             this.btnCompte.IconColor = System.Drawing.Color.LightCoral;
             this.btnCompte.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCompte.IconSize = 45;
-            this.btnCompte.Location = new System.Drawing.Point(890, 32);
+            this.btnCompte.Location = new System.Drawing.Point(840, 32);
             this.btnCompte.Name = "btnCompte";
             this.btnCompte.Size = new System.Drawing.Size(50, 50);
             this.btnCompte.TabIndex = 2;
@@ -71,7 +71,7 @@
             this.btnInfoHotel.IconColor = System.Drawing.Color.RoyalBlue;
             this.btnInfoHotel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnInfoHotel.IconSize = 45;
-            this.btnInfoHotel.Location = new System.Drawing.Point(834, 32);
+            this.btnInfoHotel.Location = new System.Drawing.Point(784, 32);
             this.btnInfoHotel.Name = "btnInfoHotel";
             this.btnInfoHotel.Size = new System.Drawing.Size(50, 50);
             this.btnInfoHotel.TabIndex = 3;
@@ -101,9 +101,9 @@
             // panelConnexion
             // 
             this.panelConnexion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelConnexion.Location = new System.Drawing.Point(890, 88);
+            this.panelConnexion.Location = new System.Drawing.Point(900, 88);
             this.panelConnexion.Name = "panelConnexion";
-            this.panelConnexion.Size = new System.Drawing.Size(280, 200);
+            this.panelConnexion.Size = new System.Drawing.Size(270, 200);
             this.panelConnexion.TabIndex = 5;
             this.panelConnexion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelConnexion_MouseClick);
             // 
@@ -114,7 +114,7 @@
             this.btnChambreHotel.IconColor = System.Drawing.Color.Tomato;
             this.btnChambreHotel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnChambreHotel.IconSize = 45;
-            this.btnChambreHotel.Location = new System.Drawing.Point(778, 33);
+            this.btnChambreHotel.Location = new System.Drawing.Point(728, 33);
             this.btnChambreHotel.Name = "btnChambreHotel";
             this.btnChambreHotel.Size = new System.Drawing.Size(50, 50);
             this.btnChambreHotel.TabIndex = 7;
