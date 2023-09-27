@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanelChambres = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAddChambre = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // label1
@@ -51,14 +52,29 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelChambres.Location = new System.Drawing.Point(12, 51);
             this.flowLayoutPanelChambres.Name = "flowLayoutPanelChambres";
-            this.flowLayoutPanelChambres.Size = new System.Drawing.Size(1058, 490);
+            this.flowLayoutPanelChambres.Size = new System.Drawing.Size(1002, 490);
             this.flowLayoutPanelChambres.TabIndex = 14;
+            // 
+            // btnAddChambre
+            // 
+            this.btnAddChambre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddChambre.IconChar = FontAwesome.Sharp.IconChar.Add;
+            this.btnAddChambre.IconColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddChambre.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddChambre.IconSize = 45;
+            this.btnAddChambre.Location = new System.Drawing.Point(1020, 491);
+            this.btnAddChambre.Name = "btnAddChambre";
+            this.btnAddChambre.Size = new System.Drawing.Size(50, 50);
+            this.btnAddChambre.TabIndex = 0;
+            this.btnAddChambre.UseVisualStyleBackColor = true;
+            this.btnAddChambre.Click += new System.EventHandler(this.btnAddChambre_Click);
             // 
             // FrmChambre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 553);
+            this.Controls.Add(this.btnAddChambre);
             this.Controls.Add(this.flowLayoutPanelChambres);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,5 +90,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelChambres;
+        private FontAwesome.Sharp.IconButton btnAddChambre;
     }
 }
