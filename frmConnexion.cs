@@ -39,13 +39,16 @@ namespace AP_HOTEL_APPLI
         public void PanelFormLogin()
         {
             panelLogin.Visible = true;
-            panelLogout.Visible = false;
+            btnLogout.Visible = false;
+            this.BackColor = Color.RoyalBlue;
         }
 
         public void PanelFormLogout()
         {
             panelLogin.Visible = false;
-            panelLogout.Visible = true;
+            btnLogout.Visible = true;
+            // faire disparaitre la couleur de fond
+            this.BackColor = DefaultBackColor;
         }
 
         

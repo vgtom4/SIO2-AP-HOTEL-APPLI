@@ -35,10 +35,12 @@
             this.btnSave = new FontAwesome.Sharp.IconButton();
             this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.tablePanelInfo = new System.Windows.Forms.TableLayoutPanel();
+            this.grdEquip = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtDescC = new System.Windows.Forms.RichTextBox();
-            this.txtDescL = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,10 +59,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPrix = new System.Windows.Forms.TextBox();
-            this.grdEquip = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDescL = new System.Windows.Forms.RichTextBox();
             this.tablePanelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEquip)).BeginInit();
             this.SuspendLayout();
@@ -130,7 +130,7 @@
             this.tablePanelInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tablePanelInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tablePanelInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tablePanelInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tablePanelInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tablePanelInfo.Controls.Add(this.grdEquip, 4, 8);
             this.tablePanelInfo.Controls.Add(this.label13, 3, 8);
             this.tablePanelInfo.Controls.Add(this.txtDescC, 1, 7);
@@ -170,6 +170,74 @@
             this.tablePanelInfo.Size = new System.Drawing.Size(996, 486);
             this.tablePanelInfo.TabIndex = 16;
             // 
+            // grdEquip
+            // 
+            this.grdEquip.AllowUserToAddRows = false;
+            this.grdEquip.AllowUserToDeleteRows = false;
+            this.grdEquip.AllowUserToResizeColumns = false;
+            this.grdEquip.AllowUserToResizeRows = false;
+            this.grdEquip.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdEquip.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.grdEquip.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grdEquip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdEquip.ColumnHeadersVisible = false;
+            this.grdEquip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.grdEquip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdEquip.GridColor = System.Drawing.SystemColors.Control;
+            this.grdEquip.Location = new System.Drawing.Point(709, 386);
+            this.grdEquip.MultiSelect = false;
+            this.grdEquip.Name = "grdEquip";
+            this.grdEquip.ReadOnly = true;
+            this.grdEquip.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.grdEquip.RowHeadersVisible = false;
+            this.grdEquip.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.grdEquip.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.grdEquip.RowTemplate.Height = 24;
+            this.grdEquip.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdEquip.Size = new System.Drawing.Size(263, 97);
+            this.grdEquip.TabIndex = 17;
+            this.grdEquip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEquip_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = false;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "Column1";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.Width = 6;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Column2";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(530, 383);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(173, 23);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Equipement(s) :";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtDescC
             // 
             this.txtDescC.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -182,18 +250,6 @@
             this.txtDescC.TabIndex = 12;
             this.txtDescC.Text = "";
             // 
-            // txtDescL
-            // 
-            this.txtDescL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescL.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDescL.EnableAutoDragDrop = true;
-            this.txtDescL.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescL.Location = new System.Drawing.Point(221, 386);
-            this.txtDescL.Name = "txtDescL";
-            this.txtDescL.Size = new System.Drawing.Size(263, 97);
-            this.txtDescL.TabIndex = 11;
-            this.txtDescL.Text = "";
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -204,18 +260,6 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "N°";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 383);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(212, 23);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Description Longue :";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
@@ -414,73 +458,29 @@
             this.txtPrix.Size = new System.Drawing.Size(263, 27);
             this.txtPrix.TabIndex = 34;
             // 
-            // grdEquip
+            // label8
             // 
-            this.grdEquip.AllowUserToAddRows = false;
-            this.grdEquip.AllowUserToDeleteRows = false;
-            this.grdEquip.AllowUserToResizeColumns = false;
-            this.grdEquip.AllowUserToResizeRows = false;
-            this.grdEquip.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grdEquip.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.grdEquip.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grdEquip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdEquip.ColumnHeadersVisible = false;
-            this.grdEquip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.grdEquip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdEquip.GridColor = System.Drawing.SystemColors.Control;
-            this.grdEquip.Location = new System.Drawing.Point(709, 386);
-            this.grdEquip.MultiSelect = false;
-            this.grdEquip.Name = "grdEquip";
-            this.grdEquip.ReadOnly = true;
-            this.grdEquip.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.grdEquip.RowHeadersVisible = false;
-            this.grdEquip.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.grdEquip.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.grdEquip.RowTemplate.Height = 24;
-            this.grdEquip.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdEquip.Size = new System.Drawing.Size(263, 97);
-            this.grdEquip.TabIndex = 17;
-            this.grdEquip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEquip_CellClick);
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 383);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(212, 23);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Description Longue :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Column1
+            // txtDescL
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = false;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.HeaderText = "Column1";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 6;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Column2";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(530, 383);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(173, 23);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "Equipement(s) :";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtDescL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDescL.EnableAutoDragDrop = true;
+            this.txtDescL.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescL.Location = new System.Drawing.Point(221, 386);
+            this.txtDescL.Name = "txtDescL";
+            this.txtDescL.Size = new System.Drawing.Size(263, 97);
+            this.txtDescL.TabIndex = 11;
+            this.txtDescL.Text = "";
             // 
             // FrmInfo
             // 
