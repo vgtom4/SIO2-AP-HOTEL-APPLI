@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -192,6 +193,20 @@ namespace AP_HOTEL_APPLI
                     varglobale.hotel.deslong = txtDescL.Text;
                     varglobale.hotel.descourt = txtDescC.Text;
                     varglobale.hotel.prix = int.Parse(txtPrix.Text);
+
+                    // Pour tout les équipements cochés dans le DataGridView des équipements
+                    varglobale.hotel.equipement.Clear();
+                    
+                    foreach (DataGridViewRow row in grdEquip.Rows)
+                    {
+                        if (row.Cells[0].Value != null && (bool)row.Cells[0].Value)
+                        {
+                            // Ajouter l'équipement dans la liste des équipements de l'hotel
+                            string lib = row.Cells[1].Value.ToString();
+                            varglobale.hotel.equipement.Add(varglobale.connexion.equipement.Where(equip => equip.lib == lib).FirstOrDefault());
+                        }
+                    }
+
                     varglobale.connexion.SaveChanges();
                 }
                 else
@@ -201,6 +216,22 @@ namespace AP_HOTEL_APPLI
             } catch (Exception)
             {
                 
+            }
+        }
+
+        private void grdEquip_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Cocher ou décocher la checkbox présente dans la première colonne de la ligne cliqué dans le DataGridView des équipements
+            if (e.RowIndex >= 0 && editMode)
+            {
+                if (grdEquip.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    grdEquip.Rows[e.RowIndex].Cells[0].Value = !(bool)grdEquip.Rows[e.RowIndex].Cells[0].Value;
+                }
+                else
+                {
+                    grdEquip.Rows[e.RowIndex].Cells[0].Value = true;
+                }
             }
         }
     }

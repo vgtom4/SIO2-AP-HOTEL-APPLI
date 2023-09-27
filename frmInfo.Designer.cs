@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEdit = new FontAwesome.Sharp.IconButton();
             this.btnSave = new FontAwesome.Sharp.IconButton();
@@ -36,30 +37,30 @@
             this.tablePanelInfo = new System.Windows.Forms.TableLayoutPanel();
             this.txtDescC = new System.Windows.Forms.RichTextBox();
             this.txtDescL = new System.Windows.Forms.RichTextBox();
-            this.txtAdr2 = new System.Windows.Forms.RichTextBox();
-            this.txtAdr1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtNo = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtCP = new System.Windows.Forms.TextBox();
-            this.txtVille = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtAdr2 = new System.Windows.Forms.RichTextBox();
+            this.txtAdr1 = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtVille = new System.Windows.Forms.TextBox();
+            this.txtCP = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtPrix = new System.Windows.Forms.TextBox();
             this.grdEquip = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label13 = new System.Windows.Forms.Label();
             this.tablePanelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEquip)).BeginInit();
             this.SuspendLayout();
@@ -167,7 +168,7 @@
             // 
             // txtDescC
             // 
-            this.txtDescC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDescC.EnableAutoDragDrop = true;
             this.txtDescC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,30 +190,6 @@
             this.txtDescL.TabIndex = 11;
             this.txtDescL.Text = "";
             // 
-            // txtAdr2
-            // 
-            this.txtAdr2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAdr2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAdr2.EnableAutoDragDrop = true;
-            this.txtAdr2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdr2.Location = new System.Drawing.Point(696, 248);
-            this.txtAdr2.Name = "txtAdr2";
-            this.txtAdr2.Size = new System.Drawing.Size(286, 60);
-            this.txtAdr2.TabIndex = 6;
-            this.txtAdr2.Text = "";
-            // 
-            // txtAdr1
-            // 
-            this.txtAdr1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAdr1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAdr1.EnableAutoDragDrop = true;
-            this.txtAdr1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdr1.Location = new System.Drawing.Point(696, 183);
-            this.txtAdr1.Name = "txtAdr1";
-            this.txtAdr1.Size = new System.Drawing.Size(286, 59);
-            this.txtAdr1.TabIndex = 5;
-            this.txtAdr1.Text = "";
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -223,18 +200,6 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "N°";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(552, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 23);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Adresse 1 :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
             // 
@@ -259,40 +224,6 @@
             this.label3.Text = "Nom :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(552, 245);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 23);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Adresse 2 :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(552, 93);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 23);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Code postal :";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(552, 123);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 23);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Ville :";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -305,17 +236,6 @@
             this.label9.Text = "Description Courte :";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 123);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(212, 23);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Téléphone :";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label12
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -326,17 +246,6 @@
             this.label12.TabIndex = 27;
             this.label12.Text = "Mot de passe :";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(552, 33);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(138, 23);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Prix :";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtNo
             // 
@@ -369,15 +278,85 @@
             this.txtPassword.Size = new System.Drawing.Size(285, 27);
             this.txtPassword.TabIndex = 30;
             // 
-            // txtCP
+            // label4
             // 
-            this.txtCP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCP.Location = new System.Drawing.Point(696, 93);
-            this.txtCP.Name = "txtCP";
-            this.txtCP.Size = new System.Drawing.Size(286, 27);
-            this.txtCP.TabIndex = 31;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(552, 245);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 23);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Adresse 2 :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(552, 180);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(138, 23);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Adresse 1 :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtAdr2
+            // 
+            this.txtAdr2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAdr2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAdr2.EnableAutoDragDrop = true;
+            this.txtAdr2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdr2.Location = new System.Drawing.Point(696, 248);
+            this.txtAdr2.Name = "txtAdr2";
+            this.txtAdr2.Size = new System.Drawing.Size(286, 60);
+            this.txtAdr2.TabIndex = 6;
+            this.txtAdr2.Text = "";
+            // 
+            // txtAdr1
+            // 
+            this.txtAdr1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAdr1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAdr1.EnableAutoDragDrop = true;
+            this.txtAdr1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdr1.Location = new System.Drawing.Point(696, 183);
+            this.txtAdr1.Name = "txtAdr1";
+            this.txtAdr1.Size = new System.Drawing.Size(286, 59);
+            this.txtAdr1.TabIndex = 5;
+            this.txtAdr1.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 123);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(212, 23);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Téléphone :";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtTel
+            // 
+            this.txtTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTel.Location = new System.Drawing.Point(221, 123);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(285, 27);
+            this.txtTel.TabIndex = 33;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(552, 123);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(138, 23);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Ville :";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtVille
             // 
@@ -389,15 +368,37 @@
             this.txtVille.Size = new System.Drawing.Size(286, 27);
             this.txtVille.TabIndex = 32;
             // 
-            // txtTel
+            // txtCP
             // 
-            this.txtTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.Location = new System.Drawing.Point(221, 123);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(285, 27);
-            this.txtTel.TabIndex = 33;
+            this.txtCP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCP.Location = new System.Drawing.Point(696, 93);
+            this.txtCP.Name = "txtCP";
+            this.txtCP.Size = new System.Drawing.Size(286, 27);
+            this.txtCP.TabIndex = 31;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(552, 93);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(138, 23);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Code postal :";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(552, 33);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(138, 23);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Prix :";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPrix
             // 
@@ -418,6 +419,7 @@
             this.grdEquip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.grdEquip.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdEquip.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.grdEquip.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdEquip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdEquip.ColumnHeadersVisible = false;
             this.grdEquip.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -425,33 +427,29 @@
             this.Column2});
             this.grdEquip.GridColor = System.Drawing.SystemColors.Control;
             this.grdEquip.Location = new System.Drawing.Point(725, 374);
+            this.grdEquip.MultiSelect = false;
             this.grdEquip.Name = "grdEquip";
             this.grdEquip.ReadOnly = true;
             this.grdEquip.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.grdEquip.RowHeadersVisible = false;
             this.grdEquip.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.grdEquip.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdEquip.RowTemplate.Height = 24;
+            this.grdEquip.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdEquip.Size = new System.Drawing.Size(286, 167);
             this.grdEquip.TabIndex = 17;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(546, 374);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(173, 23);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "Equipement(s) :";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.grdEquip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEquip_CellClick);
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = false;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = false;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.HeaderText = "Column1";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
@@ -468,6 +466,17 @@
             this.Column2.ReadOnly = true;
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(546, 374);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(173, 23);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Equipement(s) :";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FrmInfo
             // 
