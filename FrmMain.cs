@@ -106,5 +106,10 @@ namespace AP_HOTEL_APPLI
         {
             OpenChildForm(new FrmChambre());
         }
+
+        private void btnCalendrier_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmCalendar());
+        }
     }
 }

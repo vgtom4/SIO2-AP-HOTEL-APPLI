@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelConnexion = new System.Windows.Forms.Panel();
             this.btnChambreHotel = new FontAwesome.Sharp.IconButton();
+            this.btnCalendrier = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,12 +122,25 @@
             this.btnChambreHotel.UseVisualStyleBackColor = true;
             this.btnChambreHotel.Click += new System.EventHandler(this.btnChambreHotel_Click);
             // 
+            // btnCalendrier
+            // 
+            this.btnCalendrier.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
+            this.btnCalendrier.IconColor = System.Drawing.Color.Black;
+            this.btnCalendrier.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCalendrier.Location = new System.Drawing.Point(668, 33);
+            this.btnCalendrier.Name = "btnCalendrier";
+            this.btnCalendrier.Size = new System.Drawing.Size(50, 50);
+            this.btnCalendrier.TabIndex = 8;
+            this.btnCalendrier.UseVisualStyleBackColor = true;
+            this.btnCalendrier.Click += new System.EventHandler(this.btnCalendrier_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.btnCalendrier);
             this.Controls.Add(this.btnChambreHotel);
             this.Controls.Add(this.panelConnexion);
             this.Controls.Add(this.pictureBox1);
@@ -153,5 +167,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelConnexion;
         private FontAwesome.Sharp.IconButton btnChambreHotel;
+        private FontAwesome.Sharp.IconButton btnCalendrier;
     }
 }
