@@ -108,9 +108,12 @@ namespace AP_HOTEL_APPLI
             OpenChildForm(new FrmChambre());
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btnCalendrier_Click(object sender, EventArgs e)
         {
-            if (varglobale.hotel != null) { 
+            //OpenChildForm(new FrmCalendar());
+            
+            if (varglobale.hotel != null)
+            {
                 DateTime dateDebut = new DateTime(2023, 09, 27, 10, 0, 0); // Exemple : 27 septembre 2023 à 10:00:00
                 DateTime dateFin = new DateTime(2023, 09, 30, 11, 0, 0);   // Exemple : 30 septembre 2023 à 11:00:00
 
