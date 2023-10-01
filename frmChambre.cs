@@ -81,17 +81,18 @@ namespace AP_HOTEL_APPLI
         }
         private void btnAddChambre_Click(object sender, EventArgs e)
         {
-            if ((MessageBox.Show($"Confirmez l'ajout de la chambre {numNouvChambre()} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
+            
+            if (varglobale.hotel != null)
             {
-                if (varglobale.hotel != null)
-                {
+                //if ((MessageBox.Show($"Confirmez l'ajout de la chambre {numNouvChambre()} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
+                //{
                     chambre nvChambre = new chambre();
                     nvChambre.nochambre = numNouvChambre();
                     nvChambre.nohotel = noHotel();
                     varglobale.hotel.chambre.Add(nvChambre);
                     varglobale.connexion.SaveChanges();
                     RefreshChambre();
-                }
+                //}
             }
                 
         }

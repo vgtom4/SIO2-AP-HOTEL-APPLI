@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelConnexion = new System.Windows.Forms.Panel();
             this.btnChambreHotel = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,12 +122,27 @@
             this.btnChambreHotel.UseVisualStyleBackColor = true;
             this.btnChambreHotel.Click += new System.EventHandler(this.btnChambreHotel_Click);
             // 
+            // iconButton1
+            // 
+            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.BellConcierge;
+            this.iconButton1.IconColor = System.Drawing.Color.Violet;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 45;
+            this.iconButton1.Location = new System.Drawing.Point(672, 33);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(50, 50);
+            this.iconButton1.TabIndex = 8;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.btnChambreHotel);
             this.Controls.Add(this.panelConnexion);
             this.Controls.Add(this.pictureBox1);
@@ -153,5 +169,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelConnexion;
         private FontAwesome.Sharp.IconButton btnChambreHotel;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

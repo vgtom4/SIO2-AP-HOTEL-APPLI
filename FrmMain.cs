@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -105,6 +106,23 @@ namespace AP_HOTEL_APPLI
         private void btnChambreHotel_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmChambre());
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (varglobale.hotel != null) { 
+                DateTime dateDebut = new DateTime(2023, 09, 27, 10, 0, 0); // Exemple : 27 septembre 2023 à 10:00:00
+                DateTime dateFin = new DateTime(2023, 09, 30, 11, 0, 0);   // Exemple : 30 septembre 2023 à 11:00:00
+
+                // Ajouter 30min à la date de fin pour que la réservation soit valide
+                dateDebut = dateDebut.AddMinutes(-30);
+                dateFin = dateFin.AddMinutes(30);
+
+                chambre lachambre = varglobale.hotel.chambre.Where(c => c.nochambre == 1).FirstOrDefault();
+                bool existrReservation = lachambre.reservation.Any(reservation => reservation.datedeb <= dateDebut && dateDebut <= reservation.datefin || reservation.datedeb <= dateFin && dateFin <= reservation.datefin);
+
+                MessageBox.Show($"La réservation existe-t-elle ? {existrReservation}");
+            }
         }
     }
 }
