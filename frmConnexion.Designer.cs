@@ -138,6 +138,9 @@
             this.btnConnexionDemo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConnexionDemo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnexionDemo.ForeColor = System.Drawing.Color.White;
+            this.btnConnexionDemo.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnConnexionDemo.IconColor = System.Drawing.Color.Black;
+            this.btnConnexionDemo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConnexionDemo.Location = new System.Drawing.Point(3, 3);
             this.btnConnexionDemo.Name = "btnConnexionDemo";
             this.btnConnexionDemo.Size = new System.Drawing.Size(69, 44);
@@ -159,6 +162,9 @@
             this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConnect.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.ForeColor = System.Drawing.Color.White;
+            this.btnConnect.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnConnect.IconColor = System.Drawing.Color.Black;
+            this.btnConnect.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConnect.Location = new System.Drawing.Point(78, 3);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(147, 44);
@@ -180,6 +186,9 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnLogout.IconColor = System.Drawing.Color.Black;
+            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogout.Location = new System.Drawing.Point(0, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(280, 200);
@@ -195,8 +204,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(169)))), ((int)(((byte)(159)))));
             this.ClientSize = new System.Drawing.Size(280, 200);
-            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.btnLogout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmConnexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

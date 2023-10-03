@@ -22,11 +22,11 @@ namespace AP_HOTEL_APPLI
         private void FormInfo_Load(object sender, EventArgs e)
         {
             editMode = false;
-            IsEditMode();
+            SwitchEditMode();
             RefreshInfo();
         }
 
-        public void IsEditMode()
+        public void SwitchEditMode()
         {
             txtPassword.UseSystemPasswordChar = !editMode;  
 
@@ -65,7 +65,7 @@ namespace AP_HOTEL_APPLI
 
         public void RefreshInfo()
         {
-            IsEditMode();
+            SwitchEditMode();
             if (varglobale.hotel != null)
             {
                 txtNo.Text = varglobale.hotel.nohotel.ToString();
@@ -118,12 +118,19 @@ namespace AP_HOTEL_APPLI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (DataIsCorrect())
+            if (varglobale.hotel != null)
+            { 
+                if (DataIsCorrect())
+                {
+                    editMode = false;
+                    HotelDAO.UpdateHotel(txtNom.Text, txtPassword.Text, txtAdr1.Text, txtAdr2.Text, txtVille.Text, txtCP.Text, txtTel.Text, txtDescL.Text, txtDescC.Text, Single.Parse(txtPrix.Text), EquipementDAO.GetLesEquipementsDGV(grdEquip));
+                    Application.OpenForms.OfType<FrmMain>().FirstOrDefault().RefreshForm();
+                    RefreshInfo();
+                }
+            }
+            else
             {
-                editMode = false;
-                EditHotel();
-                Application.OpenForms.OfType<FrmMain>().FirstOrDefault().RefreshForm();
-                RefreshInfo();
+                MessageBox.Show("Aucun hotel n'est connecté");
             }
         }
 
@@ -175,48 +182,6 @@ namespace AP_HOTEL_APPLI
             }
 
             return dataIsCorrect;
-        }
-
-        private void EditHotel()
-        {
-            try
-            {
-                if (varglobale.hotel != null)
-                {
-                    varglobale.hotel.nom = txtNom.Text;
-                    varglobale.hotel.password = txtPassword.Text;
-                    varglobale.hotel.adr1 = txtAdr1.Text;
-                    varglobale.hotel.adr2 = txtAdr2.Text;
-                    varglobale.hotel.ville = txtVille.Text;
-                    varglobale.hotel.cp = txtCP.Text;
-                    varglobale.hotel.tel = txtTel.Text;
-                    varglobale.hotel.deslong = txtDescL.Text;
-                    varglobale.hotel.descourt = txtDescC.Text;
-                    varglobale.hotel.prix = int.Parse(txtPrix.Text);
-
-                    // Pour tout les équipements cochés dans le DataGridView des équipements
-                    varglobale.hotel.equipement.Clear();
-                    
-                    foreach (DataGridViewRow row in grdEquip.Rows)
-                    {
-                        if (row.Cells[0].Value != null && (bool)row.Cells[0].Value)
-                        {
-                            // Ajouter l'équipement dans la liste des équipements de l'hotel
-                            string lib = row.Cells[1].Value.ToString();
-                            varglobale.hotel.equipement.Add(varglobale.connexion.equipement.Where(equip => equip.lib == lib).FirstOrDefault());
-                        }
-                    }
-
-                    varglobale.connexion.SaveChanges();
-                }
-                else
-                {
-                    MessageBox.Show("Aucun hotel n'est connecté");
-                }
-            } catch (Exception)
-            {
-                
-            }
         }
 
         private void grdEquip_CellClick(object sender, DataGridViewCellEventArgs e)

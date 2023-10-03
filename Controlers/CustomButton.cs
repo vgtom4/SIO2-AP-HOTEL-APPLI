@@ -11,7 +11,7 @@ using System.ComponentModel;
 
 namespace AP_HOTEL_APPLI.Controlers
 {
-    public class CustomButton : Button
+    public class CustomButton : FontAwesome.Sharp.IconButton
     {
         //Fields
         private int borderSize = 0;
