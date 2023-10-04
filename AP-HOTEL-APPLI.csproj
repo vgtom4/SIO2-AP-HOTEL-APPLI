@@ -276,6 +276,7 @@
     <Compile Include="reservation.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ReservationDAO.cs" />
     <Compile Include="varglobale.cs" />
     <EmbeddedResource Include="FrmCalendar.resx">
       <DependentUpon>FrmCalendar.cs</DependentUpon>

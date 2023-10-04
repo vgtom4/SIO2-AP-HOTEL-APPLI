@@ -33,10 +33,13 @@
             this.cboRes = new System.Windows.Forms.ComboBox();
             this.lblInfoNbChambre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listChambre = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddRes = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCancel = new FontAwesome.Sharp.IconButton();
+            this.btnSave = new FontAwesome.Sharp.IconButton();
+            this.btnEdit = new FontAwesome.Sharp.IconButton();
+            this.listChambre = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -60,6 +63,7 @@
             // 
             // cboRes
             // 
+            this.cboRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRes.FormattingEnabled = true;
             this.cboRes.Location = new System.Drawing.Point(52, 213);
@@ -89,22 +93,6 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Gestion des réservations";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // listChambre
-            // 
-            this.listChambre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listChambre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listChambre.ColumnWidth = 60;
-            this.listChambre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listChambre.FormattingEnabled = true;
-            this.listChambre.ItemHeight = 27;
-            this.listChambre.Location = new System.Drawing.Point(52, 309);
-            this.listChambre.MultiColumn = true;
-            this.listChambre.Name = "listChambre";
-            this.listChambre.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listChambre.Size = new System.Drawing.Size(454, 218);
-            this.listChambre.TabIndex = 16;
             // 
             // label3
             // 
@@ -144,15 +132,76 @@
             this.label4.Text = "Les réservations :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.Backspace;
+            this.btnCancel.IconColor = System.Drawing.Color.Brown;
+            this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancel.IconSize = 45;
+            this.btnCancel.Location = new System.Drawing.Point(1020, 491);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(50, 50);
+            this.btnCancel.TabIndex = 22;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.btnSave.IconColor = System.Drawing.Color.BlueViolet;
+            this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnSave.IconSize = 45;
+            this.btnSave.Location = new System.Drawing.Point(1020, 435);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(50, 50);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
+            this.btnEdit.IconColor = System.Drawing.Color.IndianRed;
+            this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEdit.Location = new System.Drawing.Point(1020, 379);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(50, 50);
+            this.btnEdit.TabIndex = 20;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // listChambre
+            // 
+            this.listChambre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listChambre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listChambre.CheckOnClick = true;
+            this.listChambre.ColumnWidth = 80;
+            this.listChambre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listChambre.FormattingEnabled = true;
+            this.listChambre.HorizontalScrollbar = true;
+            this.listChambre.Location = new System.Drawing.Point(12, 305);
+            this.listChambre.MultiColumn = true;
+            this.listChambre.Name = "listChambre";
+            this.listChambre.Size = new System.Drawing.Size(529, 236);
+            this.listChambre.TabIndex = 23;
+            // 
             // FrmCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 553);
+            this.Controls.Add(this.listChambre);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnAddRes);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.listChambre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblInfoNbChambre);
             this.Controls.Add(this.cboRes);
@@ -171,9 +220,12 @@
         private System.Windows.Forms.ComboBox cboRes;
         private System.Windows.Forms.Label lblInfoNbChambre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listChambre;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton btnAddRes;
         private System.Windows.Forms.Label label4;
+        private FontAwesome.Sharp.IconButton btnCancel;
+        private FontAwesome.Sharp.IconButton btnSave;
+        private FontAwesome.Sharp.IconButton btnEdit;
+        private System.Windows.Forms.CheckedListBox listChambre;
     }
 }
