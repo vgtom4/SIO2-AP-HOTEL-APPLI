@@ -84,7 +84,7 @@
             this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
             this.btnEdit.IconColor = System.Drawing.Color.IndianRed;
             this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEdit.Location = new System.Drawing.Point(1020, 362);
+            this.btnEdit.Location = new System.Drawing.Point(1020, 379);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(50, 50);
             this.btnEdit.TabIndex = 1;
@@ -98,7 +98,7 @@
             this.btnSave.IconColor = System.Drawing.Color.BlueViolet;
             this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnSave.IconSize = 45;
-            this.btnSave.Location = new System.Drawing.Point(1020, 418);
+            this.btnSave.Location = new System.Drawing.Point(1020, 435);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(50, 50);
             this.btnSave.TabIndex = 13;
@@ -108,11 +108,11 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.Backspace;
             this.btnCancel.IconColor = System.Drawing.Color.Brown;
             this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancel.IconSize = 45;
-            this.btnCancel.Location = new System.Drawing.Point(1020, 474);
+            this.btnCancel.Location = new System.Drawing.Point(1020, 491);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(50, 50);
             this.btnCancel.TabIndex = 14;
