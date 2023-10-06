@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace AP_HOTEL_APPLI
 {
@@ -116,28 +117,51 @@ namespace AP_HOTEL_APPLI
                 int i = 1;
                 bool trouve = false;
                 chambre nvChambre = new chambre();
-
-                while (i<=mesChambres.Count && !trouve)
+                bool valid = false;
+                int temp= 1;
+                if (cboxcustom.Checked)
                 {
-                    if (mesChambres[i-1].nochambre != i)
+                    
+                        temp = Convert.ToInt32(Interaction.InputBox("Numéro de la chambre à ajouter"));
+                        if (!varglobale.hotel.chambre.Where(chambre => chambre.nochambre == temp).Any())
+                        {
+                            valid = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Numéro de chambre déjà existant");
+                        }
+                }
+                else
+                {
+                    while (i <= mesChambres.Count && !trouve)
                     {
-                        nvChambre.nochambre = i;
-                        trouve = true;
+                        if (mesChambres[i - 1].nochambre != i)
+                        {
+                            temp = i;
+                            trouve = true;
+                            valid = true;
+                        }
+                        else
+                        {
+                            i++;
+                        }
                     }
-                    else
+                    if (!trouve)
                     {
-                        i++;
+                        temp = numNouvChambre();
+                        valid = true;
                     }
                 }
-                if (!trouve)
+                if (valid)
                 {
-                    nvChambre.nochambre = numNouvChambre();
+                    nvChambre.nohotel = noHotel();
+                    nvChambre.nochambre = temp;
+                    varglobale.hotel.chambre.Add(nvChambre);
+                    varglobale.connexion.SaveChanges();
+                    RefreshChambre();
                 }
-
-                nvChambre.nohotel = noHotel();
-                varglobale.hotel.chambre.Add(nvChambre);
-                varglobale.connexion.SaveChanges();
-                RefreshChambre();
+                
             }
                 
         }

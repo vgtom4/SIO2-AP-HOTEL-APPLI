@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanelChambres = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddChambre = new FontAwesome.Sharp.IconButton();
+            this.cboxcustom = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -69,11 +70,22 @@
             this.btnAddChambre.UseVisualStyleBackColor = true;
             this.btnAddChambre.Click += new System.EventHandler(this.btnAddChambre_Click);
             // 
+            // cboxcustom
+            // 
+            this.cboxcustom.AutoSize = true;
+            this.cboxcustom.Location = new System.Drawing.Point(1003, 466);
+            this.cboxcustom.Name = "cboxcustom";
+            this.cboxcustom.Size = new System.Drawing.Size(105, 19);
+            this.cboxcustom.TabIndex = 15;
+            this.cboxcustom.Text = "N° custom ?";
+            this.cboxcustom.UseVisualStyleBackColor = true;
+            // 
             // FrmChambre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 553);
+            this.Controls.Add(this.cboxcustom);
             this.Controls.Add(this.btnAddChambre);
             this.Controls.Add(this.flowLayoutPanelChambres);
             this.Controls.Add(this.label1);
@@ -83,6 +95,7 @@
             this.Text = "frmChambre";
             this.Load += new System.EventHandler(this.frmChambre_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -91,5 +104,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelChambres;
         private FontAwesome.Sharp.IconButton btnAddChambre;
+        private System.Windows.Forms.CheckBox cboxcustom;
     }
 }
