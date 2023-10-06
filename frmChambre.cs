@@ -32,7 +32,7 @@ namespace AP_HOTEL_APPLI
             flowLayoutPanelChambres.Controls.Clear();
             if (varglobale.hotel != null)
             {
-                List<chambre> chambres = varglobale.hotel.chambre.ToList();
+                List<chambre> chambres = varglobale.hotel.chambre.OrderBy(chambre => chambre.nochambre).ToList();
 
                 foreach (var chambre in chambres)
                 {
@@ -55,6 +55,7 @@ namespace AP_HOTEL_APPLI
         {
             int idChambre = (int)((System.Windows.Forms.Button)sender).Tag;
             int idHotel = (int)varglobale.hotel.nohotel;
+            
 
             if ((MessageBox.Show($"Confirmez la suppression de la chambre {idChambre} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
             {
@@ -110,8 +111,29 @@ namespace AP_HOTEL_APPLI
             
             if (varglobale.hotel != null)
             {
+                List<chambre> mesChambres = new List<chambre>();
+                mesChambres = varglobale.hotel.chambre.OrderBy(chambre=>chambre.nochambre).ToList();
+                int i = 1;
+                bool trouve = false;
                 chambre nvChambre = new chambre();
-                nvChambre.nochambre = numNouvChambre();
+
+                while (i<=mesChambres.Count && !trouve)
+                {
+                    if (mesChambres[i-1].nochambre != i)
+                    {
+                        nvChambre.nochambre = i;
+                        trouve = true;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                }
+                if (!trouve)
+                {
+                    nvChambre.nochambre = numNouvChambre();
+                }
+
                 nvChambre.nohotel = noHotel();
                 varglobale.hotel.chambre.Add(nvChambre);
                 varglobale.connexion.SaveChanges();
