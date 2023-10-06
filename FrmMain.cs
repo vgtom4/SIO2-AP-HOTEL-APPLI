@@ -99,11 +99,6 @@ namespace AP_HOTEL_APPLI
             }
         }
 
-        private void panelConnexion_MouseClick(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show("test");
-        }
-
         private void btnChambreHotel_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmChambre());

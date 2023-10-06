@@ -106,7 +106,6 @@
             this.panelConnexion.Name = "panelConnexion";
             this.panelConnexion.Size = new System.Drawing.Size(270, 200);
             this.panelConnexion.TabIndex = 5;
-            this.panelConnexion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelConnexion_MouseClick);
             // 
             // btnChambreHotel
             // 
@@ -124,11 +123,12 @@
             // 
             // btnCalendrier
             // 
+            this.btnCalendrier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCalendrier.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
             this.btnCalendrier.IconColor = System.Drawing.Color.BlueViolet;
             this.btnCalendrier.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCalendrier.IconSize = 45;
-            this.btnCalendrier.Location = new System.Drawing.Point(668, 33);
+            this.btnCalendrier.Location = new System.Drawing.Point(672, 33);
             this.btnCalendrier.Name = "btnCalendrier";
             this.btnCalendrier.Size = new System.Drawing.Size(50, 50);
             this.btnCalendrier.TabIndex = 8;
