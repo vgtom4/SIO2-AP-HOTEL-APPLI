@@ -99,64 +99,66 @@ namespace AP_HOTEL_APPLI
             }
         }
 
-        private int numNouvChambre() { return varglobale.hotel.chambre.ToList().Count() + 1;}
-        
-
         private int noHotel()
         {
-            int no = varglobale.hotel.nohotel;
-            return no;
+            return varglobale.hotel.nohotel;
         }
+
         private void btnAddChambre_Click(object sender, EventArgs e)
         {
-            
             if (varglobale.hotel != null)
             {
-                List<chambre> mesChambres = new List<chambre>();
-                mesChambres = varglobale.hotel.chambre.OrderBy(chambre=>chambre.nochambre).ToList();
-                int i = 1;
-                bool trouve = false;
-                chambre nvChambre = new chambre();
+                List<chambre> lesChambres = varglobale.hotel.chambre.OrderBy(chambre=>chambre.nochambre).ToList();
+                
                 bool valid = false;
-                int temp= 1;
+                int numNewChambre = 1;
+
                 if (cboxcustom.Checked)
                 {
-                    
-                        temp = Convert.ToInt32(Interaction.InputBox("Numéro de la chambre à ajouter"));
-                        if (!varglobale.hotel.chambre.Where(chambre => chambre.nochambre == temp).Any())
+                    string numNewChambreStr = Interaction.InputBox("Numéro de la chambre à ajouter");
+                    // vérifie si numNewChambreStr est un nombre
+                    if (int.TryParse(numNewChambreStr, out int numNewChambreInt) && numNewChambreInt > 0)
+                    {
+                        if (!varglobale.hotel.chambre.Where(chambre => chambre.nochambre == numNewChambreInt).Any())
                         {
+                            numNewChambre = numNewChambreInt;
                             valid = true;
                         }
                         else
                         {
                             MessageBox.Show("Numéro de chambre déjà existant");
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Numéro de chambre invalide");
+                    }
                 }
                 else
                 {
-                    while (i <= mesChambres.Count && !trouve)
+                    while (numNewChambre <= lesChambres.Count && !valid)
                     {
-                        if (mesChambres[i - 1].nochambre != i)
+                        if (lesChambres[numNewChambre - 1].nochambre != numNewChambre)
                         {
-                            temp = i;
-                            trouve = true;
                             valid = true;
                         }
                         else
                         {
-                            i++;
+                            numNewChambre++;
                         }
                     }
-                    if (!trouve)
+                    if (!valid)
                     {
-                        temp = numNouvChambre();
+                        numNewChambre = varglobale.hotel.chambre.ToList().Count() + 1;
                         valid = true;
                     }
                 }
+
                 if (valid)
                 {
-                    nvChambre.nohotel = noHotel();
-                    nvChambre.nochambre = temp;
+                    chambre nvChambre = new chambre();
+                    nvChambre.nohotel = varglobale.hotel.nohotel;
+                    nvChambre.nochambre = numNewChambre;
                     varglobale.hotel.chambre.Add(nvChambre);
                     varglobale.connexion.SaveChanges();
                     RefreshChambre();

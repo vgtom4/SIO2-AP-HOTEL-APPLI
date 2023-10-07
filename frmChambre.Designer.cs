@@ -32,6 +32,7 @@
             this.flowLayoutPanelChambres = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddChambre = new FontAwesome.Sharp.IconButton();
             this.cboxcustom = new System.Windows.Forms.CheckBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // label1
@@ -51,9 +52,9 @@
             this.flowLayoutPanelChambres.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanelChambres.Location = new System.Drawing.Point(12, 51);
+            this.flowLayoutPanelChambres.Location = new System.Drawing.Point(12, 466);
             this.flowLayoutPanelChambres.Name = "flowLayoutPanelChambres";
-            this.flowLayoutPanelChambres.Size = new System.Drawing.Size(1002, 490);
+            this.flowLayoutPanelChambres.Size = new System.Drawing.Size(1002, 75);
             this.flowLayoutPanelChambres.TabIndex = 14;
             // 
             // btnAddChambre
@@ -80,11 +81,21 @@
             this.cboxcustom.Text = "N° custom ?";
             this.cboxcustom.UseVisualStyleBackColor = true;
             // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(18, 121);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(378, 194);
+            this.listView1.TabIndex = 16;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // FrmChambre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 553);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.cboxcustom);
             this.Controls.Add(this.btnAddChambre);
             this.Controls.Add(this.flowLayoutPanelChambres);
@@ -105,5 +116,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelChambres;
         private FontAwesome.Sharp.IconButton btnAddChambre;
         private System.Windows.Forms.CheckBox cboxcustom;
+        private System.Windows.Forms.ListView listView1;
     }
 }
