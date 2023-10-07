@@ -28,59 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DateDebut = new System.Windows.Forms.DateTimePicker();
             this.cboRes = new System.Windows.Forms.ComboBox();
-            this.lblInfoNbChambre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddRes = new FontAwesome.Sharp.IconButton();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblLesRes = new System.Windows.Forms.Label();
             this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.btnSave = new FontAwesome.Sharp.IconButton();
             this.btnEdit = new FontAwesome.Sharp.IconButton();
             this.listChambre = new System.Windows.Forms.CheckedListBox();
+            this.rdoCreateRes = new System.Windows.Forms.RadioButton();
+            this.rdoVisuRes = new System.Windows.Forms.RadioButton();
+            this.panelEditBtn = new System.Windows.Forms.Panel();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DateFin = new System.Windows.Forms.DateTimePicker();
+            this.TimeFin = new System.Windows.Forms.DateTimePicker();
+            this.TimeDebut = new System.Windows.Forms.DateTimePicker();
+            this.panelInfoClient = new System.Windows.Forms.Panel();
+            this.panelEditBtn.SuspendLayout();
+            this.panelInfoClient.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // DateDebut
             // 
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(628, 30);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Sélectionnez une date pour en voir les réservations";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(52, 131);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(368, 34);
-            this.dateTimePicker1.TabIndex = 2;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.DateDebut.CustomFormat = "";
+            this.DateDebut.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateDebut.Location = new System.Drawing.Point(322, 146);
+            this.DateDebut.Name = "DateDebut";
+            this.DateDebut.Size = new System.Drawing.Size(387, 34);
+            this.DateDebut.TabIndex = 2;
+            this.DateDebut.ValueChanged += new System.EventHandler(this.DateDebut_ValueChanged);
             // 
             // cboRes
             // 
             this.cboRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRes.FormattingEnabled = true;
-            this.cboRes.Location = new System.Drawing.Point(52, 213);
+            this.cboRes.Location = new System.Drawing.Point(12, 233);
             this.cboRes.Name = "cboRes";
             this.cboRes.Size = new System.Drawing.Size(215, 35);
             this.cboRes.TabIndex = 3;
             this.cboRes.Visible = false;
             this.cboRes.SelectedIndexChanged += new System.EventHandler(this.cboRes_SelectedIndexChanged);
-            // 
-            // lblInfoNbChambre
-            // 
-            this.lblInfoNbChambre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblInfoNbChambre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoNbChambre.Location = new System.Drawing.Point(648, 232);
-            this.lblInfoNbChambre.Name = "lblInfoNbChambre";
-            this.lblInfoNbChambre.Size = new System.Drawing.Size(240, 16);
-            this.lblInfoNbChambre.TabIndex = 6;
             // 
             // label2
             // 
@@ -98,7 +91,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(47, 261);
+            this.label3.Location = new System.Drawing.Point(12, 271);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(279, 30);
             this.label3.TabIndex = 17;
@@ -113,7 +106,7 @@
             this.btnAddRes.IconColor = System.Drawing.Color.LightSeaGreen;
             this.btnAddRes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddRes.IconSize = 45;
-            this.btnAddRes.Location = new System.Drawing.Point(728, 261);
+            this.btnAddRes.Location = new System.Drawing.Point(633, 487);
             this.btnAddRes.Name = "btnAddRes";
             this.btnAddRes.Size = new System.Drawing.Size(160, 50);
             this.btnAddRes.TabIndex = 18;
@@ -122,15 +115,15 @@
             this.btnAddRes.UseVisualStyleBackColor = true;
             this.btnAddRes.Click += new System.EventHandler(this.btnAddRes_Click);
             // 
-            // label4
+            // lblLesRes
             // 
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(47, 180);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(628, 30);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Les réservations :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblLesRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLesRes.Location = new System.Drawing.Point(12, 200);
+            this.lblLesRes.Name = "lblLesRes";
+            this.lblLesRes.Size = new System.Drawing.Size(215, 30);
+            this.lblLesRes.TabIndex = 19;
+            this.lblLesRes.Text = "Les réservations :";
+            this.lblLesRes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnCancel
             // 
@@ -139,7 +132,7 @@
             this.btnCancel.IconColor = System.Drawing.Color.Brown;
             this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancel.IconSize = 45;
-            this.btnCancel.Location = new System.Drawing.Point(1020, 491);
+            this.btnCancel.Location = new System.Drawing.Point(0, 112);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(50, 50);
             this.btnCancel.TabIndex = 22;
@@ -153,7 +146,7 @@
             this.btnSave.IconColor = System.Drawing.Color.BlueViolet;
             this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnSave.IconSize = 45;
-            this.btnSave.Location = new System.Drawing.Point(1020, 435);
+            this.btnSave.Location = new System.Drawing.Point(0, 56);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(50, 50);
             this.btnSave.TabIndex = 21;
@@ -167,7 +160,7 @@
             this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
             this.btnEdit.IconColor = System.Drawing.Color.IndianRed;
             this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEdit.Location = new System.Drawing.Point(1020, 379);
+            this.btnEdit.Location = new System.Drawing.Point(0, 0);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(50, 50);
             this.btnEdit.TabIndex = 20;
@@ -190,42 +183,178 @@
             this.listChambre.Size = new System.Drawing.Size(529, 236);
             this.listChambre.TabIndex = 23;
             // 
+            // rdoCreateRes
+            // 
+            this.rdoCreateRes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rdoCreateRes.AutoSize = true;
+            this.rdoCreateRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoCreateRes.Location = new System.Drawing.Point(189, 67);
+            this.rdoCreateRes.Name = "rdoCreateRes";
+            this.rdoCreateRes.Size = new System.Drawing.Size(298, 31);
+            this.rdoCreateRes.TabIndex = 24;
+            this.rdoCreateRes.TabStop = true;
+            this.rdoCreateRes.Text = "Création de réservation";
+            this.rdoCreateRes.UseVisualStyleBackColor = true;
+            this.rdoCreateRes.CheckedChanged += new System.EventHandler(this.rdoCreateRes_CheckedChanged);
+            // 
+            // rdoVisuRes
+            // 
+            this.rdoVisuRes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rdoVisuRes.AutoSize = true;
+            this.rdoVisuRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoVisuRes.Location = new System.Drawing.Point(570, 67);
+            this.rdoVisuRes.Name = "rdoVisuRes";
+            this.rdoVisuRes.Size = new System.Drawing.Size(367, 31);
+            this.rdoVisuRes.TabIndex = 25;
+            this.rdoVisuRes.TabStop = true;
+            this.rdoVisuRes.Text = "Visualisation des réservations";
+            this.rdoVisuRes.UseVisualStyleBackColor = true;
+            this.rdoVisuRes.CheckedChanged += new System.EventHandler(this.rdoVisuRes_CheckedChanged);
+            // 
+            // panelEditBtn
+            // 
+            this.panelEditBtn.Controls.Add(this.btnCancel);
+            this.panelEditBtn.Controls.Add(this.btnEdit);
+            this.panelEditBtn.Controls.Add(this.btnSave);
+            this.panelEditBtn.Location = new System.Drawing.Point(1020, 379);
+            this.panelEditBtn.Name = "panelEditBtn";
+            this.panelEditBtn.Size = new System.Drawing.Size(50, 162);
+            this.panelEditBtn.TabIndex = 26;
+            // 
+            // txtNom
+            // 
+            this.txtNom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNom.Location = new System.Drawing.Point(34, 42);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(220, 27);
+            this.txtNom.TabIndex = 27;
+            // 
+            // txtMail
+            // 
+            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMail.Location = new System.Drawing.Point(34, 105);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(220, 27);
+            this.txtMail.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(34, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(220, 30);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Nom :";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(34, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(220, 30);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Mail :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // DateFin
+            // 
+            this.DateFin.CustomFormat = "";
+            this.DateFin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateFin.Location = new System.Drawing.Point(322, 200);
+            this.DateFin.Name = "DateFin";
+            this.DateFin.Size = new System.Drawing.Size(387, 34);
+            this.DateFin.TabIndex = 31;
+            this.DateFin.ValueChanged += new System.EventHandler(this.DateFin_ValueChanged);
+            // 
+            // TimeFin
+            // 
+            this.TimeFin.CustomFormat = "HH\'h\'mm";
+            this.TimeFin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TimeFin.Location = new System.Drawing.Point(730, 200);
+            this.TimeFin.Name = "TimeFin";
+            this.TimeFin.ShowUpDown = true;
+            this.TimeFin.Size = new System.Drawing.Size(97, 34);
+            this.TimeFin.TabIndex = 33;
+            this.TimeFin.ValueChanged += new System.EventHandler(this.TimeFin_ValueChanged);
+            // 
+            // TimeDebut
+            // 
+            this.TimeDebut.CustomFormat = "HH\'h\'mm";
+            this.TimeDebut.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeDebut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TimeDebut.Location = new System.Drawing.Point(730, 146);
+            this.TimeDebut.Name = "TimeDebut";
+            this.TimeDebut.ShowUpDown = true;
+            this.TimeDebut.Size = new System.Drawing.Size(97, 34);
+            this.TimeDebut.TabIndex = 32;
+            this.TimeDebut.ValueChanged += new System.EventHandler(this.TimeDebut_ValueChanged);
+            // 
+            // panelInfoClient
+            // 
+            this.panelInfoClient.Controls.Add(this.label1);
+            this.panelInfoClient.Controls.Add(this.txtNom);
+            this.panelInfoClient.Controls.Add(this.txtMail);
+            this.panelInfoClient.Controls.Add(this.label5);
+            this.panelInfoClient.Location = new System.Drawing.Point(573, 305);
+            this.panelInfoClient.Name = "panelInfoClient";
+            this.panelInfoClient.Size = new System.Drawing.Size(289, 150);
+            this.panelInfoClient.TabIndex = 34;
+            // 
             // FrmCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 553);
+            this.Controls.Add(this.panelInfoClient);
+            this.Controls.Add(this.TimeFin);
+            this.Controls.Add(this.TimeDebut);
+            this.Controls.Add(this.DateFin);
+            this.Controls.Add(this.panelEditBtn);
+            this.Controls.Add(this.rdoVisuRes);
+            this.Controls.Add(this.rdoCreateRes);
             this.Controls.Add(this.listChambre);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblLesRes);
             this.Controls.Add(this.btnAddRes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblInfoNbChambre);
             this.Controls.Add(this.cboRes);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DateDebut);
             this.Name = "FrmCalendar";
             this.Text = "FrmCalendar";
             this.Load += new System.EventHandler(this.FrmCalendar_Load);
+            this.panelEditBtn.ResumeLayout(false);
+            this.panelInfoClient.ResumeLayout(false);
+            this.panelInfoClient.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DateDebut;
         private System.Windows.Forms.ComboBox cboRes;
-        private System.Windows.Forms.Label lblInfoNbChambre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton btnAddRes;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblLesRes;
         private FontAwesome.Sharp.IconButton btnCancel;
         private FontAwesome.Sharp.IconButton btnSave;
         private FontAwesome.Sharp.IconButton btnEdit;
         private System.Windows.Forms.CheckedListBox listChambre;
+        private System.Windows.Forms.RadioButton rdoCreateRes;
+        private System.Windows.Forms.RadioButton rdoVisuRes;
+        private System.Windows.Forms.Panel panelEditBtn;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.TextBox txtMail;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker DateFin;
+        private System.Windows.Forms.DateTimePicker TimeFin;
+        private System.Windows.Forms.DateTimePicker TimeDebut;
+        private System.Windows.Forms.Panel panelInfoClient;
     }
 }

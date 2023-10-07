@@ -13,6 +13,8 @@ namespace AP_HOTEL_APPLI
 {
     public partial class FrmCalendar : Form
     {
+        List<chambre> lesChambresDisponibles = new List<chambre>();
+        List<reservation> lesReservations = new List<reservation>();
         reservation lareservation;
         public FrmCalendar()
         {
@@ -24,7 +26,13 @@ namespace AP_HOTEL_APPLI
             SwitchEditMode(false);
             RefreshForm();
             // date du jour pour le calendrier
-            dateTimePicker1.Value = DateTime.Now;
+            DateDebut.Value = DateTime.Now;
+            TimeDebut.Value = DateTime.Now;
+
+            // timeDebut et timeFin à 00:00:00
+            TimeDebut.Value = new DateTime(TimeDebut.Value.Year, TimeDebut.Value.Month, TimeDebut.Value.Day, 0, 0, 0);
+            TimeFin.Value = new DateTime(TimeFin.Value.Year, TimeFin.Value.Month, TimeFin.Value.Day, 0, 0, 0);
+            rdoCreateRes.Checked = true;
         }
 
         public void RefreshForm()
@@ -32,55 +40,51 @@ namespace AP_HOTEL_APPLI
             SwitchEditMode(false);
             if (varglobale.hotel != null)
             {
-                RefreshChambre();
-                GetLesReservations();
+                SwitchGestionReservation();
+                if (rdoVisuRes.Checked)
+                {
+                    DateTime dateTimeDebut = new DateTime(DateDebut.Value.Year, DateDebut.Value.Month, DateDebut.Value.Day, TimeDebut.Value.Hour, TimeDebut.Value.Minute, TimeDebut.Value.Second);
+                    lesReservations = ReservationDAO.GetLesReservationsDate(dateTimeDebut);
+                    ShowRes(lesReservations);
+                }
+                RefreshChambre(); 
             }
         }
 
         public void RefreshChambre()
         {
             listChambre.Items.Clear();
-            if (lareservation != null)
-            {
-                List<chambre> lesChambres = varglobale.hotel.chambre.Where(chambre => chambre.reservation.Count == 0 || chambre.reservation.Contains(lareservation)).ToList();
-                foreach (chambre chambre in lesChambres)
-                {
-                    listChambre.Items.Add($"n°{chambre.nochambre}");
 
-                    if (chambre.reservation.Contains(lareservation))
-                    {
-                        // selectionner le checkbox de la chambre dans la liste
-                        listChambre.SetItemChecked(listChambre.Items.Count - 1, true);
-                    }
+            DateTime dateTimeDebut = new DateTime(DateDebut.Value.Year, DateDebut.Value.Month, DateDebut.Value.Day, TimeDebut.Value.Hour, TimeDebut.Value.Minute, TimeDebut.Value.Second);
+            DateTime dateTimeFin = new DateTime(DateFin.Value.Year, DateFin.Value.Month, DateFin.Value.Day, TimeFin.Value.Hour, TimeFin.Value.Minute, TimeFin.Value.Second);
+
+            lesChambresDisponibles = null;
+            lesChambresDisponibles = rdoCreateRes.Checked ? ChambreDAO.GetLesChambresDisponibles(dateTimeDebut, dateTimeFin) : ChambreDAO.GetLesChambresDisponibles(dateTimeDebut, dateTimeDebut, lareservation);
+            foreach (chambre chambre in lesChambresDisponibles)
+            {
+                listChambre.Items.Add($"n°{chambre.nochambre}");
+
+                if (chambre.reservation.Contains(lareservation) && rdoVisuRes.Checked)
+                {
+                    // selectionner le checkbox de la chambre dans la liste
+                    listChambre.SetItemChecked(listChambre.Items.Count - 1, true);
                 }
             }
         }
 
-        public void GetLesReservations()
+        /// <summary>
+        /// Permet d'afficher les réservations de la liste de réservations passée en paramètre dans la combobox des réservations
+        /// </summary>
+        /// <param name="lesRes">Listes des réservations à afficher dans la ComboBox</param>
+        private void ShowRes(List<reservation> lesRes)
         {
             cboRes.Items.Clear();
             lareservation = null;
-            if (varglobale.hotel != null)
+            foreach (reservation reservation in lesRes)
             {
-                cboRes.Visible = true;
-                btnAddRes.Visible = true;
-
-                List<reservation> lesReservationsDate = varglobale.hotel.reservation.Where(reservation => reservation.datedeb.Value.ToString("d") == dateTimePicker1.Value.ToString("d")).ToList();
-                
-                foreach (reservation reservation in lesReservationsDate)
-                {
-                    cboRes.Items.Add($"n°{reservation.nores}");
-                    lesReservations.Add(reservation);
-                }
-                if (cboRes.Items.Count > 0) cboRes.SelectedIndex = 0;
+                cboRes.Items.Add($"n°{reservation.nores}");
             }
-        }
-
-        List<reservation> lesReservations = new List<reservation>();
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            GetLesReservations();
-            RefreshForm();
+            if (cboRes.Items.Count > 0) cboRes.SelectedIndex = 0;
         }
 
         private void btnAddRes_Click(object sender, EventArgs e)
@@ -164,13 +168,71 @@ namespace AP_HOTEL_APPLI
             }
             else
             {
-                btnEdit.Visible = false;
-                btnSave.Visible = false;
-                btnCancel.Visible = false;
+                panelEditBtn.Visible = false;
                 editMode = false;
             }
 
 
+        }
+
+        private void SwitchGestionReservation()
+        {
+            bool modeCreateRes = rdoCreateRes.Checked;
+            btnAddRes.Visible = modeCreateRes;
+            TimeDebut.Visible = modeCreateRes;
+            DateFin.Visible = modeCreateRes;
+            TimeFin.Visible = modeCreateRes;
+            panelInfoClient.Visible = modeCreateRes;
+
+            lblLesRes.Visible = !modeCreateRes;
+            panelEditBtn.Visible = !modeCreateRes;
+            cboRes.Visible = !modeCreateRes;
+        }
+
+        private void rdoCreateRes_CheckedChanged(object sender, EventArgs e)
+        {
+            RefreshForm();
+        }
+
+        private void rdoVisuRes_CheckedChanged(object sender, EventArgs e)
+        {
+            RefreshForm();
+        }
+
+        private void DateDebut_ValueChanged(object sender, EventArgs e)
+        {
+            if (DateDebut.Value > DateFin.Value)
+            {
+                DateFin.Value = DateDebut.Value;
+            }
+            RefreshForm();
+        }
+
+        private void TimeDebut_ValueChanged(object sender, EventArgs e)
+        {
+            if (DateDebut.Value == DateFin.Value && TimeDebut.Value > TimeFin.Value)
+            {
+                TimeFin.Value = TimeDebut.Value;
+            }
+            RefreshForm();
+        }
+
+        private void DateFin_ValueChanged(object sender, EventArgs e)
+        {
+            if (DateDebut.Value > DateFin.Value)
+            {
+                DateDebut.Value = DateFin.Value;
+            }
+            RefreshForm();
+        }
+
+        private void TimeFin_ValueChanged(object sender, EventArgs e)
+        {
+            if (DateDebut.Value == DateFin.Value && TimeDebut.Value > TimeFin.Value)
+            {
+                TimeDebut.Value = TimeFin.Value;
+            }
+            RefreshForm();
         }
     }
 }
