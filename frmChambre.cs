@@ -17,6 +17,7 @@ namespace AP_HOTEL_APPLI
     {
         //connexiondb connexion = varglobale.connexion;
         hotel hotel = varglobale.hotel;
+        List<chambre> lesChambresASupprimmer = new List<chambre>();
 
         public FrmChambre()
         {
@@ -41,10 +42,16 @@ namespace AP_HOTEL_APPLI
                     btnChambre.Text = $"N°{chambre.nochambre}";
                     btnChambre.Tag = chambre.nochambre;
                     btnChambre.Size = new Size(60, 60);
+                    btnChambre.Cursor = Cursors.Hand;
                     btnChambre.Click += BtnChambre_Click;
 
                     flowLayoutPanelChambres.Controls.Add(btnChambre);
+
+                    var lblChambre = new ListViewItem();
+                    lblChambre.Text = $"N°{chambre.nochambre}";
+                    lblChambre.Tag = chambre.nochambre;
                 }
+                BtnSelected();
             }
             else
             {
@@ -56,47 +63,68 @@ namespace AP_HOTEL_APPLI
         {
             int idChambre = (int)((System.Windows.Forms.Button)sender).Tag;
             int idHotel = (int)varglobale.hotel.nohotel;
-            
 
-            if ((MessageBox.Show($"Confirmez la suppression de la chambre {idChambre} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
+            chambre chambreASupprimer = varglobale.hotel.chambre.Where(chambre => chambre.nochambre == idChambre).FirstOrDefault();
+            if (lesChambresASupprimmer.Contains(chambreASupprimer))
             {
-                // Supprimez la chambre de la base de données
-                chambre chambreASupprimer = varglobale.hotel.chambre.Where(chambre => chambre.nochambre == idChambre).FirstOrDefault();
-                if (chambreASupprimer != null)
-                {
-                    bool canDeleteChambre = true;
-                    // si la chambre a une reservation
-                    if (chambreASupprimer.reservation.Count() > 0)
-                    {
-                        //message de confirmation de suppression
-                        canDeleteChambre = MessageBox.Show($"La chambre {idChambre} a des réservations, voulez-vous vraiment la supprimer ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
-                        // retirer la chambre de la reservation
-                        if (canDeleteChambre)
-                        {
-                            foreach (var reservation in chambreASupprimer.reservation)
-                            {
-                                reservation.chambre.Remove(chambreASupprimer);
-                            }
-                            varglobale.connexion.SaveChanges();
-                        }
-                    }
-                    if (canDeleteChambre)
-                    {
-                        varglobale.hotel.chambre.Remove(chambreASupprimer);
-                        varglobale.connexion.SaveChanges();
-
-                        //// Supprimez également le bouton associé du conteneur
-                        //System.Windows.Forms.Button bouton = (System.Windows.Forms.Button)sender;
-                        //((FlowLayoutPanel)Button.Parent).Controls.Remove(bouton);
-
-                        // Supprimez également le bouton associé du conteneur
-                        System.Windows.Forms.Button bouton = (System.Windows.Forms.Button)sender;
-                        ((FlowLayoutPanel)bouton.Parent).Controls.Remove(bouton);
-                    }
-
-                    
-                }
+                lesChambresASupprimmer.Remove(chambreASupprimer);
             }
+            else
+            {
+                lesChambresASupprimmer.Add(chambreASupprimer);
+            }
+            
+            BtnSelected();
+
+            //if ((MessageBox.Show($"Confirmez la suppression de la chambre {idChambre} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
+            //{
+            //    // Supprimez la chambre de la base de données
+            //    chambre chambreASupprimer = varglobale.hotel.chambre.Where(chambre => chambre.nochambre == idChambre).FirstOrDefault();
+            //    if (chambreASupprimer != null)
+            //    {
+            //        bool canDeleteChambre = true;
+            //        // si la chambre a une reservation
+            //        if (chambreASupprimer.reservation.Count() > 0)
+            //        {
+            //            //message de confirmation de suppression
+            //            canDeleteChambre = MessageBox.Show($"La chambre {idChambre} a des réservations, voulez-vous vraiment la supprimer ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
+            //            // retirer la chambre de la reservation
+            //            if (canDeleteChambre)
+            //            {
+            //                foreach (var reservation in chambreASupprimer.reservation)
+            //                {
+            //                    reservation.chambre.Remove(chambreASupprimer);
+            //                }
+            //                varglobale.connexion.SaveChanges();
+            //            }
+            //        }
+            //        if (canDeleteChambre)
+            //        {
+            //            varglobale.hotel.chambre.Remove(chambreASupprimer);
+            //            varglobale.connexion.SaveChanges();
+
+            //            //// Supprimez également le bouton associé du conteneur
+            //            //System.Windows.Forms.Button bouton = (System.Windows.Forms.Button)sender;
+            //            //((FlowLayoutPanel)Button.Parent).Controls.Remove(bouton);
+
+            //            // Supprimez également le bouton associé du conteneur
+            //            System.Windows.Forms.Button bouton = (System.Windows.Forms.Button)sender;
+            //            ((FlowLayoutPanel)bouton.Parent).Controls.Remove(bouton);
+            //        }
+
+
+            //    }
+            //}
+        }
+
+        private void BtnSelected()
+        {
+            // pour tous les boutons de la flowLayoutPanelChambres aillant le tag (nochambre) de la chambre dans la liste lesChambresASupprimmer
+            foreach (System.Windows.Forms.Button btn in flowLayoutPanelChambres.Controls.OfType<System.Windows.Forms.Button>())
+            {
+                btn.BackColor = lesChambresASupprimmer.Where(chambre=> chambre.nochambre == Convert.ToInt16(btn.Tag)).Any() ? Color.RoyalBlue : Color.White;
+            }
+
         }
 
         private int noHotel()
@@ -166,6 +194,65 @@ namespace AP_HOTEL_APPLI
                 
             }
                 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (varglobale.hotel != null && lesChambresASupprimmer.Count > 0)
+            {
+                // ordonner lesChambresASupprimmer par numero de chambre
+                lesChambresASupprimmer = lesChambresASupprimmer.OrderBy(chambre => chambre.nochambre).ToList();
+
+                string lesChambresASupprimmerStr = "";
+                foreach (var unechambre in lesChambresASupprimmer)
+                {
+                    lesChambresASupprimmerStr += unechambre.nochambre + ", ";
+                }
+                lesChambresASupprimmerStr = lesChambresASupprimmerStr.Substring(0, lesChambresASupprimmerStr.Length - 2);
+
+                if ((MessageBox.Show($"Confirmez la suppression des chambres suivantes :\n {lesChambresASupprimmerStr} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
+                {
+                    foreach (var chambreASupprimer in lesChambresASupprimmer)
+                    {
+                        bool canDeleteChambre = true;
+                        // si la chambre a une reservation
+                        if (chambreASupprimer.reservation.Count() > 0)
+                        {
+                            //message de confirmation de suppression
+                            canDeleteChambre = MessageBox.Show($"La chambre {chambreASupprimer.nochambre} a des réservations, voulez-vous vraiment la supprimer ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
+                            // retirer la chambre de la reservation
+                            if (canDeleteChambre)
+                            {
+                                foreach (var reservation in chambreASupprimer.reservation)
+                                {
+                                    reservation.chambre.Remove(chambreASupprimer);
+                                }
+                                varglobale.connexion.SaveChanges();
+                            }
+                        }
+                        if (canDeleteChambre)
+                        {
+                            varglobale.hotel.chambre.Remove(chambreASupprimer);
+                            varglobale.connexion.SaveChanges();
+
+                            //// Supprimez également le bouton associé du conteneur
+                            //System.Windows.Forms.Button bouton = (System.Windows.Forms.Button)sender;
+                            //((FlowLayoutPanel)Button.Parent).Controls.Remove(bouton);
+
+                            // Supprimez également le bouton aillant comme tag le numéro de la chambre
+                            foreach (System.Windows.Forms.Button btn in flowLayoutPanelChambres.Controls.OfType<System.Windows.Forms.Button>())
+                            {
+                                if (btn.Tag.ToString() == chambreASupprimer.nochambre.ToString())
+                                {
+                                    ((FlowLayoutPanel)btn.Parent).Controls.Remove(btn);
+                                }
+                            }
+                        }
+                    }
+                }
+                lesChambresASupprimmer.Clear();
+                RefreshChambre();
+            }
         }
     }
 }
