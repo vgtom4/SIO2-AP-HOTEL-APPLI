@@ -16,7 +16,7 @@ namespace AP_HOTEL_APPLI
                         // Filtrer les chambres qui n'ont pas de réservation qui chevauche la période [dateTimeDebut, dateTimeFin]
                         !chambre.reservation.Any(reservation =>
                                 !(dateTimeDebut >= reservation.datefin || 
-                                dateTimeFin <= reservation.datedeb))).ToList();
+                                dateTimeFin <= reservation.datedeb))).OrderBy(c=> c.nochambre).ToList();
             }
 
             else
@@ -24,7 +24,7 @@ namespace AP_HOTEL_APPLI
                 return varglobale.hotel.chambre.Where(chambre => 
                         !chambre.reservation.Any(reservation => 
                                 reservation.datedeb.Value.ToString("d") == lareservation.datedeb.Value.ToString("d")) || 
-                                chambre.reservation.Contains(lareservation)).ToList();
+                                chambre.reservation.Contains(lareservation)).OrderBy(c => c.nochambre).ToList();
             }
         }
     }

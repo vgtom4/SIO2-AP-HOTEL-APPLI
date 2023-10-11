@@ -59,7 +59,7 @@
             <PropertyRef Name="nores" />
           </Key>
           <Property Name="nohotel" Type="int" />
-          <Property Name="nores" Type="int" Nullable="false" />
+          <Property Name="nores" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="datedeb" Type="datetime" />
           <Property Name="datefin" Type="datetime" />
           <Property Name="nom" Type="varchar" MaxLength="255" />
@@ -258,7 +258,7 @@
             <PropertyRef Name="nores" />
           </Key>
           <Property Name="nohotel" Type="Int32" />
-          <Property Name="nores" Type="Int32" Nullable="false" />
+          <Property Name="nores" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="datedeb" Type="DateTime" Precision="3" />
           <Property Name="datefin" Type="DateTime" Precision="3" />
           <Property Name="nom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />

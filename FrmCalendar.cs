@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace AP_HOTEL_APPLI
 {
@@ -24,7 +25,6 @@ namespace AP_HOTEL_APPLI
         private void FrmCalendar_Load(object sender, EventArgs e)
         {
             SwitchEditMode(false);
-            RefreshForm();
             // date du jour pour le calendrier
             DateDebut.Value = DateTime.Now;
             TimeDebut.Value = DateTime.Now;
@@ -33,6 +33,7 @@ namespace AP_HOTEL_APPLI
             TimeDebut.Value = new DateTime(TimeDebut.Value.Year, TimeDebut.Value.Month, TimeDebut.Value.Day, 0, 0, 0);
             TimeFin.Value = new DateTime(TimeFin.Value.Year, TimeFin.Value.Month, TimeFin.Value.Day, 0, 0, 0);
             rdoCreateRes.Checked = true;
+            RefreshForm();
         }
 
         public void RefreshForm()
@@ -47,7 +48,7 @@ namespace AP_HOTEL_APPLI
                     lesReservations = ReservationDAO.GetLesReservationsDate(dateTimeDebut);
                     ShowRes(lesReservations);
                 }
-                RefreshChambre(); 
+                RefreshChambre();
             }
         }
 
@@ -63,12 +64,21 @@ namespace AP_HOTEL_APPLI
             foreach (chambre chambre in lesChambresDisponibles)
             {
                 listChambre.Items.Add($"n°{chambre.nochambre}");
-
                 if (chambre.reservation.Contains(lareservation) && rdoVisuRes.Checked)
                 {
                     // selectionner le checkbox de la chambre dans la liste
                     listChambre.SetItemChecked(listChambre.Items.Count - 1, true);
                 }
+            }
+            listChambre.Visible = lesChambresDisponibles.Count > 0;
+
+            // text de lblChambreDispo comme dans le formulaire
+            lblChambreDispo.Text = lesChambresDisponibles.Count > 0 ? "Chambres disponibles :" : "Aucune chambre disponible";
+            lblChambreDispo.ForeColor = lesChambresDisponibles.Count > 0 ? DefaultForeColor : System.Drawing.Color.DarkRed;
+
+            if (lesChambresDisponibles.Count > 0)
+            {
+                
             }
         }
 
@@ -84,11 +94,48 @@ namespace AP_HOTEL_APPLI
             {
                 cboRes.Items.Add($"n°{reservation.nores}");
             }
-            if (cboRes.Items.Count > 0) cboRes.SelectedIndex = 0;
+            if (cboRes.Items.Count > 0)
+            {
+                cboRes.SelectedIndex = 0;
+                SwitchEditMode(false);
+                panelEditBtn.Visible = true;
+                cboRes.Visible = true;
+                lblLesRes.Visible = true;
+            }
+            else
+            {
+                panelEditBtn.Visible = false;
+                cboRes.Visible = false;
+                lblLesRes.Visible = false;
+            }
         }
 
         private void btnAddRes_Click(object sender, EventArgs e)
         {
+            if (varglobale.hotel != null)
+            {
+                if (listChambre.CheckedItems.Count > 0 && txtNom.Text != "" && txtMail.Text != "")
+                {
+                    reservation nouvelleReservation = new reservation();
+                    nouvelleReservation.datedeb = new DateTime(DateDebut.Value.Year, DateDebut.Value.Month, DateDebut.Value.Day, TimeDebut.Value.Hour, TimeDebut.Value.Minute, TimeDebut.Value.Second);
+                    nouvelleReservation.datefin = new DateTime(DateFin.Value.Year, DateFin.Value.Month, DateFin.Value.Day, TimeFin.Value.Hour, TimeFin.Value.Minute, TimeFin.Value.Second);
+                    nouvelleReservation.nom = txtNom.Text;
+                    nouvelleReservation.email = txtMail.Text;
+
+                    nouvelleReservation.chambre = listChambre.CheckedItems.Cast<string>().Select(itemList => varglobale.hotel.chambre.Where(chambre => chambre.nochambre == int.Parse(itemList.ToString().Substring(2))).FirstOrDefault()).ToList();
+                    // ajout des chambres sélectionnées à la réservation
+                    //foreach (var chambre in listChambre.CheckedItems)
+                    //{
+                    //    nouvelleReservation.chambre.Add(lesChambresDisponibles.Where(c => c.nochambre == int.Parse(chambre.ToString().Substring(2))).First());
+                    //}
+                    
+
+                    nouvelleReservation.codeacces = new Random().Next(10000, 99999);
+                    varglobale.hotel.reservation.Add(nouvelleReservation);
+                    varglobale.connexion.SaveChanges();
+                    RefreshForm();
+                }
+            }
             // -------------------------------------------------------------------------------------------------A faire
 
             //List<chambre> selectedChambres = new List<chambre>();
@@ -158,7 +205,7 @@ namespace AP_HOTEL_APPLI
 
         public void SwitchEditMode(bool editMode)
         {
-            listChambre.Enabled = editMode;
+            listChambre.Enabled = rdoCreateRes.Checked ? true : editMode;
 
             if (varglobale.hotel != null && lareservation != null)
             {
@@ -168,8 +215,9 @@ namespace AP_HOTEL_APPLI
             }
             else
             {
-                panelEditBtn.Visible = false;
-                editMode = false;
+                btnEdit.Visible = false;
+                btnSave.Visible = false;
+                btnCancel.Visible = false;
             }
 
 

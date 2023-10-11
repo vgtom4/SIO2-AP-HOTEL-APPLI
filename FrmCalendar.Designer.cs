@@ -31,7 +31,7 @@
             this.DateDebut = new System.Windows.Forms.DateTimePicker();
             this.cboRes = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblChambreDispo = new System.Windows.Forms.Label();
             this.btnAddRes = new FontAwesome.Sharp.IconButton();
             this.lblLesRes = new System.Windows.Forms.Label();
             this.btnCancel = new FontAwesome.Sharp.IconButton();
@@ -87,16 +87,16 @@
             this.label2.Text = "Gestion des réservations";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // lblChambreDispo
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 271);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(279, 30);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Chambres disponibles :";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblChambreDispo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblChambreDispo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChambreDispo.Location = new System.Drawing.Point(12, 271);
+            this.lblChambreDispo.Name = "lblChambreDispo";
+            this.lblChambreDispo.Size = new System.Drawing.Size(529, 30);
+            this.lblChambreDispo.TabIndex = 17;
+            this.lblChambreDispo.Text = "Chambres disponibles :";
+            this.lblChambreDispo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnAddRes
             // 
@@ -295,6 +295,7 @@
             // 
             // panelInfoClient
             // 
+            this.panelInfoClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panelInfoClient.Controls.Add(this.label1);
             this.panelInfoClient.Controls.Add(this.txtNom);
             this.panelInfoClient.Controls.Add(this.txtMail);
@@ -319,7 +320,7 @@
             this.Controls.Add(this.listChambre);
             this.Controls.Add(this.lblLesRes);
             this.Controls.Add(this.btnAddRes);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblChambreDispo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cboRes);
             this.Controls.Add(this.DateDebut);
@@ -338,7 +339,7 @@
         private System.Windows.Forms.DateTimePicker DateDebut;
         private System.Windows.Forms.ComboBox cboRes;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblChambreDispo;
         private FontAwesome.Sharp.IconButton btnAddRes;
         private System.Windows.Forms.Label lblLesRes;
         private FontAwesome.Sharp.IconButton btnCancel;
