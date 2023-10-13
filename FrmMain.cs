@@ -67,7 +67,7 @@ namespace AP_HOTEL_APPLI
             frmConnexion?.RefreshConnexion();
             Application.OpenForms.OfType<FrmInfo>().FirstOrDefault()?.RefreshInfo();
             Application.OpenForms.OfType<FrmChambre>().FirstOrDefault()?.RefreshChambre();
-            Application.OpenForms.OfType<FrmCalendar>().FirstOrDefault()?.RefreshForm();
+            Application.OpenForms.OfType<FrmCalendar>().FirstOrDefault()?.RefreshForms();
             if (varglobale.hotel != null) {panelConnexion.Height = 50; frmConnexion.Height = 50; }
             else { panelConnexion.Height = 200; frmConnexion.Height = 200; }
             

@@ -8,39 +8,33 @@ namespace AP_HOTEL_APPLI
 {
     internal class ChambreDAO
     {
-        public static List<chambre> GetLesChambresDisponibles(DateTime dateTimeDebut, DateTime dateTimeFin, reservation lareservation = null)
+        /// <summary>
+        /// Retourne la liste des chambres disponible de l'hôtel pour les dates [dateTimeDebut, dateTimeFin] et/ou la réservation lareservation
+        /// </summary>
+        /// <param name="dateTimeDebut"></param>
+        /// <param name="dateTimeFin"></param>
+        /// <param name="lareservation">[optionnel]</param>
+        /// <returns></returns>
+        public static List<chambre> GetLesChambresDisponibles(List<chambre> lesChambresHotel, DateTime dateTimeDebut, DateTime dateTimeFin, reservation lareservation = null)
         {
             if (lareservation == null)
             {
-                return varglobale.hotel.chambre.Where(chambre =>
-                        // Filtrer les chambres qui n'ont pas de réservation qui chevauche la période [dateTimeDebut, dateTimeFin]
-                        !chambre.reservation.Any(reservation =>
-                                !(dateTimeDebut >= reservation.datefin || 
-                                dateTimeFin <= reservation.datedeb))
-                        ).OrderBy(c=> c.nochambre).ToList();
+                // Filtrer les chambres qui n'ont pas de réservation qui chevauche la période [dateTimeDebut, dateTimeFin]
+                return lesChambresHotel.Where(chambre =>
+                            !chambre.reservation.Any(reservation =>
+                                !(dateTimeDebut >= reservation.datefin || dateTimeFin <= reservation.datedeb)
+                            )
+                        ).OrderBy(c => c.nochambre).ToList();
             }
-
             else
             {
-                //return varglobale.hotel.chambre.Where(chambre =>
-                //        !chambre.reservation.Any(reservation =>
-                //                reservation.datedeb.Value.ToString("d") == lareservation.datedeb.Value.ToString("d")) ||
-                //                chambre.reservation.Contains(lareservation))
-                //    .OrderBy(c => c.nochambre).ToList();
-
-                // On récupère les chambres qui ne sont pas réservées pour la période [datedeb, datefin] et qui sont les chambres de la réservation
-                //return varglobale.hotel.chambre.Where(chambre =>
-                //        chambre.reservation.Contains(lareservation) ||
-                //        //Filtrer les chambres qui n'ont pas de réservation qui chevauche la période [dateTimeDebut, dateTimeFin]
-                //        !chambre.reservation.Any(reservation =>
-                //                (reservation.datedeb > dateTimeDebut && reservation.datefin > dateTimeDebut) ||
-                //                (reservation.datedeb < dateTimeFin && reservation.datefin < dateTimeFin)))
-                //        .OrderBy(c => c.nochambre).ToList();
-
-                return varglobale.hotel.chambre.Where(chambre =>
+                // Filtrer les chambres qui n'ont pas de réservation qui chevauche la période [lareservation.datedeb, lareservation.datefin]
+                // ou qui font partie de la réservation lareservation
+                return lesChambresHotel.Where(chambre =>
                             chambre.reservation.Contains(lareservation) ||
                             !chambre.reservation.Any(reservation =>
-                                (reservation.datedeb <= dateTimeFin && reservation.datefin >= dateTimeDebut))
+                                (reservation.datedeb <= lareservation.datefin && reservation.datefin >= lareservation.datedeb)
+                            )
                         ).OrderBy(c => c.nochambre).ToList();
             }
         }

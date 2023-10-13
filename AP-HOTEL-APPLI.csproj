@@ -231,6 +231,12 @@
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EquipementDAO.cs" />
+    <Compile Include="FrmAddRes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddRes.Designer.cs">
+      <DependentUpon>FrmAddRes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCalendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,12 @@
     <Compile Include="FrmChambre.Designer.cs">
       <DependentUpon>FrmChambre.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVisuRes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisuRes.Designer.cs">
+      <DependentUpon>FrmVisuRes.cs</DependentUpon>
+    </Compile>
     <Compile Include="hotel.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
@@ -269,7 +281,6 @@
     <Compile Include="FrmConnexion.Designer.cs">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="passerelleReservation.cs" />
     <Compile Include="photo.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
@@ -280,6 +291,9 @@
     </Compile>
     <Compile Include="ReservationDAO.cs" />
     <Compile Include="varglobale.cs" />
+    <EmbeddedResource Include="FrmAddRes.resx">
+      <DependentUpon>FrmAddRes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCalendar.resx">
       <DependentUpon>FrmCalendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisuRes.resx">
+      <DependentUpon>FrmVisuRes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
