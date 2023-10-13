@@ -20,7 +20,8 @@ namespace AP_HOTEL_APPLI
             this.chambre = new HashSet<chambre>();
         }
     
-        public Nullable<int> nohotel { get; set; }
+        public int noresglobale { get; set; }
+        public int nohotel { get; set; }
         public int nores { get; set; }
         public Nullable<System.DateTime> datedeb { get; set; }
         public Nullable<System.DateTime> datefin { get; set; }

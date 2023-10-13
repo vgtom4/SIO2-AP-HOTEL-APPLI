@@ -60,7 +60,7 @@ namespace AP_HOTEL_APPLI
             DateTime dateTimeFin = new DateTime(DateFin.Value.Year, DateFin.Value.Month, DateFin.Value.Day, TimeFin.Value.Hour, TimeFin.Value.Minute, TimeFin.Value.Second);
 
             lesChambresDisponibles = null;
-            lesChambresDisponibles = rdoCreateRes.Checked ? ChambreDAO.GetLesChambresDisponibles(dateTimeDebut, dateTimeFin) : ChambreDAO.GetLesChambresDisponibles(dateTimeDebut, dateTimeDebut, lareservation);
+            lesChambresDisponibles = rdoCreateRes.Checked ? ChambreDAO.GetLesChambresDisponibles(dateTimeDebut, dateTimeFin) : ChambreDAO.GetLesChambresDisponibles(dateTimeDebut, dateTimeFin, lareservation);
             foreach (chambre chambre in lesChambresDisponibles)
             {
                 listChambre.Items.Add($"n°{chambre.nochambre}");
@@ -117,6 +117,7 @@ namespace AP_HOTEL_APPLI
                 if (listChambre.CheckedItems.Count > 0 && txtNom.Text != "" && txtMail.Text != "")
                 {
                     reservation nouvelleReservation = new reservation();
+                    nouvelleReservation.nores = varglobale.hotel.reservation.Count > 0 ? varglobale.hotel.reservation.Max(res => res.nores) + 1 : 1;
                     nouvelleReservation.datedeb = new DateTime(DateDebut.Value.Year, DateDebut.Value.Month, DateDebut.Value.Day, TimeDebut.Value.Hour, TimeDebut.Value.Minute, TimeDebut.Value.Second);
                     nouvelleReservation.datefin = new DateTime(DateFin.Value.Year, DateFin.Value.Month, DateFin.Value.Day, TimeFin.Value.Hour, TimeFin.Value.Minute, TimeFin.Value.Second);
                     nouvelleReservation.nom = txtNom.Text;
@@ -136,7 +137,7 @@ namespace AP_HOTEL_APPLI
                     RefreshForm();
                 }
             }
-            // -------------------------------------------------------------------------------------------------A faire
+            // -------------------------------------------------------------------------------------------------A Léon
 
             //List<chambre> selectedChambres = new List<chambre>();
             //foreach (chambre chambre in cboRes.Items)
