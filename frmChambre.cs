@@ -210,7 +210,7 @@ namespace AP_HOTEL_APPLI
                 }
                 lesChambresASupprimmerStr = lesChambresASupprimmerStr.Substring(0, lesChambresASupprimmerStr.Length - 2);
 
-                if ((MessageBox.Show($"Confirmez la suppression des chambres suivantes :\n {lesChambresASupprimmerStr} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes))
+                if (MessageBox.Show($"Confirmez la suppression des chambres suivantes :\n {lesChambresASupprimmerStr} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     foreach (var chambreASupprimer in lesChambresASupprimmer)
                     {

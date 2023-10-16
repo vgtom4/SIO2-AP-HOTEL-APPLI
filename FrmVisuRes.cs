@@ -8,7 +8,7 @@ namespace AP_HOTEL_APPLI
 {
     public partial class FrmVisuRes : Form
     {
-        private FrmCalendar frmBase = Application.OpenForms.OfType<FrmCalendar>().FirstOrDefault();
+        private FrmReservation frmBase = Application.OpenForms.OfType<FrmReservation>().FirstOrDefault();
         List<reservation> lesReservations = new List<reservation>();
         reservation lareservation;
 
@@ -142,6 +142,18 @@ namespace AP_HOTEL_APPLI
         {
             SwitchEditMode(false);
             frmBase.RefreshChambre(listChambre, DateDebut.Value, DateDebut.Value, lareservation);
+        }
+
+        private void btnSuppr_Click(object sender, EventArgs e)
+        {
+            if (lareservation != null && varglobale.hotel != null && MessageBox.Show($"Voulez-vous vraiment supprimer cette réservation {lareservation.nores}  ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                varglobale.hotel.chambre.Where(chambre => chambre.reservation.Contains(lareservation)).ToList().ForEach(chambre => chambre.reservation.Remove(lareservation));
+                
+                // c'est pété -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                varglobale.hotel.reservation.Remove(lareservation);
+                varglobale.connexion.SaveChanges();
+            }
         }
     }
 }

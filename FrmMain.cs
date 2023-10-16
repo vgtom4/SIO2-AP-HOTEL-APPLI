@@ -67,7 +67,7 @@ namespace AP_HOTEL_APPLI
             frmConnexion?.RefreshConnexion();
             Application.OpenForms.OfType<FrmInfo>().FirstOrDefault()?.RefreshInfo();
             Application.OpenForms.OfType<FrmChambre>().FirstOrDefault()?.RefreshChambre();
-            Application.OpenForms.OfType<FrmCalendar>().FirstOrDefault()?.RefreshForms();
+            Application.OpenForms.OfType<FrmReservation>().FirstOrDefault()?.RefreshForms();
             if (varglobale.hotel != null) {panelConnexion.Height = 50; frmConnexion.Height = 50; }
             else { panelConnexion.Height = 200; frmConnexion.Height = 200; }
             
@@ -106,7 +106,7 @@ namespace AP_HOTEL_APPLI
 
         private void btnCalendrier_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmCalendar());
+            OpenChildForm(new FrmReservation());
         }
     }
 }

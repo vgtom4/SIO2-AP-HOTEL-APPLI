@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace AP_HOTEL_APPLI
 {
-    public partial class FrmCalendar : Form
+    public partial class FrmReservation : Form
     {
         FrmVisuRes frmVisuRes;
         FrmAddRes frmAddRes;
 
-        public FrmCalendar()
+        public FrmReservation()
         {
             InitializeComponent();
         }

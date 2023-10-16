@@ -9,7 +9,7 @@ namespace AP_HOTEL_APPLI
     public partial class FrmAddRes : Form
     {
         List<chambre> lesChambresDisponibles = new List<chambre>();
-        private FrmCalendar frmBase = Application.OpenForms.OfType<FrmCalendar>().FirstOrDefault();
+        private FrmReservation frmBase = Application.OpenForms.OfType<FrmReservation>().FirstOrDefault();
 
         public FrmAddRes()
         {

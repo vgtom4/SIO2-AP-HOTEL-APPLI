@@ -1,6 +1,6 @@
 ﻿namespace AP_HOTEL_APPLI
 {
-    partial class FrmCalendar
+    partial class FrmReservation
     {
         /// <summary>
         /// Required designer variable.

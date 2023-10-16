@@ -39,18 +39,20 @@
             this.DateDebut = new System.Windows.Forms.DateTimePicker();
             this.rtbInfoRes = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSuppr = new FontAwesome.Sharp.IconButton();
             this.panelEditBtn.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelEditBtn
             // 
             this.panelEditBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelEditBtn.Controls.Add(this.btnSuppr);
             this.panelEditBtn.Controls.Add(this.btnCancel);
             this.panelEditBtn.Controls.Add(this.btnEdit);
             this.panelEditBtn.Controls.Add(this.btnSave);
-            this.panelEditBtn.Location = new System.Drawing.Point(996, 263);
+            this.panelEditBtn.Location = new System.Drawing.Point(996, 207);
             this.panelEditBtn.Name = "panelEditBtn";
-            this.panelEditBtn.Size = new System.Drawing.Size(50, 162);
+            this.panelEditBtn.Size = new System.Drawing.Size(50, 218);
             this.panelEditBtn.TabIndex = 38;
             // 
             // btnCancel
@@ -180,6 +182,20 @@
             this.label1.Text = "Voir les réservation du";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnSuppr
+            // 
+            this.btnSuppr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuppr.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnSuppr.IconColor = System.Drawing.Color.Firebrick;
+            this.btnSuppr.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnSuppr.IconSize = 45;
+            this.btnSuppr.Location = new System.Drawing.Point(0, 168);
+            this.btnSuppr.Name = "btnSuppr";
+            this.btnSuppr.Size = new System.Drawing.Size(50, 50);
+            this.btnSuppr.TabIndex = 23;
+            this.btnSuppr.UseVisualStyleBackColor = true;
+            this.btnSuppr.Click += new System.EventHandler(this.btnSuppr_Click);
+            // 
             // FrmVisuRes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -214,5 +230,6 @@
         private System.Windows.Forms.DateTimePicker DateDebut;
         private System.Windows.Forms.RichTextBox rtbInfoRes;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnSuppr;
     }
 }
