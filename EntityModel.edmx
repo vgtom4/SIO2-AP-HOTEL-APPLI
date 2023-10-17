@@ -152,7 +152,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_reserver_reservation">
-          <End Role="reservation" Type="Self.reservation" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="reserver" Type="Self.reserver" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="reservation">

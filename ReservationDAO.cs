@@ -17,7 +17,11 @@ namespace AP_HOTEL_APPLI
 
         public static List<reservation> GetLesReservationsDate(DateTime dateDeReservation)
         {
-            return varglobale.hotel.reservation.Where(reservation => reservation.datedeb.Value.ToString("d") == dateDeReservation.ToString("d")).OrderBy(reservation=> reservation.datedeb).ToList();
+            dateDeReservation = DateTime.Parse(dateDeReservation.ToString("d"));
+
+            return varglobale.hotel.reservation.Where(reservation =>
+                           reservation.datedeb.Value <= dateDeReservation && dateDeReservation <= reservation.datefin.Value
+                                      ).OrderBy(reservation => reservation.datedeb).ToList();
         }
     }
 }

@@ -57,31 +57,25 @@ namespace AP_HOTEL_APPLI
                 panelEditBtn.Visible = true;
                 cboRes.Visible = true;
                 lblLesRes.Visible = true;
+                lblChambreDispo.Visible = true;
+                listChambre.Visible = true;
             }
             else
             {
                 panelEditBtn.Visible = false;
                 cboRes.Visible = false;
                 lblLesRes.Visible = false;
+                lblChambreDispo.Visible = false;
+                listChambre.Visible = false;
             }
         }
 
         public void SwitchEditMode(bool editMode)
         {
             listChambre.Enabled = editMode;
-
-            if (varglobale.hotel != null && lareservation != null)
-            {
-                btnEdit.Visible = !editMode;
-                btnSave.Visible = editMode;
-                btnCancel.Visible = editMode;
-            }
-            else
-            {
-                btnEdit.Visible = false;
-                btnSave.Visible = false;
-                btnCancel.Visible = false;
-            }
+            btnEdit.Visible = !editMode;
+            btnSave.Visible = editMode;
+            btnCancel.Visible = editMode;
         }
 
         private void DateDebut_ValueChanged(object sender, EventArgs e)
@@ -148,11 +142,10 @@ namespace AP_HOTEL_APPLI
         {
             if (lareservation != null && varglobale.hotel != null && MessageBox.Show($"Voulez-vous vraiment supprimer cette réservation {lareservation.nores}  ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                varglobale.hotel.chambre.Where(chambre => chambre.reservation.Contains(lareservation)).ToList().ForEach(chambre => chambre.reservation.Remove(lareservation));
-                
-                // c'est pété -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                varglobale.hotel.reservation.Remove(lareservation);
+                varglobale.connexion.reservation.Remove(lareservation);
                 varglobale.connexion.SaveChanges();
+
+                Application.OpenForms.OfType<FrmMain>().FirstOrDefault().RefreshForm();
             }
         }
     }
