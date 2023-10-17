@@ -44,6 +44,7 @@ namespace AP_HOTEL_APPLI
         // Permet d'ajouter une réservation à l'hôtel connecté
         private void btnAddRes_Click(object sender, EventArgs e)
         {
+            lblInfo.Text = "";
             if (varglobale.hotel != null)
             {
                 if (listChambre.CheckedItems.Count > 0 && txtNom.Text != "" && txtMail.Text != "")
@@ -65,6 +66,9 @@ namespace AP_HOTEL_APPLI
                     nouvelleReservation.codeacces = new Random().Next(10000, 99999);
                     varglobale.hotel.reservation.Add(nouvelleReservation);
                     varglobale.connexion.SaveChanges();
+                    lblInfo.Text = "Réservation enregistrée";
+                    txtMail.Text = "";
+                    txtNom.Text = "";
                     frmBase.RefreshForms();
                 }
             }

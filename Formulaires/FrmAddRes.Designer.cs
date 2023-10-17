@@ -41,6 +41,7 @@
             this.btnAddRes = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TimeFin
@@ -167,9 +168,9 @@
             this.btnAddRes.IconColor = System.Drawing.Color.LightSeaGreen;
             this.btnAddRes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddRes.IconSize = 45;
-            this.btnAddRes.Location = new System.Drawing.Point(736, 375);
+            this.btnAddRes.Location = new System.Drawing.Point(712, 375);
             this.btnAddRes.Name = "btnAddRes";
-            this.btnAddRes.Size = new System.Drawing.Size(160, 50);
+            this.btnAddRes.Size = new System.Drawing.Size(220, 50);
             this.btnAddRes.TabIndex = 36;
             this.btnAddRes.Text = "Ajouter";
             this.btnAddRes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -196,11 +197,23 @@
             this.label3.TabIndex = 46;
             this.label3.Text = "Fin réservation :";
             // 
+            // lblInfo
+            // 
+            this.lblInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblInfo.Location = new System.Drawing.Point(712, 327);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(220, 23);
+            this.lblInfo.TabIndex = 47;
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmAddRes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1058, 437);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TimeFin);
@@ -238,5 +251,6 @@
         private System.Windows.Forms.Label lblChambreDispo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

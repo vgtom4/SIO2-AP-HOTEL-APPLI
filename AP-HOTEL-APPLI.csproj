@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo-balladins-mini.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\logo-balladins-mini.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -211,7 +211,7 @@
     <Compile Include="chambre.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ChambreDAO.cs" />
+    <Compile Include="ClasseTechniques\ChambreDAO.cs" />
     <Compile Include="EntityModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -230,55 +230,55 @@
     <Compile Include="equipement.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EquipementDAO.cs" />
-    <Compile Include="FrmAddRes.cs">
+    <Compile Include="ClasseTechniques\EquipementDAO.cs" />
+    <Compile Include="Formulaires\FrmAddRes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddRes.Designer.cs">
+    <Compile Include="Formulaires\FrmAddRes.Designer.cs">
       <DependentUpon>FrmAddRes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmReservation.cs">
+    <Compile Include="Formulaires\FrmReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReservation.Designer.cs">
+    <Compile Include="Formulaires\FrmReservation.Designer.cs">
       <DependentUpon>FrmReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInfo.cs">
+    <Compile Include="Formulaires\FrmInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInfo.Designer.cs">
+    <Compile Include="Formulaires\FrmInfo.Designer.cs">
       <DependentUpon>FrmInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.cs">
+    <Compile Include="Formulaires\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
+    <Compile Include="Formulaires\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Controlers\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FrmChambre.cs">
+    <Compile Include="Formulaires\FrmChambre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmChambre.Designer.cs">
+    <Compile Include="Formulaires\FrmChambre.Designer.cs">
       <DependentUpon>FrmChambre.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVisuRes.cs">
+    <Compile Include="Formulaires\FrmVisuRes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmVisuRes.Designer.cs">
+    <Compile Include="Formulaires\FrmVisuRes.Designer.cs">
       <DependentUpon>FrmVisuRes.cs</DependentUpon>
     </Compile>
     <Compile Include="hotel.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="HotelDAO.cs" />
-    <Compile Include="passerelleConnexion.cs" />
-    <Compile Include="FrmConnexion.cs">
+    <Compile Include="ClasseTechniques\HotelDAO.cs" />
+    <Compile Include="ClasseTechniques\passerelleConnexion.cs" />
+    <Compile Include="Formulaires\FrmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConnexion.Designer.cs">
+    <Compile Include="Formulaires\FrmConnexion.Designer.cs">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
     <Compile Include="photo.cs">
@@ -289,27 +289,27 @@
     <Compile Include="reservation.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ReservationDAO.cs" />
-    <Compile Include="varglobale.cs" />
-    <EmbeddedResource Include="FrmAddRes.resx">
+    <Compile Include="ClasseTechniques\ReservationDAO.cs" />
+    <Compile Include="ClasseTechniques\varglobale.cs" />
+    <EmbeddedResource Include="Formulaires\FrmAddRes.resx">
       <DependentUpon>FrmAddRes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReservation.resx">
+    <EmbeddedResource Include="Formulaires\FrmReservation.resx">
       <DependentUpon>FrmReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInfo.resx">
+    <EmbeddedResource Include="Formulaires\FrmInfo.resx">
       <DependentUpon>FrmInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
+    <EmbeddedResource Include="Formulaires\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmChambre.resx">
+    <EmbeddedResource Include="Formulaires\FrmChambre.resx">
       <DependentUpon>FrmChambre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConnexion.resx">
+    <EmbeddedResource Include="Formulaires\FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmVisuRes.resx">
+    <EmbeddedResource Include="Formulaires\FrmVisuRes.resx">
       <DependentUpon>FrmVisuRes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -360,7 +360,7 @@
       <DependentUpon>EntityModel.edmx</DependentUpon>
       <LastGenOutput>EntityModel.cs</LastGenOutput>
     </Content>
-    <Content Include="logo-balladins-mini.ico" />
+    <Content Include="Resources\logo-balladins-mini.ico" />
     <None Include="Resources\logo-balladins-mini-bg.jpg" />
     <None Include="Resources\logo-balladins-mini.png" />
     <None Include="Resources\wifi.png" />
@@ -387,9 +387,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
