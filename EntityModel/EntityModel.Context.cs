@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AP_HOTEL_APPLI
+namespace AP_HOTEL_APPLI.EntityModel
 {
     using System;
     using System.Data.Entity;

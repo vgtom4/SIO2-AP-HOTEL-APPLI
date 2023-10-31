@@ -1,6 +1,8 @@
-﻿using System;
+﻿using AP_HOTEL_APPLI.EntityModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace AP_HOTEL_APPLI
@@ -51,11 +53,9 @@ namespace AP_HOTEL_APPLI
             foreach (chambre chambre in lesChambresDisponibles)
             {
                 checkedListBox.Items.Add($"n°{chambre.nochambre}");
-                if (chambre.reservation.Contains(lareservation))
-                {
-                    // selectionner le checkbox de la chambre dans la liste
-                    checkedListBox.SetItemChecked(checkedListBox.Items.Count - 1, true);
-                }
+
+                // Cocher la chambre si elle est réservée
+                checkedListBox.SetItemChecked(checkedListBox.Items.Count - 1, chambre.reservation.Contains(lareservation));
             }
         }
 

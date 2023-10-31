@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelEditBtn = new System.Windows.Forms.Panel();
+            this.btnSuppr = new FontAwesome.Sharp.IconButton();
             this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.btnEdit = new FontAwesome.Sharp.IconButton();
             this.btnSave = new FontAwesome.Sharp.IconButton();
@@ -39,21 +41,36 @@
             this.DateDebut = new System.Windows.Forms.DateTimePicker();
             this.rtbInfoRes = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSuppr = new FontAwesome.Sharp.IconButton();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelEditBtn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEditBtn
             // 
-            this.panelEditBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelEditBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panelEditBtn.Controls.Add(this.btnSuppr);
             this.panelEditBtn.Controls.Add(this.btnCancel);
             this.panelEditBtn.Controls.Add(this.btnEdit);
             this.panelEditBtn.Controls.Add(this.btnSave);
-            this.panelEditBtn.Location = new System.Drawing.Point(996, 207);
+            this.panelEditBtn.Location = new System.Drawing.Point(996, 198);
             this.panelEditBtn.Name = "panelEditBtn";
             this.panelEditBtn.Size = new System.Drawing.Size(50, 218);
             this.panelEditBtn.TabIndex = 38;
+            // 
+            // btnSuppr
+            // 
+            this.btnSuppr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuppr.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnSuppr.IconColor = System.Drawing.Color.Firebrick;
+            this.btnSuppr.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnSuppr.IconSize = 45;
+            this.btnSuppr.Location = new System.Drawing.Point(0, 168);
+            this.btnSuppr.Name = "btnSuppr";
+            this.btnSuppr.Size = new System.Drawing.Size(50, 50);
+            this.btnSuppr.TabIndex = 23;
+            this.btnSuppr.UseVisualStyleBackColor = true;
+            this.btnSuppr.Click += new System.EventHandler(this.btnSuppr_Click);
             // 
             // btnCancel
             // 
@@ -99,14 +116,15 @@
             // 
             // listChambre
             // 
-            this.listChambre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.listChambre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listChambre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listChambre.CheckOnClick = true;
             this.listChambre.ColumnWidth = 80;
             this.listChambre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listChambre.FormattingEnabled = true;
             this.listChambre.HorizontalScrollbar = true;
-            this.listChambre.Location = new System.Drawing.Point(12, 189);
+            this.listChambre.Location = new System.Drawing.Point(461, 189);
             this.listChambre.MultiColumn = true;
             this.listChambre.Name = "listChambre";
             this.listChambre.Size = new System.Drawing.Size(529, 236);
@@ -114,9 +132,10 @@
             // 
             // lblLesRes
             // 
-            this.lblLesRes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLesRes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLesRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F);
-            this.lblLesRes.Location = new System.Drawing.Point(12, 63);
+            this.lblLesRes.Location = new System.Drawing.Point(111, 79);
             this.lblLesRes.Name = "lblLesRes";
             this.lblLesRes.Size = new System.Drawing.Size(215, 30);
             this.lblLesRes.TabIndex = 36;
@@ -125,9 +144,9 @@
             // 
             // lblChambreDispo
             // 
-            this.lblChambreDispo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblChambreDispo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblChambreDispo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChambreDispo.Location = new System.Drawing.Point(12, 155);
+            this.lblChambreDispo.Location = new System.Drawing.Point(461, 155);
             this.lblChambreDispo.Name = "lblChambreDispo";
             this.lblChambreDispo.Size = new System.Drawing.Size(529, 30);
             this.lblChambreDispo.TabIndex = 35;
@@ -136,11 +155,12 @@
             // 
             // cboRes
             // 
-            this.cboRes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboRes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRes.FormattingEnabled = true;
-            this.cboRes.Location = new System.Drawing.Point(12, 96);
+            this.cboRes.Location = new System.Drawing.Point(111, 112);
             this.cboRes.Name = "cboRes";
             this.cboRes.Size = new System.Drawing.Size(215, 35);
             this.cboRes.TabIndex = 34;
@@ -149,10 +169,9 @@
             // 
             // DateDebut
             // 
-            this.DateDebut.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DateDebut.CustomFormat = "";
             this.DateDebut.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateDebut.Location = new System.Drawing.Point(600, 63);
+            this.DateDebut.Location = new System.Drawing.Point(287, 23);
             this.DateDebut.Name = "DateDebut";
             this.DateDebut.Size = new System.Drawing.Size(387, 34);
             this.DateDebut.TabIndex = 33;
@@ -160,10 +179,12 @@
             // 
             // rtbInfoRes
             // 
-            this.rtbInfoRes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rtbInfoRes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbInfoRes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbInfoRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbInfoRes.Location = new System.Drawing.Point(600, 189);
+            this.rtbInfoRes.Location = new System.Drawing.Point(55, 189);
             this.rtbInfoRes.Name = "rtbInfoRes";
             this.rtbInfoRes.ReadOnly = true;
             this.rtbInfoRes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
@@ -173,28 +194,17 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F);
-            this.label1.Location = new System.Drawing.Point(337, 63);
+            this.label1.Location = new System.Drawing.Point(24, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(257, 34);
             this.label1.TabIndex = 40;
             this.label1.Text = "Voir les réservation du";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnSuppr
+            // errorProvider
             // 
-            this.btnSuppr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSuppr.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnSuppr.IconColor = System.Drawing.Color.Firebrick;
-            this.btnSuppr.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnSuppr.IconSize = 45;
-            this.btnSuppr.Location = new System.Drawing.Point(0, 168);
-            this.btnSuppr.Name = "btnSuppr";
-            this.btnSuppr.Size = new System.Drawing.Size(50, 50);
-            this.btnSuppr.TabIndex = 23;
-            this.btnSuppr.UseVisualStyleBackColor = true;
-            this.btnSuppr.Click += new System.EventHandler(this.btnSuppr_Click);
+            this.errorProvider.ContainerControl = this;
             // 
             // FrmVisuRes
             // 
@@ -214,6 +224,7 @@
             this.Text = "FrmVisuRes";
             this.Load += new System.EventHandler(this.FrmVisuRes_Load);
             this.panelEditBtn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,5 +242,6 @@
         private System.Windows.Forms.RichTextBox rtbInfoRes;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnSuppr;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AP_HOTEL_APPLI.EntityModel;
 
 namespace AP_HOTEL_APPLI
 {
@@ -24,8 +25,6 @@ namespace AP_HOTEL_APPLI
             {
                 return false;
             }
-            
-            
         }
     }
 }

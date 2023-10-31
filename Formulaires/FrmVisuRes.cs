@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AP_HOTEL_APPLI.EntityModel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -85,10 +86,11 @@ namespace AP_HOTEL_APPLI
 
         private void cboRes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             lareservation = varglobale.hotel.reservation.Where(reservation => reservation == lesReservations[cboRes.SelectedIndex]).FirstOrDefault();
             frmBase.RefreshChambre(listChambre, DateDebut.Value, DateDebut.Value, lareservation);
             rtbInfoRes.Text =
-                        "Informations réservation\n\n" +
+                        "Résumé de la réservation\n\n" +
                         $"N°{lareservation.nores}\n" +
                         $"Nom : {lareservation.nom}\n" +
                         $"Email : {lareservation.email}\n" +
@@ -107,6 +109,7 @@ namespace AP_HOTEL_APPLI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             if (varglobale.hotel != null)
             {
                 if (listChambre.CheckedItems.Count > 0)
@@ -118,28 +121,28 @@ namespace AP_HOTEL_APPLI
                     {
                         lesChambres.Add(varglobale.hotel.chambre.Where(chambre => chambre.nochambre == int.Parse(item.ToString().Substring(2))).FirstOrDefault());
                     }
-                    // ou
-                    // lesChambres = listChambre.CheckedItems.Cast<string>().Select(itemList => varglobale.hotel.chambre.Where(chambre => chambre.nochambre == int.Parse(itemList.ToString().Substring(2))).FirstOrDefault()).ToList();
-
+                    
                     ReservationDAO.UpdateReservation(lareservation, lesChambres);
-                    frmBase.RefreshForms();
+                    //frmBase.RefreshForms();
                     SwitchEditMode(false);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Aucun hotel n'est connecté");
+                else
+                {
+                    errorProvider.SetError(listChambre, "Au moins 1 chambre doit être sélectionnée.");
+                }
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             SwitchEditMode(false);
             frmBase.RefreshChambre(listChambre, DateDebut.Value, DateDebut.Value, lareservation);
         }
 
         private void btnSuppr_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             if (lareservation != null && varglobale.hotel != null && MessageBox.Show($"Voulez-vous vraiment supprimer cette réservation {lareservation.nores}  ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 varglobale.connexion.reservation.Remove(lareservation);

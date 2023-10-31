@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AP_HOTEL_APPLI.ClasseTechniques;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -136,30 +137,21 @@ namespace AP_HOTEL_APPLI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            RemoveErrorsProvider();
+            Utils.RemoveErrorsProvider(listErrorProviders);
             editMode = false;
             RefreshInfo();
         }
 
         List<ErrorProvider> listErrorProviders = new List<ErrorProvider>();
-        public void RemoveErrorsProvider()
-        {
-            foreach (var errorProvider in listErrorProviders)
-            {
-                errorProvider.Clear();
-            }
-        }
-
         public bool DataIsCorrect()
         {
-            RemoveErrorsProvider();
+            Utils.RemoveErrorsProvider(listErrorProviders);
 
-            bool dataIsCorrect = true;
             // Liste des contrôles à ignorer car peuvent être vides
             List<TextBoxBase> controlsToIgnoreBecauseCanBeEmpty = new List<TextBoxBase> { txtAdr2 };
 
             // Liste des contrôles invalide
-            List<TextBoxBase> invalidControls = new List<TextBoxBase>();
+            Dictionary<Control, string> invalidControls = new Dictionary<Control, string>();
 
             foreach (Control RTB in tablePanelInfo.Controls.OfType<TextBoxBase>())
             {
@@ -167,21 +159,13 @@ namespace AP_HOTEL_APPLI
                 if (RTB.Text == "" && !controlsToIgnoreBecauseCanBeEmpty.Contains(RTB))
                 {
                     // Ajoutez le contrôle à la liste des contrôles invalides
-                    invalidControls.Add((TextBoxBase)RTB);
-                    dataIsCorrect = false;
+                    invalidControls.Add(RTB, "Veuillez remplir ce champ");
                 }
             }
 
-            // instance d'error provider pour tout les contrôles invalides
-            
-            foreach (var RTB in invalidControls)
-            {
-                ErrorProvider errorProvider = new ErrorProvider();
-                errorProvider.SetError(RTB, "Veuillez remplir ce champ");
-                listErrorProviders.Add(errorProvider);
-            }
+            Utils.SetErrorProviders(listErrorProviders, invalidControls);
 
-            return dataIsCorrect;
+            return !invalidControls.Any();
         }
 
         private void grdEquip_CellClick(object sender, DataGridViewCellEventArgs e)

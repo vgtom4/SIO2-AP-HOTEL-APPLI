@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using AP_HOTEL_APPLI.EntityModel;
 using Microsoft.VisualBasic;
 
 namespace AP_HOTEL_APPLI

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AP_HOTEL_APPLI.EntityModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AP_HOTEL_APPLI.ClasseTechniques;
+using AP_HOTEL_APPLI.EntityModel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -20,11 +22,7 @@ namespace AP_HOTEL_APPLI
         {
             // date du jour pour le calendrier
             DateDebut.Value = DateTime.Now;
-            TimeDebut.Value = DateTime.Now;
-
-            // timeDebut et timeFin à 00:00:00
-            TimeDebut.Value = new DateTime(TimeDebut.Value.Year, TimeDebut.Value.Month, TimeDebut.Value.Day, 0, 0, 0);
-            TimeFin.Value = new DateTime(TimeFin.Value.Year, TimeFin.Value.Month, TimeFin.Value.Day, 0, 0, 0);
+            DateFin.Value = DateTime.Now;
         }
 
         /// <summary>
@@ -32,10 +30,7 @@ namespace AP_HOTEL_APPLI
         /// </summary>
         public void RefreshForm()
         {
-            DateTime dateTimeDebut = new DateTime(DateDebut.Value.Year, DateDebut.Value.Month, DateDebut.Value.Day, TimeDebut.Value.Hour, TimeDebut.Value.Minute, TimeDebut.Value.Second);
-            DateTime dateTimeFin = new DateTime(DateFin.Value.Year, DateFin.Value.Month, DateFin.Value.Day, TimeFin.Value.Hour, TimeFin.Value.Minute, TimeFin.Value.Second);
-
-            frmBase.RefreshChambre(listChambre, dateTimeDebut, dateTimeFin);
+            frmBase.RefreshChambre(listChambre, DateDebut.Value, DateFin.Value);
 
             lblChambreDispo.Text = listChambre.Items.Count > 0 ? "Chambres disponibles :" : "Aucune chambre disponible";
             lblChambreDispo.ForeColor = listChambre.Items.Count > 0 ? DefaultForeColor : System.Drawing.Color.DarkRed;
@@ -47,12 +42,14 @@ namespace AP_HOTEL_APPLI
             lblInfo.Text = "";
             if (varglobale.hotel != null)
             {
-                if (listChambre.CheckedItems.Count > 0 && txtNom.Text != "" && txtMail.Text != "")
+                if (DataIsCorrect())
                 {
                     reservation nouvelleReservation = new reservation();
                     nouvelleReservation.nores = varglobale.hotel.reservation.Count > 0 ? varglobale.hotel.reservation.Max(res => res.nores) + 1 : 1;
-                    nouvelleReservation.datedeb = new DateTime(DateDebut.Value.Year, DateDebut.Value.Month, DateDebut.Value.Day, TimeDebut.Value.Hour, TimeDebut.Value.Minute, TimeDebut.Value.Second);
-                    nouvelleReservation.datefin = new DateTime(DateFin.Value.Year, DateFin.Value.Month, DateFin.Value.Day, TimeFin.Value.Hour, TimeFin.Value.Minute, TimeFin.Value.Second);
+                    nouvelleReservation.datedeb = DateDebut.Value;
+                    nouvelleReservation.datefin = DateFin.Value;
+                    //nouvelleReservation.datedeb = new DateTime(DateDebut.Value.Year, DateDebut.Value.Month, DateDebut.Value.Day, TimeDebut.Value.Hour, TimeDebut.Value.Minute, TimeDebut.Value.Second);
+                    //nouvelleReservation.datefin = new DateTime(DateFin.Value.Year, DateFin.Value.Month, DateFin.Value.Day, TimeFin.Value.Hour, TimeFin.Value.Minute, TimeFin.Value.Second);
                     nouvelleReservation.nom = txtNom.Text;
                     nouvelleReservation.email = txtMail.Text;
 
@@ -76,18 +73,13 @@ namespace AP_HOTEL_APPLI
 
         private void DateDebut_ValueChanged(object sender, EventArgs e)
         {
+            if (DateDebut.Value < DateTime.Now)
+            {
+                DateDebut.Value = DateTime.Now;
+            }
             if (DateDebut.Value > DateFin.Value)
             {
                 DateFin.Value = DateDebut.Value;
-            }
-            frmBase.RefreshForms();
-        }
-
-        private void TimeDebut_ValueChanged(object sender, EventArgs e)
-        {
-            if (DateDebut.Value == DateFin.Value && TimeDebut.Value > TimeFin.Value)
-            {
-                TimeFin.Value = TimeDebut.Value;
             }
             frmBase.RefreshForms();
         }
@@ -101,13 +93,32 @@ namespace AP_HOTEL_APPLI
             frmBase.RefreshForms();
         }
 
-        private void TimeFin_ValueChanged(object sender, EventArgs e)
+        List<ErrorProvider> listErrorProviders = new List<ErrorProvider>();
+        public bool DataIsCorrect()
         {
-            if (DateDebut.Value == DateFin.Value && TimeDebut.Value > TimeFin.Value)
+            Utils.RemoveErrorsProvider(listErrorProviders);
+
+            // Liste des contrôles invalide
+            Dictionary<Control, string> invalidControls = new Dictionary<Control, string>();
+
+            foreach (Control RTB in Controls.OfType<TextBoxBase>())
             {
-                TimeDebut.Value = TimeFin.Value;
+                // Si le contrôle est vide et n'est pas dans la liste des contrôles à ignorer
+                if (RTB.Text == "")
+                {
+                    // Ajoutez le contrôle à la liste des contrôles invalides
+                    invalidControls.Add(RTB, "Veuillez remplir ce champ.");
+                }
             }
-            frmBase.RefreshForms();
+
+            if (listChambre.CheckedItems.Count == 0) 
+            { 
+                invalidControls.Add(listChambre, "Au moins 1 chambre doit être sélectionnée.");
+            }
+
+            Utils.SetErrorProviders(listErrorProviders, invalidControls);
+
+            return !invalidControls.Any();
         }
     }
 }

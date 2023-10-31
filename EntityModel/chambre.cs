@@ -7,30 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AP_HOTEL_APPLI
+namespace AP_HOTEL_APPLI.EntityModel
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class reservation
+    public partial class chambre
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public reservation()
+        public chambre()
         {
-            this.chambre = new HashSet<chambre>();
+            this.reservation = new HashSet<reservation>();
         }
     
-        public int noresglobale { get; set; }
         public int nohotel { get; set; }
-        public int nores { get; set; }
-        public Nullable<System.DateTime> datedeb { get; set; }
-        public Nullable<System.DateTime> datefin { get; set; }
-        public string nom { get; set; }
-        public string email { get; set; }
-        public Nullable<int> codeacces { get; set; }
+        public int nochambre { get; set; }
     
         public virtual hotel hotel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<chambre> chambre { get; set; }
+        public virtual ICollection<reservation> reservation { get; set; }
     }
 }
