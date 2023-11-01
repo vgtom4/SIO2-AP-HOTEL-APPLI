@@ -39,10 +39,12 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1058, 40);
+            this.label1.Size = new System.Drawing.Size(1076, 40);
             this.label1.TabIndex = 13;
             this.label1.Text = "Gestion des chambres";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -55,28 +57,30 @@
             this.flowLayoutPanelChambres.AutoScroll = true;
             this.flowLayoutPanelChambres.Location = new System.Drawing.Point(12, 51);
             this.flowLayoutPanelChambres.Name = "flowLayoutPanelChambres";
-            this.flowLayoutPanelChambres.Size = new System.Drawing.Size(1002, 490);
+            this.flowLayoutPanelChambres.Size = new System.Drawing.Size(1020, 537);
             this.flowLayoutPanelChambres.TabIndex = 14;
             // 
             // btnAddChambre
             // 
             this.btnAddChambre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddChambre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.btnAddChambre.IconChar = FontAwesome.Sharp.IconChar.Add;
             this.btnAddChambre.IconColor = System.Drawing.Color.LightSeaGreen;
             this.btnAddChambre.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnAddChambre.IconSize = 45;
-            this.btnAddChambre.Location = new System.Drawing.Point(1020, 435);
+            this.btnAddChambre.Location = new System.Drawing.Point(1038, 482);
             this.btnAddChambre.Name = "btnAddChambre";
             this.btnAddChambre.Size = new System.Drawing.Size(50, 50);
             this.btnAddChambre.TabIndex = 0;
-            this.btnAddChambre.UseVisualStyleBackColor = true;
+            this.btnAddChambre.UseVisualStyleBackColor = false;
             this.btnAddChambre.Click += new System.EventHandler(this.btnAddChambre_Click);
             // 
             // cboxcustom
             // 
             this.cboxcustom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cboxcustom.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cboxcustom.Location = new System.Drawing.Point(1009, 365);
+            this.cboxcustom.ForeColor = System.Drawing.Color.White;
+            this.cboxcustom.Location = new System.Drawing.Point(1027, 412);
             this.cboxcustom.Name = "cboxcustom";
             this.cboxcustom.Size = new System.Drawing.Size(73, 64);
             this.cboxcustom.TabIndex = 15;
@@ -87,21 +91,23 @@
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnDelete.IconColor = System.Drawing.Color.Crimson;
             this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnDelete.IconSize = 45;
-            this.btnDelete.Location = new System.Drawing.Point(1020, 491);
+            this.btnDelete.Location = new System.Drawing.Point(1038, 538);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(50, 50);
             this.btnDelete.TabIndex = 16;
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FrmChambre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(1082, 553);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.cboxcustom);
@@ -109,6 +115,7 @@
             this.Controls.Add(this.flowLayoutPanelChambres);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1100, 600);
             this.Name = "FrmChambre";
             this.Text = "frmChambre";

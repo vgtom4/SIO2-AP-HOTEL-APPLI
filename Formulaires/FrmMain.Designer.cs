@@ -225,8 +225,11 @@
             // 
             // txtId
             // 
+            this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtId.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtId.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.txtId.Location = new System.Drawing.Point(3, 33);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(154, 28);
@@ -246,12 +249,16 @@
             // 
             // txtPwd
             // 
+            this.txtPwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.txtPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPwd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPwd.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.txtPwd.Location = new System.Drawing.Point(173, 33);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(155, 28);
             this.txtPwd.TabIndex = 5;
+            this.txtPwd.UseSystemPasswordChar = true;
             // 
             // tableLayoutPanel2
             // 

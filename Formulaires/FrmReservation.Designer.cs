@@ -38,7 +38,9 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1058, 40);
@@ -51,6 +53,7 @@
             this.rdoCreateRes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdoCreateRes.AutoSize = true;
             this.rdoCreateRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoCreateRes.ForeColor = System.Drawing.Color.White;
             this.rdoCreateRes.Location = new System.Drawing.Point(189, 67);
             this.rdoCreateRes.Name = "rdoCreateRes";
             this.rdoCreateRes.Size = new System.Drawing.Size(298, 31);
@@ -65,6 +68,7 @@
             this.rdoVisuRes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdoVisuRes.AutoSize = true;
             this.rdoVisuRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoVisuRes.ForeColor = System.Drawing.Color.White;
             this.rdoVisuRes.Location = new System.Drawing.Point(570, 67);
             this.rdoVisuRes.Name = "rdoVisuRes";
             this.rdoVisuRes.Size = new System.Drawing.Size(367, 31);
@@ -84,16 +88,18 @@
             this.panelGestion.Size = new System.Drawing.Size(1058, 437);
             this.panelGestion.TabIndex = 35;
             // 
-            // FrmCalendar
+            // FrmReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(1082, 553);
             this.Controls.Add(this.rdoVisuRes);
             this.Controls.Add(this.rdoCreateRes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panelGestion);
-            this.Name = "FrmCalendar";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmReservation";
             this.Text = "FrmCalendar";
             this.Load += new System.EventHandler(this.FrmCalendar_Load);
             this.ResumeLayout(false);

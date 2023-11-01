@@ -118,10 +118,12 @@
             // 
             this.listChambre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listChambre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.listChambre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listChambre.CheckOnClick = true;
             this.listChambre.ColumnWidth = 80;
             this.listChambre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listChambre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.listChambre.FormattingEnabled = true;
             this.listChambre.HorizontalScrollbar = true;
             this.listChambre.Location = new System.Drawing.Point(461, 189);
@@ -157,8 +159,10 @@
             // 
             this.cboRes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.cboRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.cboRes.FormattingEnabled = true;
             this.cboRes.Location = new System.Drawing.Point(111, 112);
             this.cboRes.Name = "cboRes";
@@ -169,6 +173,10 @@
             // 
             // DateDebut
             // 
+            this.DateDebut.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
+            this.DateDebut.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.DateDebut.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.DateDebut.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.DateDebut.CustomFormat = "";
             this.DateDebut.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateDebut.Location = new System.Drawing.Point(287, 23);
@@ -182,8 +190,10 @@
             this.rtbInfoRes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbInfoRes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.rtbInfoRes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbInfoRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbInfoRes.ForeColor = System.Drawing.Color.White;
             this.rtbInfoRes.Location = new System.Drawing.Point(55, 189);
             this.rtbInfoRes.Name = "rtbInfoRes";
             this.rtbInfoRes.ReadOnly = true;
@@ -210,6 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(1058, 437);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtbInfoRes);
@@ -219,6 +230,7 @@
             this.Controls.Add(this.lblChambreDispo);
             this.Controls.Add(this.cboRes);
             this.Controls.Add(this.DateDebut);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVisuRes";
             this.Text = "FrmVisuRes";

@@ -183,5 +183,60 @@ namespace AP_HOTEL_APPLI
                 }
             }
         }
+
+        private void txtNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdr2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdr1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtVille_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrix_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

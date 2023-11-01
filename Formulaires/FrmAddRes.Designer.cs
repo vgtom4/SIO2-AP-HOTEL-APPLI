@@ -45,6 +45,9 @@
             // DateFin
             // 
             this.DateFin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DateFin.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
+            this.DateFin.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.DateFin.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.DateFin.CustomFormat = "dddd dd MMMM yyyy   \'à\'   HH\'h\'mm";
             this.DateFin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -57,6 +60,10 @@
             // DateDebut
             // 
             this.DateDebut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DateDebut.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
+            this.DateDebut.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.DateDebut.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.DateDebut.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.DateDebut.CustomFormat = "dddd dd MMMM yyyy   \'à\'   HH\'h\'mm";
             this.DateDebut.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateDebut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -80,6 +87,7 @@
             // txtNom
             // 
             this.txtNom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.txtNom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNom.Location = new System.Drawing.Point(166, 207);
@@ -90,6 +98,7 @@
             // txtMail
             // 
             this.txtMail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMail.Location = new System.Drawing.Point(166, 270);
@@ -111,10 +120,12 @@
             // listChambre
             // 
             this.listChambre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.listChambre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.listChambre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listChambre.CheckOnClick = true;
             this.listChambre.ColumnWidth = 80;
             this.listChambre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listChambre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.listChambre.FormattingEnabled = true;
             this.listChambre.HorizontalScrollbar = true;
             this.listChambre.Location = new System.Drawing.Point(586, 85);
@@ -137,7 +148,9 @@
             // btnAddRes
             // 
             this.btnAddRes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddRes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.btnAddRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.btnAddRes.IconChar = FontAwesome.Sharp.IconChar.Add;
             this.btnAddRes.IconColor = System.Drawing.Color.LightSeaGreen;
             this.btnAddRes.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -148,7 +161,7 @@
             this.btnAddRes.TabIndex = 36;
             this.btnAddRes.Text = "Ajouter";
             this.btnAddRes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddRes.UseVisualStyleBackColor = true;
+            this.btnAddRes.UseVisualStyleBackColor = false;
             this.btnAddRes.Click += new System.EventHandler(this.btnAddRes_Click);
             // 
             // label2
@@ -175,7 +188,7 @@
             // 
             this.lblInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblInfo.ForeColor = System.Drawing.Color.White;
             this.lblInfo.Location = new System.Drawing.Point(166, 312);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(220, 23);
@@ -186,6 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(1058, 437);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.label3);
@@ -199,6 +213,7 @@
             this.Controls.Add(this.listChambre);
             this.Controls.Add(this.btnAddRes);
             this.Controls.Add(this.lblChambreDispo);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAddRes";
             this.Text = "FrmAddRes";
