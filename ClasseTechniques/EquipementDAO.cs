@@ -1,4 +1,5 @@
-﻿using AP_HOTEL_APPLI.EntityModel;
+﻿using AP_HOTEL_APPLI.ClasseTechniques;
+using AP_HOTEL_APPLI.EntityModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,17 @@ namespace AP_HOTEL_APPLI
 {
     internal class EquipementDAO
     {
+        /// <summary>
+        /// Permet de charger les équipements dans le DataGridView
+        /// </summary>
+        /// <param name="grdEquipements">DataGridView a initialiser</param>
+        /// <returns></returns>
         public static List<equipement> GetLesEquipementsDGV(DataGridView grdEquipements)
         {
             try
             {
                 List<equipement> lesEquipements = new List<equipement>();
+                // Charger les équipements dans le DataGridView grdEquipements
                 foreach (DataGridViewRow row in grdEquipements.Rows)
                 {
                     if (row.Cells[0].Value != null && (bool)row.Cells[0].Value)
@@ -26,10 +33,11 @@ namespace AP_HOTEL_APPLI
                 }
                 return lesEquipements;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Utils.GenerateFileError(ex);
                 return null;
             }
-        }
+}
     }
 }

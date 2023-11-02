@@ -10,8 +10,8 @@ namespace AP_HOTEL_APPLI
 {
     public partial class FrmAddRes : Form
     {
-        List<chambre> lesChambresDisponibles = new List<chambre>();
-        private FrmReservation frmBase = Application.OpenForms.OfType<FrmReservation>().FirstOrDefault();
+        private List<chambre> lesChambresDisponibles = new List<chambre>();
+        private readonly FrmReservation frmBase = Application.OpenForms.OfType<FrmReservation>().FirstOrDefault();
 
         public FrmAddRes()
         {
@@ -30,95 +30,129 @@ namespace AP_HOTEL_APPLI
         /// </summary>
         public void RefreshForm()
         {
-            frmBase.RefreshChambre(listChambre, DateDebut.Value, DateFin.Value);
+            try {
+                frmBase.RefreshChambre(listChambre, DateDebut.Value, DateFin.Value);
 
-            lblChambreDispo.Text = listChambre.Items.Count > 0 ? "Chambres disponibles :" : "Aucune chambre disponible";
-            lblChambreDispo.ForeColor = listChambre.Items.Count > 0 ? DefaultForeColor : System.Drawing.Color.DarkRed;
+                lblChambreDispo.Text = listChambre.Items.Count > 0 ? "Chambres disponibles :" : "Aucune chambre disponible";
+                lblChambreDispo.ForeColor = listChambre.Items.Count > 0 ? System.Drawing.Color.White : System.Drawing.Color.FromArgb(179, 25, 32);
+            }
+            catch (Exception ex)
+            {
+                Utils.GenerateFileError(ex);
+            }
         }
 
         // Permet d'ajouter une réservation à l'hôtel connecté
         private void btnAddRes_Click(object sender, EventArgs e)
         {
-            lblInfo.Text = "";
-            if (varglobale.hotel != null)
-            {
-                if (DataIsCorrect())
+            try {
+                lblInfo.Text = "";
+                if (Utils.HotelIsConnected() && DataIsCorrect())
                 {
-                    reservation nouvelleReservation = new reservation();
-                    nouvelleReservation.nores = varglobale.hotel.reservation.Count > 0 ? varglobale.hotel.reservation.Max(res => res.nores) + 1 : 1;
-                    nouvelleReservation.datedeb = DateDebut.Value;
-                    nouvelleReservation.datefin = DateFin.Value;
-                    //nouvelleReservation.datedeb = new DateTime(DateDebut.Value.Year, DateDebut.Value.Month, DateDebut.Value.Day, TimeDebut.Value.Hour, TimeDebut.Value.Minute, TimeDebut.Value.Second);
-                    //nouvelleReservation.datefin = new DateTime(DateFin.Value.Year, DateFin.Value.Month, DateFin.Value.Day, TimeFin.Value.Hour, TimeFin.Value.Minute, TimeFin.Value.Second);
-                    nouvelleReservation.nom = txtNom.Text;
-                    nouvelleReservation.email = txtMail.Text;
+                    // On crée une nouvelle réservation
+                    reservation nouvelleReservation = new reservation() { 
+                        nores = varglobale.hotel.reservation.Count > 0 ? varglobale.hotel.reservation.Max(res => res.nores) + 1 : 1,
+                        datedeb = DateDebut.Value,
+                        datefin = DateFin.Value,
+                        nom = txtNom.Text,
+                        email = txtMail.Text,
+                        // On récupère les chambres cochées dans la liste des chambres
+                        chambre = listChambre.CheckedItems.Cast<string>().Select(itemList => varglobale.hotel.chambre.Where(chambre => chambre.nochambre == int.Parse(itemList.ToString().Substring(2))).FirstOrDefault()).ToList(),
+                        codeacces = new Random().Next(10000, 99999)
+                    };
 
-                    nouvelleReservation.chambre = listChambre.CheckedItems.Cast<string>().Select(itemList => varglobale.hotel.chambre.Where(chambre => chambre.nochambre == int.Parse(itemList.ToString().Substring(2))).FirstOrDefault()).ToList();
-                    // ajout des chambres sélectionnées à la réservation
-                    //foreach (var chambre in listChambre.CheckedItems)
-                    //{
-                    //    nouvelleReservation.chambre.Add(lesChambresDisponibles.Where(c => c.nochambre == int.Parse(chambre.ToString().Substring(2))).FirstOrDefault());
-                    //}
-
-                    nouvelleReservation.codeacces = new Random().Next(10000, 99999);
+                    // On ajoute la réservation à l'hôtel connecté et on sauvegarde les changements
                     varglobale.hotel.reservation.Add(nouvelleReservation);
                     varglobale.connexion.SaveChanges();
                     lblInfo.Text = "Réservation enregistrée";
                     txtMail.Text = "";
                     txtNom.Text = "";
-                    frmBase.RefreshForms();
+                    frmBase.RefreshReservationForms();
                 }
+            }
+            catch (Exception ex)
+            {
+                Utils.GenerateFileError(ex);
             }
         }
 
+        // Permet d'actualiser la liste des chambres disponibles en fonction des dates sélectionnées
         private void DateDebut_ValueChanged(object sender, EventArgs e)
         {
-            if (DateDebut.Value < DateTime.Now)
+            try
             {
-                DateDebut.Value = DateTime.Now;
+                // Permet de ne pas sélectionner une date antérieure à la date du jour
+                if (DateDebut.Value < DateTime.Now)
+                {
+                    DateDebut.Value = DateTime.Now;
+                }
+                // Permet d'ajuster la date de fin si elle est antérieure à la date de début
+                if (DateDebut.Value > DateFin.Value)
+                {
+                    DateFin.Value = DateDebut.Value;
+                }
+                frmBase.RefreshReservationForms();
             }
-            if (DateDebut.Value > DateFin.Value)
+            catch (Exception ex)
             {
-                DateFin.Value = DateDebut.Value;
+                Utils.GenerateFileError(ex);
             }
-            frmBase.RefreshForms();
         }
 
+        // Permet d'actualiser la liste des chambres disponibles en fonction des dates sélectionnées
         private void DateFin_ValueChanged(object sender, EventArgs e)
         {
-            if (DateDebut.Value > DateFin.Value)
-            {
-                DateDebut.Value = DateFin.Value;
+            try {
+                // Permet d'ajuster la date de début si elle est postérieure à la date de fin
+                if (DateDebut.Value > DateFin.Value)
+                {
+                    DateDebut.Value = DateFin.Value;
+                }
+                frmBase.RefreshReservationForms();
             }
-            frmBase.RefreshForms();
+            catch (Exception ex)
+            {
+                Utils.GenerateFileError(ex);
+            }
         }
 
-        List<ErrorProvider> listErrorProviders = new List<ErrorProvider>();
+        readonly List<ErrorProvider> listErrorProviders = new List<ErrorProvider>();
+        /// <summary>
+        /// Vérifie que les données saisies sont correctes
+        /// </summary>
+        /// <returns>true, si les données saisies sont correctes. Sinon, false</returns>
         public bool DataIsCorrect()
         {
-            Utils.RemoveErrorsProvider(listErrorProviders);
+            try {
+                Utils.RemoveErrorProviders(listErrorProviders);
 
-            // Liste des contrôles invalide
-            Dictionary<Control, string> invalidControls = new Dictionary<Control, string>();
+                // Liste des contrôles invalide
+                Dictionary<Control, string> invalidControls = new Dictionary<Control, string>();
 
-            foreach (Control RTB in Controls.OfType<TextBoxBase>())
-            {
-                // Si le contrôle est vide et n'est pas dans la liste des contrôles à ignorer
-                if (RTB.Text == "")
+                foreach (Control RTB in Controls.OfType<TextBoxBase>())
                 {
-                    // Ajoutez le contrôle à la liste des contrôles invalides
-                    invalidControls.Add(RTB, "Veuillez remplir ce champ.");
+                    // Si le contrôle est vide et n'est pas dans la liste des contrôles à ignorer
+                    if (RTB.Text == "")
+                    {
+                        // Ajoutez le contrôle à la liste des contrôles invalides
+                        invalidControls.Add(RTB, "Veuillez remplir ce champ.");
+                    }
                 }
+                // Si aucune chambre n'est sélectionnée
+                if (listChambre.CheckedItems.Count == 0) 
+                { 
+                    invalidControls.Add(listChambre, "Au moins 1 chambre doit être sélectionnée.");
+                }
+
+                Utils.SetErrorProviders(listErrorProviders, invalidControls);
+
+                return !invalidControls.Any();
             }
-
-            if (listChambre.CheckedItems.Count == 0) 
-            { 
-                invalidControls.Add(listChambre, "Au moins 1 chambre doit être sélectionnée.");
+            catch (Exception ex)
+            {
+                Utils.GenerateFileError(ex);
+                return false;
             }
-
-            Utils.SetErrorProviders(listErrorProviders, invalidControls);
-
-            return !invalidControls.Any();
         }
     }
 }

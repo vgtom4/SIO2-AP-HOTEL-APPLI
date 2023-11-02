@@ -281,7 +281,7 @@
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ClasseTechniques\HotelDAO.cs" />
-    <Compile Include="ClasseTechniques\passerelleConnexion.cs" />
+    <Compile Include="ClasseTechniques\PasserelleConnexion.cs" />
     <Compile Include="EntityModel\photo.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>

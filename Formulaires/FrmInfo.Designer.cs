@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEdit = new FontAwesome.Sharp.IconButton();
-            this.btnSave = new FontAwesome.Sharp.IconButton();
-            this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.tablePanelInfo = new System.Windows.Forms.TableLayoutPanel();
             this.grdEquip = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.txtDescC = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,8 +59,10 @@
             this.txtPrix = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescL = new System.Windows.Forms.RichTextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancel = new AP_HOTEL_APPLI.Controlers.CustomButton();
+            this.btnSave = new AP_HOTEL_APPLI.Controlers.CustomButton();
+            this.btnEdit = new AP_HOTEL_APPLI.Controlers.CustomButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tablePanelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEquip)).BeginInit();
             this.SuspendLayout();
@@ -76,50 +78,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1076, 43);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Informations";
+            this.label1.Text = "Informations de l\'hôtel";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
-            this.btnEdit.IconColor = System.Drawing.Color.IndianRed;
-            this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEdit.Location = new System.Drawing.Point(1038, 426);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(50, 50);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            this.btnSave.IconColor = System.Drawing.Color.BlueViolet;
-            this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnSave.IconSize = 45;
-            this.btnSave.Location = new System.Drawing.Point(1038, 482);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(50, 50);
-            this.btnSave.TabIndex = 13;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.Backspace;
-            this.btnCancel.IconColor = System.Drawing.Color.Brown;
-            this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancel.IconSize = 45;
-            this.btnCancel.Location = new System.Drawing.Point(1038, 538);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(50, 50);
-            this.btnCancel.TabIndex = 14;
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // tablePanelInfo
             // 
@@ -214,6 +174,26 @@
             this.grdEquip.TabIndex = 17;
             this.grdEquip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEquip_CellClick);
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "Column1";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.Width = 6;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Column2";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // label13
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -239,7 +219,6 @@
             this.txtDescC.Size = new System.Drawing.Size(272, 94);
             this.txtDescC.TabIndex = 12;
             this.txtDescC.Text = "";
-            this.txtDescC.TextChanged += new System.EventHandler(this.txtDescC_TextChanged);
             // 
             // label2
             // 
@@ -302,7 +281,6 @@
             this.txtNo.ReadOnly = true;
             this.txtNo.Size = new System.Drawing.Size(272, 27);
             this.txtNo.TabIndex = 28;
-            this.txtNo.TextChanged += new System.EventHandler(this.txtNo_TextChanged);
             // 
             // txtNom
             // 
@@ -315,7 +293,6 @@
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(272, 27);
             this.txtNom.TabIndex = 29;
-            this.txtNom.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
             // 
             // txtPassword
             // 
@@ -328,7 +305,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(272, 27);
             this.txtPassword.TabIndex = 30;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label4
             // 
@@ -369,7 +345,6 @@
             this.txtAdr2.Size = new System.Drawing.Size(272, 94);
             this.txtAdr2.TabIndex = 6;
             this.txtAdr2.Text = "";
-            this.txtAdr2.TextChanged += new System.EventHandler(this.txtAdr2_TextChanged);
             // 
             // txtAdr1
             // 
@@ -384,7 +359,6 @@
             this.txtAdr1.Size = new System.Drawing.Size(272, 120);
             this.txtAdr1.TabIndex = 5;
             this.txtAdr1.Text = "";
-            this.txtAdr1.TextChanged += new System.EventHandler(this.txtAdr1_TextChanged);
             // 
             // label7
             // 
@@ -409,7 +383,6 @@
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(272, 27);
             this.txtTel.TabIndex = 33;
-            this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
             // 
             // label10
             // 
@@ -434,7 +407,6 @@
             this.txtVille.Name = "txtVille";
             this.txtVille.Size = new System.Drawing.Size(272, 27);
             this.txtVille.TabIndex = 32;
-            this.txtVille.TextChanged += new System.EventHandler(this.txtVille_TextChanged);
             // 
             // txtCP
             // 
@@ -447,7 +419,6 @@
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(272, 27);
             this.txtCP.TabIndex = 31;
-            this.txtCP.TextChanged += new System.EventHandler(this.txtCP_TextChanged);
             // 
             // label6
             // 
@@ -484,7 +455,6 @@
             this.txtPrix.Name = "txtPrix";
             this.txtPrix.Size = new System.Drawing.Size(272, 27);
             this.txtPrix.TabIndex = 34;
-            this.txtPrix.TextChanged += new System.EventHandler(this.txtPrix_TextChanged);
             // 
             // label8
             // 
@@ -512,27 +482,75 @@
             this.txtDescL.Size = new System.Drawing.Size(272, 121);
             this.txtDescL.TabIndex = 11;
             this.txtDescL.Text = "";
-            this.txtDescL.TextChanged += new System.EventHandler(this.txtDescL_TextChanged);
             // 
-            // Column1
+            // btnCancel
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "Column1";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 6;
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnCancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancel.BorderRadius = 5;
+            this.btnCancel.BorderSize = 0;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.Backspace;
+            this.btnCancel.IconColor = System.Drawing.Color.DarkRed;
+            this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancel.Location = new System.Drawing.Point(1038, 538);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(50, 50);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.TextColor = System.Drawing.Color.White;
+            this.toolTip1.SetToolTip(this.btnCancel, "Annuler les changements");
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // Column2
+            // btnSave
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Column2";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSave.BorderRadius = 5;
+            this.btnSave.BorderSize = 0;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.btnSave.IconColor = System.Drawing.Color.Purple;
+            this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnSave.Location = new System.Drawing.Point(1038, 482);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(50, 50);
+            this.btnSave.TabIndex = 18;
+            this.btnSave.TextColor = System.Drawing.Color.White;
+            this.toolTip1.SetToolTip(this.btnSave, "Enregistrer les changements");
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnEdit.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEdit.BorderRadius = 5;
+            this.btnEdit.BorderSize = 0;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
+            this.btnEdit.IconColor = System.Drawing.Color.Navy;
+            this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEdit.Location = new System.Drawing.Point(1038, 426);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(50, 50);
+            this.btnEdit.TabIndex = 17;
+            this.btnEdit.TextColor = System.Drawing.Color.White;
+            this.toolTip1.SetToolTip(this.btnEdit, "Modifier les informations de l\'hotel");
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // FrmInfo
             // 
@@ -540,10 +558,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(1100, 600);
-            this.Controls.Add(this.tablePanelInfo);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.tablePanelInfo);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1100, 600);
@@ -560,9 +578,6 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton btnEdit;
-        private FontAwesome.Sharp.IconButton btnSave;
-        private FontAwesome.Sharp.IconButton btnCancel;
         private System.Windows.Forms.TableLayoutPanel tablePanelInfo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
@@ -590,5 +605,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private Controlers.CustomButton btnEdit;
+        private Controlers.CustomButton btnSave;
+        private Controlers.CustomButton btnCancel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

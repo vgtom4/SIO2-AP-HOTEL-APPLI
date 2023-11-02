@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AP_HOTEL_APPLI.ClasseTechniques;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace AP_HOTEL_APPLI.Formulaires
         {
             lblClock.Text = DateTime.Now.ToLongTimeString();
             lblDate.Text = DateTime.Now.ToLongDateString();
-            lblStateAccount.Text = varglobale.hotel != null ? $"Bienvenue {varglobale.hotel.nom}." : "Vous n'êtes pas connecté.";
+            lblStateAccount.Text = Utils.HotelIsConnected() ? $"Bienvenue {varglobale.hotel.nom}." : "Vous n'êtes pas connecté.";
         }
     }
 }

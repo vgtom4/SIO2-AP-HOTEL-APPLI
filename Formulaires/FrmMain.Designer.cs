@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.lblInfo = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
@@ -47,8 +48,9 @@
             this.btnInfo = new AP_HOTEL_APPLI.Controlers.CustomButton();
             this.btnChambre = new AP_HOTEL_APPLI.Controlers.CustomButton();
             this.btnTest = new AP_HOTEL_APPLI.Controlers.CustomButton();
-            this.btnLogIn = new AP_HOTEL_APPLI.Controlers.CustomButton();
-            this.btnLogOut = new AP_HOTEL_APPLI.Controlers.CustomButton();
+            this.btnSignIn = new AP_HOTEL_APPLI.Controlers.CustomButton();
+            this.btnSignOut = new AP_HOTEL_APPLI.Controlers.CustomButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.tablePanelConnexion.SuspendLayout();
@@ -189,12 +191,11 @@
             // 
             // tablePanelConnexion
             // 
-            this.tablePanelConnexion.ColumnCount = 3;
-            this.tablePanelConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tablePanelConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tablePanelConnexion.ColumnCount = 4;
             this.tablePanelConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tablePanelConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tablePanelConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tablePanelConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tablePanelConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tablePanelConnexion.Controls.Add(this.label1, 0, 0);
             this.tablePanelConnexion.Controls.Add(this.txtId, 0, 1);
             this.tablePanelConnexion.Controls.Add(this.label2, 2, 0);
@@ -206,8 +207,6 @@
             this.tablePanelConnexion.RowCount = 2;
             this.tablePanelConnexion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tablePanelConnexion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tablePanelConnexion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tablePanelConnexion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tablePanelConnexion.Size = new System.Drawing.Size(331, 75);
             this.tablePanelConnexion.TabIndex = 16;
             // 
@@ -218,7 +217,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 30);
+            this.label1.Size = new System.Drawing.Size(139, 30);
             this.label1.TabIndex = 10;
             this.label1.Text = "Identifiant :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -232,7 +231,7 @@
             this.txtId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.txtId.Location = new System.Drawing.Point(3, 33);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(154, 28);
+            this.txtId.Size = new System.Drawing.Size(139, 28);
             this.txtId.TabIndex = 4;
             // 
             // label2
@@ -240,9 +239,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(173, 0);
+            this.label2.Location = new System.Drawing.Point(168, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 30);
+            this.label2.Size = new System.Drawing.Size(139, 30);
             this.label2.TabIndex = 11;
             this.label2.Text = "Mot de passe :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -254,9 +253,9 @@
             this.txtPwd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPwd.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
-            this.txtPwd.Location = new System.Drawing.Point(173, 33);
+            this.txtPwd.Location = new System.Drawing.Point(168, 33);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(155, 28);
+            this.txtPwd.Size = new System.Drawing.Size(139, 28);
             this.txtPwd.TabIndex = 5;
             this.txtPwd.UseSystemPasswordChar = true;
             // 
@@ -270,7 +269,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.99999F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.btnReservation, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnInfo, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnChambre, 1, 0);
@@ -306,6 +304,7 @@
             this.btnReservation.Text = "Réservations";
             this.btnReservation.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.btnReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.btnReservation, "Accéder au gestionnaire des réservations de l\'hotel");
             this.btnReservation.UseVisualStyleBackColor = false;
             this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
             // 
@@ -333,6 +332,7 @@
             this.btnInfo.Text = "Informations";
             this.btnInfo.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.btnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.btnInfo, "Accéder au gestionnaire des informations de l\'hotel");
             this.btnInfo.UseVisualStyleBackColor = false;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
@@ -360,6 +360,7 @@
             this.btnChambre.Text = "Chambres";
             this.btnChambre.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.btnChambre.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.btnChambre, "Accéder au gestionnaire des chambres de l\'hotel");
             this.btnChambre.UseVisualStyleBackColor = false;
             this.btnChambre.Click += new System.EventHandler(this.btnChambre_Click);
             // 
@@ -385,53 +386,55 @@
             this.btnTest.Text = "test";
             this.btnTest.TextColor = System.Drawing.Color.White;
             this.btnTest.UseVisualStyleBackColor = false;
-            this.btnTest.Click += new System.EventHandler(this.customButton1_Click);
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
-            // btnLogIn
+            // btnSignIn
             // 
-            this.btnLogIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
-            this.btnLogIn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
-            this.btnLogIn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLogIn.BorderRadius = 10;
-            this.btnLogIn.BorderSize = 0;
-            this.btnLogIn.FlatAppearance.BorderSize = 0;
-            this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogIn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogIn.ForeColor = System.Drawing.Color.White;
-            this.btnLogIn.IconChar = FontAwesome.Sharp.IconChar.SignIn;
-            this.btnLogIn.IconColor = System.Drawing.Color.Black;
-            this.btnLogIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLogIn.Location = new System.Drawing.Point(1138, 52);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(50, 50);
-            this.btnLogIn.TabIndex = 6;
-            this.btnLogIn.TextColor = System.Drawing.Color.White;
-            this.btnLogIn.UseVisualStyleBackColor = false;
-            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
+            this.btnSignIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnSignIn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnSignIn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSignIn.BorderRadius = 10;
+            this.btnSignIn.BorderSize = 0;
+            this.btnSignIn.FlatAppearance.BorderSize = 0;
+            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignIn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.ForeColor = System.Drawing.Color.White;
+            this.btnSignIn.IconChar = FontAwesome.Sharp.IconChar.SignIn;
+            this.btnSignIn.IconColor = System.Drawing.Color.Black;
+            this.btnSignIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSignIn.Location = new System.Drawing.Point(1138, 52);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(50, 50);
+            this.btnSignIn.TabIndex = 6;
+            this.btnSignIn.TextColor = System.Drawing.Color.White;
+            this.toolTip1.SetToolTip(this.btnSignIn, "Se connecter");
+            this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
-            // btnLogOut
+            // btnSignOut
             // 
-            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
-            this.btnLogOut.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
-            this.btnLogOut.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLogOut.BorderRadius = 10;
-            this.btnLogOut.BorderSize = 0;
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnLogOut.IconColor = System.Drawing.Color.Black;
-            this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLogOut.Location = new System.Drawing.Point(1138, 52);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(50, 50);
-            this.btnLogOut.TabIndex = 6;
-            this.btnLogOut.TextColor = System.Drawing.Color.White;
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.btnSignOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSignOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnSignOut.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnSignOut.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSignOut.BorderRadius = 10;
+            this.btnSignOut.BorderSize = 0;
+            this.btnSignOut.FlatAppearance.BorderSize = 0;
+            this.btnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignOut.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignOut.ForeColor = System.Drawing.Color.White;
+            this.btnSignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnSignOut.IconColor = System.Drawing.Color.Black;
+            this.btnSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSignOut.Location = new System.Drawing.Point(1138, 52);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(50, 50);
+            this.btnSignOut.TabIndex = 6;
+            this.btnSignOut.TextColor = System.Drawing.Color.White;
+            this.toolTip1.SetToolTip(this.btnSignOut, "Se déconnecter");
+            this.btnSignOut.UseVisualStyleBackColor = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // FrmMain
             // 
@@ -441,8 +444,8 @@
             this.ClientSize = new System.Drawing.Size(1200, 800);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.panelTitleBar);
-            this.Controls.Add(this.btnLogIn);
-            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.btnSignIn);
+            this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.lblInfo);
@@ -452,7 +455,7 @@
             this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "FrmMain";
             this.Text = "Outil de gestion Hotel Balladins";
-            this.Load += new System.EventHandler(this.formBase_Load);
+            this.Load += new System.EventHandler(this.formMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.tablePanelConnexion.ResumeLayout(false);
@@ -476,13 +479,14 @@
         private System.Windows.Forms.TableLayoutPanel tablePanelConnexion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtId;
-        private Controlers.CustomButton btnLogIn;
+        private Controlers.CustomButton btnSignIn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Controlers.CustomButton btnReservation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPwd;
-        private Controlers.CustomButton btnLogOut;
+        private Controlers.CustomButton btnSignOut;
         private Controlers.CustomButton btnTest;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

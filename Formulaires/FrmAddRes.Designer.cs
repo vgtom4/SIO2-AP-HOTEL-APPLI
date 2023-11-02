@@ -35,16 +35,16 @@
             this.txtMail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listChambre = new System.Windows.Forms.CheckedListBox();
-            this.lblChambreDispo = new System.Windows.Forms.Label();
-            this.btnAddRes = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.lblChambreDispo = new System.Windows.Forms.Label();
+            this.btnAddRes = new AP_HOTEL_APPLI.Controlers.CustomButton();
             this.SuspendLayout();
             // 
             // DateFin
             // 
-            this.DateFin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DateFin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.DateFin.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.DateFin.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.DateFin.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
@@ -59,7 +59,7 @@
             // 
             // DateDebut
             // 
-            this.DateDebut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DateDebut.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.DateDebut.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.DateDebut.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.DateDebut.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
@@ -75,7 +75,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(166, 174);
             this.label1.Name = "label1";
@@ -86,7 +86,7 @@
             // 
             // txtNom
             // 
-            this.txtNom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNom.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.txtNom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,7 +97,7 @@
             // 
             // txtMail
             // 
-            this.txtMail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMail.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,7 +108,7 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(166, 237);
             this.label5.Name = "label5";
@@ -119,7 +119,9 @@
             // 
             // listChambre
             // 
-            this.listChambre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.listChambre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listChambre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
             this.listChambre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listChambre.CheckOnClick = true;
@@ -134,39 +136,9 @@
             this.listChambre.Size = new System.Drawing.Size(460, 340);
             this.listChambre.TabIndex = 37;
             // 
-            // lblChambreDispo
-            // 
-            this.lblChambreDispo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblChambreDispo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChambreDispo.Location = new System.Drawing.Point(581, 52);
-            this.lblChambreDispo.Name = "lblChambreDispo";
-            this.lblChambreDispo.Size = new System.Drawing.Size(314, 30);
-            this.lblChambreDispo.TabIndex = 35;
-            this.lblChambreDispo.Text = "Chambres disponibles :";
-            this.lblChambreDispo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnAddRes
-            // 
-            this.btnAddRes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddRes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
-            this.btnAddRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddRes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
-            this.btnAddRes.IconChar = FontAwesome.Sharp.IconChar.Add;
-            this.btnAddRes.IconColor = System.Drawing.Color.LightSeaGreen;
-            this.btnAddRes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAddRes.IconSize = 45;
-            this.btnAddRes.Location = new System.Drawing.Point(166, 360);
-            this.btnAddRes.Name = "btnAddRes";
-            this.btnAddRes.Size = new System.Drawing.Size(220, 50);
-            this.btnAddRes.TabIndex = 36;
-            this.btnAddRes.Text = "Ajouter";
-            this.btnAddRes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddRes.UseVisualStyleBackColor = false;
-            this.btnAddRes.Click += new System.EventHandler(this.btnAddRes_Click);
-            // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(8, 6);
             this.label2.Name = "label2";
@@ -176,7 +148,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 85);
             this.label3.Name = "label3";
@@ -186,7 +158,7 @@
             // 
             // lblInfo
             // 
-            this.lblInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblInfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo.ForeColor = System.Drawing.Color.White;
             this.lblInfo.Location = new System.Drawing.Point(166, 312);
@@ -195,12 +167,50 @@
             this.lblInfo.TabIndex = 47;
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblChambreDispo
+            // 
+            this.lblChambreDispo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChambreDispo.Location = new System.Drawing.Point(581, 52);
+            this.lblChambreDispo.Name = "lblChambreDispo";
+            this.lblChambreDispo.Size = new System.Drawing.Size(292, 30);
+            this.lblChambreDispo.TabIndex = 48;
+            this.lblChambreDispo.Text = "Chambres disponibles :";
+            this.lblChambreDispo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnAddRes
+            // 
+            this.btnAddRes.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnAddRes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnAddRes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(195)))), ((int)(((byte)(67)))));
+            this.btnAddRes.BorderColor = System.Drawing.Color.LightPink;
+            this.btnAddRes.BorderRadius = 5;
+            this.btnAddRes.BorderSize = 0;
+            this.btnAddRes.FlatAppearance.BorderSize = 0;
+            this.btnAddRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
+            this.btnAddRes.IconChar = FontAwesome.Sharp.IconChar.Add;
+            this.btnAddRes.IconColor = System.Drawing.Color.Teal;
+            this.btnAddRes.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnAddRes.IconSize = 46;
+            this.btnAddRes.Location = new System.Drawing.Point(109, 338);
+            this.btnAddRes.Name = "btnAddRes";
+            this.btnAddRes.Size = new System.Drawing.Size(329, 50);
+            this.btnAddRes.TabIndex = 49;
+            this.btnAddRes.Text = "Ajouter la réservation";
+            this.btnAddRes.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
+            this.btnAddRes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddRes.UseVisualStyleBackColor = false;
+            this.btnAddRes.Click += new System.EventHandler(this.btnAddRes_Click);
+            // 
             // FrmAddRes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(1058, 437);
+            this.Controls.Add(this.btnAddRes);
+            this.Controls.Add(this.lblChambreDispo);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -211,8 +221,6 @@
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listChambre);
-            this.Controls.Add(this.btnAddRes);
-            this.Controls.Add(this.lblChambreDispo);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAddRes";
@@ -231,10 +239,10 @@
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckedListBox listChambre;
-        private FontAwesome.Sharp.IconButton btnAddRes;
-        private System.Windows.Forms.Label lblChambreDispo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Label lblChambreDispo;
+        private Controlers.CustomButton btnAddRes;
     }
 }

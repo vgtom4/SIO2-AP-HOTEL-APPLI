@@ -9,7 +9,9 @@ namespace AP_HOTEL_APPLI
 {
     public class varglobale
     {
+        // Instance de la connexion à la base de données
         public static connexiondb connexion = new connexiondb();
+        // Instance de la classe hotel
         public static hotel hotel;
     }
 }

@@ -1,4 +1,5 @@
-﻿using AP_HOTEL_APPLI.EntityModel;
+﻿using AP_HOTEL_APPLI.ClasseTechniques;
+using AP_HOTEL_APPLI.EntityModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,25 +19,32 @@ namespace AP_HOTEL_APPLI
         /// <returns></returns>
         public static List<chambre> GetLesChambresDisponibles(List<chambre> lesChambresHotel, DateTime dateTimeDebut, DateTime dateTimeFin, reservation lareservation = null)
         {
-            if (lareservation == null)
-            {
-                // Filtrer les chambres qui n'ont pas de réservation qui chevauche la période [dateTimeDebut, dateTimeFin]
-                return lesChambresHotel.Where(chambre =>
-                            !chambre.reservation.Any(reservation =>
-                                !(dateTimeDebut >= reservation.datefin || dateTimeFin <= reservation.datedeb)
-                            )
-                        ).OrderBy(c => c.nochambre).ToList();
+            try {
+                if (lareservation == null)
+                {
+                    // Filtrer les chambres qui n'ont pas de réservation qui chevauche la période [dateTimeDebut, dateTimeFin]
+                    return lesChambresHotel.Where(chambre =>
+                                !chambre.reservation.Any(reservation =>
+                                    !(dateTimeDebut >= reservation.datefin || dateTimeFin <= reservation.datedeb)
+                                )
+                            ).OrderBy(c => c.nochambre).ToList();
+                }
+                else
+                {
+                    // Filtrer les chambres qui n'ont pas de réservation qui chevauche la période [lareservation.datedeb, lareservation.datefin]
+                    // ou qui font partie de la réservation lareservation
+                    return lesChambresHotel.Where(chambre =>
+                                chambre.reservation.Contains(lareservation) ||
+                                !chambre.reservation.Any(reservation =>
+                                    (reservation.datedeb <= lareservation.datefin && reservation.datefin >= lareservation.datedeb)
+                                )
+                            ).OrderBy(c => c.nochambre).ToList();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Filtrer les chambres qui n'ont pas de réservation qui chevauche la période [lareservation.datedeb, lareservation.datefin]
-                // ou qui font partie de la réservation lareservation
-                return lesChambresHotel.Where(chambre =>
-                            chambre.reservation.Contains(lareservation) ||
-                            !chambre.reservation.Any(reservation =>
-                                (reservation.datedeb <= lareservation.datefin && reservation.datefin >= lareservation.datedeb)
-                            )
-                        ).OrderBy(c => c.nochambre).ToList();
+                Utils.GenerateFileError(ex);
+                return null;
             }
         }
     }
