@@ -77,7 +77,7 @@
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(131)))));
             this.panelDesktop.Location = new System.Drawing.Point(12, 123);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1173, 665);
+            this.panelDesktop.Size = new System.Drawing.Size(1176, 665);
             this.panelDesktop.TabIndex = 4;
             // 
             // pictureBox1
@@ -386,6 +386,7 @@
             this.btnTest.Text = "test";
             this.btnTest.TextColor = System.Drawing.Color.White;
             this.btnTest.UseVisualStyleBackColor = false;
+            this.btnTest.Visible = false;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // btnSignIn

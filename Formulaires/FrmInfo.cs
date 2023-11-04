@@ -49,8 +49,8 @@ namespace AP_HOTEL_APPLI
                         zoneDeSaisie.Enabled = Utils.HotelIsConnected();
                     }
                 }
-                grdEquip.ReadOnly = !editMode;
-                grdEquip.Columns[1].ReadOnly = true;
+
+                grdEquip.Columns[0].ReadOnly = !editMode;
 
                 if (Utils.HotelIsConnected())
                 {

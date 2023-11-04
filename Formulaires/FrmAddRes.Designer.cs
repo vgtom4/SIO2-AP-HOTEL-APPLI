@@ -133,7 +133,7 @@
             this.listChambre.Location = new System.Drawing.Point(586, 85);
             this.listChambre.MultiColumn = true;
             this.listChambre.Name = "listChambre";
-            this.listChambre.Size = new System.Drawing.Size(460, 340);
+            this.listChambre.Size = new System.Drawing.Size(440, 340);
             this.listChambre.TabIndex = 37;
             // 
             // label2

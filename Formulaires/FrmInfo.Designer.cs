@@ -59,10 +59,10 @@
             this.txtPrix = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescL = new System.Windows.Forms.RichTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnCancel = new AP_HOTEL_APPLI.Controlers.CustomButton();
             this.btnSave = new AP_HOTEL_APPLI.Controlers.CustomButton();
             this.btnEdit = new AP_HOTEL_APPLI.Controlers.CustomButton();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tablePanelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEquip)).BeginInit();
             this.SuspendLayout();
