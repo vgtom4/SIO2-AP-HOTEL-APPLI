@@ -71,6 +71,8 @@ namespace AP_HOTEL_APPLI.ClasseTechniques
         /// <param name="message">exception</param>
         public static void GenerateFileError(Exception message)
         {
+            // Création du dossier ErrorLog s'il n'existe pas
+            if (!System.IO.Directory.Exists(@Application.StartupPath + "\\ErrorLogs")) { System.IO.Directory.CreateDirectory(@Application.StartupPath + "\\ErrorLogs"); }
             // En cas d'erreur, création du fichier log
             using (System.IO.StreamWriter writer = System.IO.File.AppendText(@Application.StartupPath + "\\ErrorLogs\\" + DateTime.Now.ToString("dd-MM-yyyy_HH'h'mm") + ".txt")) { writer.WriteLine(DateTime.Now.ToString() + " - " + message.Message + "\n"); }
             //MessageBox.Show("Une erreur est survenu. Erreur enregistrée dans le dossier ErrorLog.");
