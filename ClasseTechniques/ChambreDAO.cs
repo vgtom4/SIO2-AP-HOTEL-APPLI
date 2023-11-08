@@ -16,7 +16,7 @@ namespace AP_HOTEL_APPLI
         /// <param name="dateTimeDebut"></param>
         /// <param name="dateTimeFin"></param>
         /// <param name="lareservation">[optionnel]</param>
-        /// <returns></returns>
+        /// <returns>Liste de chambre</returns>
         public static List<chambre> GetLesChambresDisponibles(List<chambre> lesChambresHotel, DateTime dateTimeDebut, DateTime dateTimeFin, reservation lareservation = null)
         {
             try {
