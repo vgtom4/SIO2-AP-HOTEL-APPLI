@@ -18,11 +18,24 @@ L'application permet de :
 
 ## Schéma relationnel de la base de données exploitée
 
-Image bdd
+![](imagesProjet/schema_bdd.png)
 
 ## Visuels de l'interface de l'application
 
-Images appli
+### Interface d'accueil :
+![](imagesProjet/APPLI_HOTEL_accueil.png)
+
+### Interface de gestion des informations hôtel :
+![](imagesProjet/APPLI_HOTEL_info.png)
+
+### Interface de gestion des chambres :
+![](imagesProjet/APPLI_HOTEL_chambre.png)
+
+### Interface de visualisation et d'édition des réservations :
+![](imagesProjet/APPLI_HOTEL_visuRes.png)
+
+### Interface de création de réservation :
+![](imagesProjet/APPLI_HOTEL_addRes.png)
 
 # Installation
 
