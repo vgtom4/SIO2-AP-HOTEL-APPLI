@@ -369,6 +369,7 @@
       <DependentUpon>EntityModel.edmx</DependentUpon>
       <LastGenOutput>EntityModel.cs</LastGenOutput>
     </Content>
+    <Content Include="imagesProjet\schema_bdd.png" />
     <Content Include="Resources\logo-balladins-mini.ico" />
     <None Include="Resources\logo-balladins-mini-bg.jpg" />
     <None Include="Resources\logo-balladins-mini.png" />
