@@ -39,11 +39,11 @@ L'application permet de :
 
 # Installation
 
-## Comment joindre la base de données du projet ?
+## Comment importer la base de données du projet ?
 
 *Explication pour Microsoft SQL Server Management Studio*
---> Récupérez les fichiers .mdf et .ldf de la base de données.
-Dans MSSMS, faites *clic-droit* sur "**Bases de données**" -> "**Joindre**" -> "**Ajouter**" -> *sélectionnez le fichier .mdf*-> Enfin, cliquez sur "**Ok**".
+--> Récupérez le [fichier .bak](https://github.com/vgtom4/SIO2-AP-HOTEL-APPLI/blob/master/DataBase/bdhotel_lepers-vieillard.bak) de la base de données.
+Dans MSSMS, faites *clic-droit* sur "**Bases de données**" -> "**Restaurer la base de données...**" -> cochez "**Support**" -> cliquez sur "**[...]**" -> "**Ajouter**" -> *sélectionnez le fichier .bak*-> Enfin, cliquez sur "**Ok**" puis "**Ok**".
 
 ## Comment lier une base de données au projet ?
 
